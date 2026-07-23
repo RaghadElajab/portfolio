@@ -57,7 +57,7 @@
 }
 
 .pettable-cat .generated-cat-body {
-  transition: transform .18s ease, filter .18s ease;
+  transition: transform .18s ease, filter .18s ease, opacity .12s steps(1, end);
 }
 
 .pettable-cat:hover .generated-cat-body,
@@ -97,31 +97,9 @@
   animation-duration: .75s;
 }
 
-.cat-happy-face {
-  position: absolute;
+.generated-cat-happy {
   z-index: 3;
-  left: 47px;
-  top: 43px;
-  width: 70px;
-  height: 32px;
   opacity: 0;
-  pointer-events: none;
-}
-
-.cat-happy-face svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-  image-rendering: pixelated;
-}
-
-.cat-happy-face rect,
-.cat-happy-face path {
-  fill: #f45b9d;
-}
-
-.cat-happy-face path {
-  fill: #071b3d;
 }
 
 .pet-sparkles {
@@ -169,7 +147,11 @@
   animation: happy-tail-wag .22s steps(2, end) infinite;
 }
 
-.pettable-cat.is-petted .cat-happy-face {
+.pettable-cat.is-petted .generated-cat-body:not(.generated-cat-happy) {
+  opacity: 0;
+}
+
+.pettable-cat.is-petted .generated-cat-happy {
   opacity: 1;
 }
 
