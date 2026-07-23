@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Raghad Elajab portfolio</title>
+  <desc id="desc">A dark-blue pixel-art window introducing Raghad Elajab and her work in AI, XR, robotics, and software engineering.</desc>
+  <rect width="1200" height="360" fill="#071426"/>
+  <g opacity=".3" stroke="#274866">
+    <path d="M0 40h1200M0 80h1200M0 120h1200M0 160h1200M0 200h1200M0 240h1200M0 280h1200M0 320h1200"/>
+    <path d="M40 0v360M80 0v360M120 0v360M160 0v360M200 0v360M240 0v360M280 0v360M320 0v360M360 0v360M400 0v360M440 0v360M480 0v360M520 0v360M560 0v360M600 0v360M640 0v360M680 0v360M720 0v360M760 0v360M800 0v360M840 0v360M880 0v360M920 0v360M960 0v360M1000 0v360M1040 0v360M1080 0v360M1120 0v360M1160 0v360"/>
+  </g>
+  <rect x="55" y="45" width="1090" height="270" fill="#0b1d33" stroke="#274866" stroke-width="4"/>
+  <rect x="55" y="45" width="1090" height="42" fill="#143250" stroke="#274866" stroke-width="4"/>
+  <text x="78" y="72" fill="#acc4d3" font-family="Courier New, monospace" font-size="16" font-weight="700" letter-spacing="2">RAGHAD_PORTFOLIO.EXE</text>
+  <rect x="1053" y="60" width="11" height="11" fill="#8ba5b7"/>
+  <rect x="1076" y="60" width="11" height="11" fill="#84edbb"/>
+  <rect x="1099" y="60" width="11" height="11" fill="#ff77ad"/>
+  <text x="94" y="138" fill="#84edbb" font-family="Courier New, monospace" font-size="17" font-weight="700" letter-spacing="4">&gt; HELLO, WORLD. I'M</text>
+  <text x="88" y="226" fill="#ff77ad" font-family="Arial, sans-serif" font-size="76" font-weight="900" letter-spacing="-4">Raghad Elajab.</text>
+  <text x="94" y="272" fill="#b9ccd8" font-family="Courier New, monospace" font-size="19" font-weight="700" letter-spacing="3">AI  ·  XR  ·  ROBOTICS  ·  SOFTWARE ENGINEERING</text>
+  <rect x="1019" y="126" width="11" height="11" fill="#84edbb"/>
+  <rect x="1046" y="153" width="11" height="11" fill="#ff77ad"/>
+  <rect x="1084" y="119" width="7" height="7" fill="#84edbb"/>
+  <rect x="1102" y="187" width="9" height="9" fill="#ff77ad"/>
+  <path d="M1019 251h92" stroke="#274866" stroke-width="4"/>
+  <path d="M1030 269h81" stroke="#84edbb" stroke-width="4"/>
+</svg>
