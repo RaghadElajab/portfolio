@@ -283,11 +283,11 @@
 }
 
 .modal-media {
-  margin: -10px -10px 25px;
-  padding: 7px;
+  margin: 0 0 18px;
+  padding: 0;
   border: 1px solid var(--line);
-  background: #030a14;
-  box-shadow: 6px 6px 0 rgba(2, 8, 16, .45);
+  overflow: hidden;
+  background: transparent;
 }
 
 .modal-media[hidden] {
@@ -297,7 +297,9 @@
 .modal-media video {
   display: block;
   width: 100%;
-  max-height: 56vh;
+  height: 100%;
+  max-height: none;
+  object-fit: contain;
   background: #000;
 }
 
@@ -310,8 +312,9 @@
 .modal-media iframe {
   display: block;
   width: 100%;
+  height: 100%;
   aspect-ratio: 16 / 9;
-  max-height: 56vh;
+  max-height: none;
   border: 0;
   background: #000;
 }
@@ -319,9 +322,10 @@
 .modal-media img {
   display: block;
   width: 100%;
-  max-height: 56vh;
+  height: auto;
+  max-height: none;
   object-fit: contain;
-  background: #fff;
+  background: transparent;
 }
 
 /* Floating mini-player: never blocks the document or page scrolling. */
@@ -347,6 +351,16 @@
   box-shadow: 10px 10px 0 rgba(2, 8, 16, .62), 14px 14px 0 rgba(255, 119, 173, .13);
 }
 
+.modal.has-video,
+.modal.has-image {
+  min-width: 340px;
+  min-height: 260px;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+  resize: both;
+}
+
 .modal.has-video .modal-body,
 .modal.has-image .modal-body {
   padding: 18px;
@@ -366,13 +380,18 @@
 
 .modal.has-video .modal-media,
 .modal.has-image .modal-media {
-  margin: -7px -7px 16px;
+  margin: 0 0 14px;
 }
 
-.modal-media video,
-.modal-media iframe,
-.modal-media img {
-  max-height: 245px;
+.modal.has-video .modal-media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.modal.has-image .modal-media {
+  width: 100%;
+  max-height: none;
 }
 
 .modal.minimized {
@@ -385,10 +404,14 @@
 @media (max-width: 520px) {
   .modal,
   .modal.has-video,
+  .modal.has-image,
   .modal.minimized {
     right: 10px;
     bottom: 10px;
     width: calc(100vw - 20px);
+    min-width: 0;
+    max-width: calc(100vw - 20px);
+    resize: none;
   }
 }
 

@@ -31,7 +31,7 @@ The site combines a dark-blue laboratory setting with pink pixel cats and minima
 - Mixed-reality gardening experiences developed for Microsoft HoloLens
 - Deep-learning experiments for crop disease classification
 - Machine-learning, systems programming, and Java software projects
-- Project demos in draggable mini-player windows
+- Project demos and result graphs in draggable, resizable mini-player windows
 - Experience, technical skills, leadership milestones, and contact links
 
 ## Built with
