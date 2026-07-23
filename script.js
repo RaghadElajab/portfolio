@@ -192,7 +192,7 @@ handle.addEventListener('pointermove', event => {
   const desiredY = event.clientY - originY;
   offsetX = Math.max(8 - modalBaseRect.left, Math.min(innerWidth - 8 - modalBaseRect.right, desiredX));
   offsetY = Math.max(8 - modalBaseRect.top, Math.min(innerHeight - 8 - modalBaseRect.bottom, desiredY));
-  modal.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+  modal.style.transform = `translate(calc(-50% + ${offsetX}px), calc(-50% + ${offsetY}px))`;
 });
 handle.addEventListener('pointerup', () => dragging = false);
 
