@@ -32,6 +32,7 @@ The site combines a dark-blue laboratory setting with pink pixel cats and minima
 - Deep-learning experiments for crop disease classification
 - Machine-learning, systems programming, and Java software projects
 - Project demos and result graphs in draggable, resizable mini-player windows
+- A pink pixel cat you can pet for a tiny animated—and audible—surprise
 - Experience, technical skills, leadership milestones, and contact links
 
 ## Built with

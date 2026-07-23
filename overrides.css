@@ -39,6 +39,33 @@
   margin-bottom: 30px;
 }
 
+.pettable-cat {
+  display: block;
+  position: relative;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.pettable-cat:focus-visible {
+  outline: 2px dashed var(--pink);
+  outline-offset: 9px;
+}
+
+.pettable-cat .generated-cat-body {
+  transition: transform .18s ease, filter .18s ease;
+}
+
+.pettable-cat:hover .generated-cat-body,
+.pettable-cat:focus-visible .generated-cat-body {
+  transform: translateY(-3px);
+  filter: drop-shadow(0 0 9px rgba(255, 119, 173, .35));
+}
+
 .generated-cat-body,
 .generated-cat-tail {
   position: absolute;
@@ -70,9 +97,122 @@
   animation-duration: .75s;
 }
 
+.cat-happy-face {
+  position: absolute;
+  z-index: 3;
+  left: 47px;
+  top: 43px;
+  width: 70px;
+  height: 32px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cat-happy-face svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+}
+
+.cat-happy-face rect,
+.cat-happy-face path {
+  fill: #f45b9d;
+}
+
+.cat-happy-face path {
+  fill: #071b3d;
+}
+
+.pet-sparkles {
+  position: absolute;
+  z-index: 4;
+  top: 7px;
+  right: 8px;
+  color: var(--pink-2);
+  font: 700 18px/1 Arial, sans-serif;
+  opacity: 0;
+  text-shadow: 18px 13px 0 var(--mint), -108px 7px 0 var(--pink);
+  pointer-events: none;
+}
+
+.pet-hint {
+  position: absolute;
+  left: 50%;
+  bottom: -17px;
+  z-index: 4;
+  padding: 3px 6px;
+  color: var(--muted);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  font: 700 9px/1 "Courier New", monospace;
+  letter-spacing: .12em;
+  opacity: 0;
+  transform: translateX(-50%) translateY(3px);
+  transition: opacity .15s ease, transform .15s ease;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.pettable-cat:hover .pet-hint,
+.pettable-cat:focus-visible .pet-hint {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.pettable-cat.is-petted .generated-cat-body {
+  animation: happy-cat-bob .7s steps(4, end);
+  filter: drop-shadow(0 0 12px rgba(255, 119, 173, .55));
+}
+
+.pettable-cat.is-petted .generated-cat-tail {
+  animation: happy-tail-wag .22s steps(2, end) infinite;
+}
+
+.pettable-cat.is-petted .cat-happy-face {
+  opacity: 1;
+}
+
+.pettable-cat.is-petted .pet-sparkles {
+  animation: pet-sparkles .75s steps(4, end);
+}
+
+.pettable-cat.is-petted .pet-hint {
+  opacity: 0;
+}
+
 @keyframes generated-tail-sway {
   0%, 100% { transform: rotate(-6deg); }
   50% { transform: rotate(8deg); }
+}
+
+@keyframes happy-cat-bob {
+  0%, 100% { transform: translateY(0) scale(1); }
+  30% { transform: translateY(5px) scale(1.02, .98); }
+  60% { transform: translateY(-4px) scale(.99, 1.02); }
+}
+
+@keyframes happy-tail-wag {
+  0%, 100% { transform: rotate(-14deg); }
+  50% { transform: rotate(18deg); }
+}
+
+@keyframes pet-sparkles {
+  0% { opacity: 0; transform: translateY(8px) scale(.5); }
+  35%, 70% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-16px) scale(1.15); }
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }
 
 .skills-card {

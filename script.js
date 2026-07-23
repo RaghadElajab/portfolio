@@ -283,3 +283,61 @@ window.addEventListener('load', layoutProjectGrid);
 window.addEventListener('resize', layoutProjectGrid);
 if (document.fonts?.ready) document.fonts.ready.then(layoutProjectGrid);
 layoutProjectGrid();
+
+const pettableCat = document.querySelector('#pettable-cat');
+const catReaction = document.querySelector('#cat-reaction');
+let catPetTimer;
+let catAudioContext;
+
+function playCatMeow() {
+  const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+  if (!AudioContextClass) return;
+  catAudioContext ||= new AudioContextClass();
+  if (catAudioContext.state === 'suspended') catAudioContext.resume();
+
+  const now = catAudioContext.currentTime;
+  const gain = catAudioContext.createGain();
+  const warmTone = catAudioContext.createOscillator();
+  const brightTone = catAudioContext.createOscillator();
+  const filter = catAudioContext.createBiquadFilter();
+
+  warmTone.type = 'triangle';
+  brightTone.type = 'sine';
+  filter.type = 'lowpass';
+  filter.frequency.setValueAtTime(1800, now);
+
+  warmTone.frequency.setValueAtTime(520, now);
+  warmTone.frequency.exponentialRampToValueAtTime(760, now + .16);
+  warmTone.frequency.exponentialRampToValueAtTime(430, now + .58);
+  brightTone.frequency.setValueAtTime(790, now);
+  brightTone.frequency.exponentialRampToValueAtTime(1080, now + .14);
+  brightTone.frequency.exponentialRampToValueAtTime(650, now + .5);
+
+  gain.gain.setValueAtTime(.0001, now);
+  gain.gain.exponentialRampToValueAtTime(.075, now + .035);
+  gain.gain.setValueAtTime(.075, now + .22);
+  gain.gain.exponentialRampToValueAtTime(.0001, now + .62);
+
+  warmTone.connect(filter);
+  brightTone.connect(filter);
+  filter.connect(gain);
+  gain.connect(catAudioContext.destination);
+  warmTone.start(now);
+  brightTone.start(now);
+  warmTone.stop(now + .64);
+  brightTone.stop(now + .64);
+}
+
+function petCat() {
+  clearTimeout(catPetTimer);
+  pettableCat.classList.remove('is-petted');
+  void pettableCat.offsetWidth;
+  pettableCat.classList.add('is-petted');
+  pettableCat.setAttribute('aria-label', 'Happy pink pixel cat. Pet again');
+  catReaction.textContent = '';
+  requestAnimationFrame(() => { catReaction.textContent = 'Meow! The cat is happy.'; });
+  playCatMeow();
+  catPetTimer = setTimeout(() => pettableCat.classList.remove('is-petted'), 1250);
+}
+
+pettableCat?.addEventListener('click', petCat);
