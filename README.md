@@ -7,14 +7,14 @@
 </p>
 
 <p align="center">
-  <strong>Hey, I'm Raghad.</strong><br>
-  This is my little pixel-built corner of the internet.<br>
-  AI, XR, robotics, software—and a few cats.<br><br>
-  <em>Curious? Visit it to find out.</em>
+  <strong>Hi, I'm Raghad! ✦</strong><br>
+  I turned my projects into a tiny pixel world.<br>
+  There are experiments, movable windows, and a pink cat with a secret.<br><br>
+  <em>Go on—enter the lab and see what happens.</em>
 </p>
 
 <p align="center">
-  <a href="https://raghadelajab.github.io/portfolio/"><strong>Enter the portfolio ↗</strong></a>
+  <a href="https://raghadelajab.github.io/portfolio/"><strong>ENTER THE PIXEL LAB ↗</strong></a>
   &nbsp;·&nbsp;
   <a href="https://github.com/RaghadElajab">GitHub</a>
   &nbsp;·&nbsp;
