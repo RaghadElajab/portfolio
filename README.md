@@ -21,7 +21,7 @@
 
 ## About the portfolio
 
-This is the personal portfolio of **Raghad Elajab**, a Computer Science student at Khalifa University interested in AI, XR, robotics, and software engineering.
+I'm **Raghad Elajab**, a Computer Science student at Khalifa University, and this is my portfolio. It brings together my work and interests across AI, XR, robotics, and software engineering.
 
 The site combines a dark-blue laboratory setting with pink pixel cats and minimal desktop-inspired windows. It is intentionally lightweight and built without a framework.
 
