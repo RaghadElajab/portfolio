@@ -336,6 +336,104 @@ function initAmbientParticles() {
 
 initAmbientParticles();
 
+const projectDashboardLayer = document.querySelector('#project-dashboard-layer');
+const projectDashboard = document.querySelector('#project-dashboard');
+const projectDashboardClose = document.querySelector('#dashboard-close');
+let projectDashboardTrigger;
+
+function createDashboardMediaPanel(title, accent) {
+  const panel = document.createElement('article');
+  panel.className = 'dashboard-media-panel';
+  panel.style.setProperty('--tile-accent', accent);
+  const heading = document.createElement('h3');
+  heading.textContent = title;
+  panel.appendChild(heading);
+  return panel;
+}
+
+function openProjectDashboard(card, trigger) {
+  const title = card.querySelector('.project-copy h3').textContent.trim();
+  const tag = card.querySelector('.project-copy .tag').textContent.trim();
+  const summary = card.querySelector('.project-copy > p:not(.tag)').textContent.trim();
+  const accent = getComputedStyle(card).getPropertyValue('--tile-accent').trim() || '#ff77ad';
+  const detailList = card.querySelector('.project-details > ul');
+  const mediaGrid = document.querySelector('#dashboard-media-grid');
+  const resourcesPanel = document.querySelector('#dashboard-resources-panel');
+  const resources = document.querySelector('#dashboard-resources');
+
+  projectDashboardTrigger = trigger;
+  projectDashboard.style.setProperty('--tile-accent', accent);
+  document.querySelector('#dashboard-file').textContent = `${title.replace(/[^a-z0-9]+/gi, '_').toUpperCase()}.DASH`;
+  document.querySelector('#dashboard-tag').textContent = tag;
+  document.querySelector('#dashboard-title').textContent = title;
+  document.querySelector('#dashboard-summary').textContent = summary;
+  document.querySelector('#dashboard-highlights').innerHTML = card.querySelector('.project-highlights').innerHTML;
+  document.querySelector('#dashboard-details').innerHTML = detailList?.innerHTML || '';
+  document.querySelector('#dashboard-stack').innerHTML = [...card.querySelectorAll('.project-meta span')]
+    .map(item => `<span>${item.textContent}</span>`).join('');
+
+  mediaGrid.replaceChildren();
+  card.querySelectorAll('.video-demo-button').forEach(button => {
+    const panel = createDashboardMediaPanel(button.dataset.videoTitle || 'Project demo', accent);
+    const frame = document.createElement('iframe');
+    frame.src = button.dataset.embed;
+    frame.title = button.dataset.videoTitle || `${title} demo`;
+    frame.loading = 'lazy';
+    frame.allow = 'autoplay; fullscreen';
+    frame.allowFullscreen = true;
+    panel.appendChild(frame);
+    mediaGrid.appendChild(panel);
+  });
+
+  card.querySelectorAll('.image-demo-button').forEach(button => {
+    const panel = createDashboardMediaPanel(button.dataset.imageTitle || 'Project result', accent);
+    const image = document.createElement('img');
+    image.src = button.dataset.image;
+    image.alt = button.dataset.imageDescription || button.dataset.imageTitle || `${title} result`;
+    image.loading = 'lazy';
+    panel.appendChild(image);
+    mediaGrid.appendChild(panel);
+  });
+  mediaGrid.dataset.count = String(mediaGrid.children.length);
+  mediaGrid.hidden = mediaGrid.children.length === 0;
+
+  resources.replaceChildren();
+  card.querySelectorAll('.project-details a').forEach(link => {
+    const resource = document.createElement('a');
+    resource.href = link.href;
+    resource.target = '_blank';
+    resource.rel = 'noreferrer';
+    resource.textContent = link.textContent.trim();
+    resources.appendChild(resource);
+  });
+  resourcesPanel.hidden = resources.children.length === 0;
+
+  projectDashboardLayer.hidden = false;
+  document.body.classList.add('dashboard-open');
+  projectDashboard.querySelector('.dashboard-content').scrollTop = 0;
+  projectDashboardClose.focus();
+}
+
+function closeProjectDashboard() {
+  if (projectDashboardLayer.hidden) return;
+  projectDashboardLayer.hidden = true;
+  document.body.classList.remove('dashboard-open');
+  document.querySelector('#dashboard-media-grid').replaceChildren();
+  projectDashboardTrigger?.focus();
+}
+
+document.querySelectorAll('.project-detail-button').forEach(button => {
+  button.addEventListener('click', () => openProjectDashboard(button.closest('.project-card'), button));
+});
+
+projectDashboardClose.addEventListener('click', closeProjectDashboard);
+projectDashboardLayer.addEventListener('click', event => {
+  if (event.target === projectDashboardLayer) closeProjectDashboard();
+});
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && !projectDashboardLayer.hidden) closeProjectDashboard();
+});
+
 const layer = document.querySelector('#modal-layer');
 const modal = document.querySelector('#modal');
 const closeButton = document.querySelector('#close-modal');
@@ -568,32 +666,6 @@ const observer = new IntersectionObserver(entries => entries.forEach(entry => {
   if (entry.isIntersecting) { entry.target.animate([{ opacity: 0, transform: 'translateY(18px)' }, { opacity: 1, transform: 'none' }], { duration: 520, easing: 'ease-out', fill: 'both' }); observer.unobserve(entry.target); }
 }), { threshold: .12 });
 if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.querySelectorAll('.project-card,.timeline-item,.achievement-grid article').forEach(el => observer.observe(el));
-
-const projectGrid = document.querySelector('.project-grid');
-let projectLayoutFrame;
-
-function layoutProjectGrid() {
-  if (!projectGrid) return;
-  projectGrid.classList.add('masonry-layout');
-  const cards = projectGrid.querySelectorAll('.project-card');
-  const styles = getComputedStyle(projectGrid);
-  const rowHeight = parseFloat(styles.gridAutoRows);
-  const rowGap = parseFloat(styles.rowGap);
-
-  cards.forEach(card => { card.style.gridRowEnd = 'auto'; });
-  cancelAnimationFrame(projectLayoutFrame);
-  projectLayoutFrame = requestAnimationFrame(() => {
-    cards.forEach(card => {
-      const span = Math.ceil((card.scrollHeight + rowGap) / (rowHeight + rowGap));
-      card.style.gridRowEnd = `span ${span}`;
-    });
-  });
-}
-
-window.addEventListener('load', layoutProjectGrid);
-window.addEventListener('resize', layoutProjectGrid);
-if (document.fonts?.ready) document.fonts.ready.then(layoutProjectGrid);
-layoutProjectGrid();
 
 const pettableCat = document.querySelector('#pettable-cat');
 const catReaction = document.querySelector('#cat-reaction');
