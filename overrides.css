@@ -646,6 +646,64 @@ footer { font-size: 11px; }
   #neural-vortex-canvas { opacity: .72; }
 }
 
+/* Particle field behind everything below the hero. */
+.ambient-particles {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 24%, rgba(255, 119, 173, .055), transparent 35%),
+    radial-gradient(circle at 82% 68%, rgba(132, 237, 187, .05), transparent 38%);
+  transition: opacity .18s linear;
+}
+
+#ambient-particles-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero {
+  z-index: 2;
+}
+
+.section,
+.contact,
+footer {
+  z-index: 1;
+}
+
+.about,
+.experience {
+  background: rgba(8, 24, 43, .8);
+}
+
+.projects,
+.achievements {
+  background: rgba(7, 20, 38, .78);
+}
+
+.contact {
+  background-color: rgba(10, 27, 48, .82);
+}
+
+@media (max-width: 700px) {
+  .about,
+  .experience,
+  .projects,
+  .achievements,
+  .contact {
+    background-color: rgba(7, 20, 38, .91);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-particles { transition: none; }
+}
+
 /* Keep achievement icons and headings aligned despite different copy lengths. */
 .achievement-grid article {
   justify-content: flex-start;
