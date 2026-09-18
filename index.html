@@ -8,6 +8,7 @@
   <title>Raghad Elajab — Portfolio</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="overrides.css">
+  <link rel="stylesheet" href="polish.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -36,7 +37,7 @@
         <p class="eyebrow"><span>01</span> HELLO, WORLD!</p>
         <h1 id="hero-title">I'm <span>Raghad<br>Elajab.</span></h1>
         <p class="hero-role">Computer Science student · AI / XR / Robotics</p>
-        <p class="hero-lede">I build intelligent systems and playful digital experiences—where practical engineering meets a little curiosity.</p>
+        <p class="hero-lede special-text" data-special-text>I build intelligent systems and playful digital experiences—where practical engineering meets a little curiosity.</p>
         <div class="hero-actions">
           <a class="button primary" href="#projects">Explore my work <span aria-hidden="true">→</span></a>
         </div>
@@ -201,25 +202,27 @@
       </header>
       <div class="dashboard-content">
         <div class="dashboard-hero dashboard-panel">
+          <p class="dashboard-label">01 / OVERVIEW</p>
           <p class="tag" id="dashboard-tag"></p>
           <h2 id="dashboard-title"></h2>
           <p id="dashboard-summary"></p>
+          <div class="dashboard-overview-stack">
+            <p class="dashboard-label">TECH STACK</p>
+            <div class="dashboard-stack" id="dashboard-stack"></div>
+          </div>
         </div>
         <div class="dashboard-panel dashboard-highlights-panel">
-          <p class="dashboard-label">WHY IT STANDS OUT</p>
+          <p class="dashboard-label">02 / WHY IT STANDS OUT</p>
           <ul id="dashboard-highlights"></ul>
         </div>
         <div class="dashboard-panel dashboard-build-panel">
-          <p class="dashboard-label">HOW IT WORKS</p>
+          <p class="dashboard-label">03 / DETAILS</p>
           <ul id="dashboard-details"></ul>
         </div>
-        <div class="dashboard-panel dashboard-stack-panel">
-          <p class="dashboard-label">TECH STACK</p>
-          <div class="dashboard-stack" id="dashboard-stack"></div>
-        </div>
+        <div class="dashboard-media-heading" id="dashboard-media-heading"><p class="dashboard-label">04 / DEMOS &amp; DATA</p></div>
         <div class="dashboard-media-grid" id="dashboard-media-grid"></div>
         <div class="dashboard-panel dashboard-resources-panel" id="dashboard-resources-panel">
-          <p class="dashboard-label">PROJECT LINKS</p>
+          <p class="dashboard-label" id="dashboard-resources-label">05 / PROJECT LINKS</p>
           <div class="dashboard-resources" id="dashboard-resources"></div>
         </div>
       </div>

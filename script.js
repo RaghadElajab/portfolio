@@ -170,6 +170,59 @@ function initNeuralVortex() {
 
 initNeuralVortex();
 
+function initSpecialText() {
+  const elements = document.querySelectorAll('[data-special-text]');
+  if (!elements.length || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const glyphs = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789<>/{}[]';
+
+  elements.forEach(element => {
+    const original = element.textContent.trim();
+    element.setAttribute('aria-label', original);
+    let started = false;
+
+    const animate = () => {
+      if (started) return;
+      started = true;
+      element.classList.add('is-scrambling');
+      let animationStart = 0;
+      let lastTime = 0;
+
+      const frame = time => {
+        if (!animationStart) animationStart = time;
+        if (time - lastTime < 34) {
+          requestAnimationFrame(frame);
+          return;
+        }
+        lastTime = time;
+        const progress = Math.min(original.length, ((time - animationStart) / 1400) * original.length);
+        element.textContent = [...original].map((character, index) => {
+          if (character === ' ' || /[—,.!']/u.test(character)) return character;
+          if (index < progress) return character;
+          return glyphs[Math.floor(Math.random() * glyphs.length)];
+        }).join('');
+
+        if (progress < original.length) requestAnimationFrame(frame);
+        else {
+          element.textContent = original;
+          element.classList.remove('is-scrambling');
+        }
+      };
+
+      setTimeout(() => requestAnimationFrame(frame), 320);
+    };
+
+    const observer = new IntersectionObserver(entries => {
+      if (entries.some(entry => entry.isIntersecting)) {
+        observer.disconnect();
+        animate();
+      }
+    }, { threshold: .6 });
+    observer.observe(element);
+  });
+}
+
+initSpecialText();
+
 function initAmbientParticles() {
   const layer = document.querySelector('#ambient-particles');
   const canvas = document.querySelector('#ambient-particles-canvas');
@@ -358,6 +411,7 @@ function openProjectDashboard(card, trigger) {
   const accent = getComputedStyle(card).getPropertyValue('--tile-accent').trim() || '#ff77ad';
   const detailList = card.querySelector('.project-details > ul');
   const mediaGrid = document.querySelector('#dashboard-media-grid');
+  const mediaHeading = document.querySelector('#dashboard-media-heading');
   const resourcesPanel = document.querySelector('#dashboard-resources-panel');
   const resources = document.querySelector('#dashboard-resources');
 
@@ -396,6 +450,7 @@ function openProjectDashboard(card, trigger) {
   });
   mediaGrid.dataset.count = String(mediaGrid.children.length);
   mediaGrid.hidden = mediaGrid.children.length === 0;
+  mediaHeading.hidden = mediaGrid.hidden;
 
   resources.replaceChildren();
   card.querySelectorAll('.project-details a').forEach(link => {
@@ -407,6 +462,7 @@ function openProjectDashboard(card, trigger) {
     resources.appendChild(resource);
   });
   resourcesPanel.hidden = resources.children.length === 0;
+  document.querySelector('#dashboard-resources-label').textContent = mediaGrid.hidden ? '04 / PROJECT LINKS' : '05 / PROJECT LINKS';
 
   projectDashboardLayer.hidden = false;
   document.body.classList.add('dashboard-open');
