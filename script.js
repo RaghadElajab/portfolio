@@ -39,6 +39,10 @@ function initNeuralVortex() {
   let pixelRatio = 1;
   let animationFrame = 0;
   let visible = true;
+  let pageVisible = !document.hidden;
+  let running = false;
+  let pauseStarted = 0;
+  let pausedDuration = 0;
   let nodes = [];
 
   function makeNodes() {
@@ -82,13 +86,14 @@ function initNeuralVortex() {
   }
 
   function drawVortex(time, staticFrame = false) {
+    const phaseTime = staticFrame ? time : time - pausedDuration;
     context.clearRect(0, 0, width, height);
     pointer.x += (pointer.targetX - pointer.x) * .035;
     pointer.y += (pointer.targetY - pointer.y) * .035;
 
     const centerX = width * (.66 + (pointer.x - .5) * .09);
     const centerY = height * (.5 + (pointer.y - .5) * .1);
-    const points = nodes.map(node => ({ ...vortexPoint(node, time, centerX, centerY), node }));
+    const points = nodes.map(node => ({ ...vortexPoint(node, phaseTime, centerX, centerY), node }));
 
     context.save();
     context.globalCompositeOperation = 'lighter';
@@ -134,13 +139,24 @@ function initNeuralVortex() {
     context.fillRect(0, 0, width, height);
     context.restore();
 
-    if (!staticFrame && visible && !reducedMotion.matches) animationFrame = requestAnimationFrame(drawVortex);
+    if (!staticFrame && running) animationFrame = requestAnimationFrame(drawVortex);
   }
 
-  function startVortex() {
-    cancelAnimationFrame(animationFrame);
+  function syncVortex() {
+    const shouldRun = visible && pageVisible && !reducedMotion.matches;
+    if (shouldRun && !running) {
+      if (pauseStarted) {
+        pausedDuration += performance.now() - pauseStarted;
+        pauseStarted = 0;
+      }
+      running = true;
+      animationFrame = requestAnimationFrame(drawVortex);
+    } else if (!shouldRun && running) {
+      running = false;
+      cancelAnimationFrame(animationFrame);
+      pauseStarted = performance.now();
+    }
     if (reducedMotion.matches) drawVortex(1400, true);
-    else if (visible) animationFrame = requestAnimationFrame(drawVortex);
   }
 
   hero.addEventListener('pointermove', event => {
@@ -158,14 +174,18 @@ function initNeuralVortex() {
 
   const visibilityObserver = new IntersectionObserver(entries => {
     visible = entries[0]?.isIntersecting ?? true;
-    startVortex();
+    syncVortex();
   }, { threshold: 0 });
 
   visibilityObserver.observe(hero);
   addEventListener('resize', resizeVortex, { passive: true });
-  reducedMotion.addEventListener?.('change', startVortex);
+  document.addEventListener('visibilitychange', () => {
+    pageVisible = !document.hidden;
+    syncVortex();
+  });
+  reducedMotion.addEventListener?.('change', syncVortex);
   resizeVortex();
-  startVortex();
+  syncVortex();
 }
 
 initNeuralVortex();
