@@ -25,6 +25,151 @@ const projects = {
   }
 };
 
+function initNeuralVortex() {
+  const canvas = document.querySelector('#neural-vortex-canvas');
+  const hero = document.querySelector('.hero');
+  if (!canvas || !hero) return;
+
+  const context = canvas.getContext('2d', { alpha: true });
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const colors = ['#ff77ad', '#ff9bc3', '#84edbb', '#4da7c8'];
+  const pointer = { x: .7, y: .48, targetX: .7, targetY: .48, active: false };
+  let width = 0;
+  let height = 0;
+  let pixelRatio = 1;
+  let animationFrame = 0;
+  let visible = true;
+  let nodes = [];
+
+  function makeNodes() {
+    const count = innerWidth < 700 ? 78 : 145;
+    const nodesPerArm = Math.ceil(count / 5);
+    nodes = Array.from({ length: count }, (_, index) => {
+      const arm = index % 5;
+      const progress = Math.floor(index / 5) / Math.max(1, nodesPerArm - 1);
+      return {
+        arm,
+        offset: progress * Math.PI * 5.8 + (Math.random() - .5) * .13,
+        radius: .07 + progress * .93 + (Math.random() - .5) * .018,
+        size: .7 + Math.random() * 2.2,
+        drift: .74 + Math.random() * .38,
+        color: colors[index % colors.length]
+      };
+    });
+  }
+
+  function resizeVortex() {
+    const bounds = hero.getBoundingClientRect();
+    width = Math.max(1, Math.round(bounds.width));
+    height = Math.max(1, Math.round(bounds.height));
+    pixelRatio = Math.min(devicePixelRatio || 1, 1.6);
+    canvas.width = Math.round(width * pixelRatio);
+    canvas.height = Math.round(height * pixelRatio);
+    context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+    makeNodes();
+    if (reducedMotion.matches) drawVortex(1400, true);
+  }
+
+  function vortexPoint(node, time, centerX, centerY) {
+    const maxRadius = Math.min(width, height) * .58;
+    const pulse = Math.sin(time * .0007 * node.drift + node.offset) * 5;
+    const radius = node.radius * maxRadius + pulse;
+    const angle = node.offset + node.arm * (Math.PI * 2 / 5) + time * .00009 * node.drift;
+    return {
+      x: centerX + Math.cos(angle) * radius * 1.42,
+      y: centerY + Math.sin(angle) * radius * .72
+    };
+  }
+
+  function drawVortex(time, staticFrame = false) {
+    context.clearRect(0, 0, width, height);
+    pointer.x += (pointer.targetX - pointer.x) * .035;
+    pointer.y += (pointer.targetY - pointer.y) * .035;
+
+    const centerX = width * (.66 + (pointer.x - .5) * .09);
+    const centerY = height * (.5 + (pointer.y - .5) * .1);
+    const points = nodes.map(node => ({ ...vortexPoint(node, time, centerX, centerY), node }));
+
+    context.save();
+    context.globalCompositeOperation = 'lighter';
+
+    for (let arm = 0; arm < 5; arm += 1) {
+      const armNodes = points.filter(point => point.node.arm === arm).sort((a, b) => a.node.radius - b.node.radius);
+      context.beginPath();
+      armNodes.forEach((point, index) => {
+        if (index === 0) context.moveTo(point.x, point.y);
+        else context.lineTo(point.x, point.y);
+      });
+      context.strokeStyle = arm % 2 ? 'rgba(132, 237, 187, .16)' : 'rgba(255, 119, 173, .2)';
+      context.lineWidth = arm % 2 ? 1 : 1.25;
+      context.stroke();
+    }
+
+    for (let index = 0; index < points.length; index += 1) {
+      const point = points[index];
+      const neighbor = points[(index + 17) % points.length];
+      const distance = Math.hypot(point.x - neighbor.x, point.y - neighbor.y);
+      if (distance < Math.min(width, height) * .22) {
+        context.beginPath();
+        context.moveTo(point.x, point.y);
+        context.lineTo(neighbor.x, neighbor.y);
+        context.strokeStyle = `rgba(139, 186, 206, ${Math.max(0, .12 - distance / 1800)})`;
+        context.lineWidth = .65;
+        context.stroke();
+      }
+
+      context.beginPath();
+      context.arc(point.x, point.y, point.node.size, 0, Math.PI * 2);
+      context.fillStyle = point.node.color;
+      context.shadowColor = point.node.color;
+      context.shadowBlur = pointer.active ? 11 : 7;
+      context.fill();
+    }
+
+    const core = context.createRadialGradient(centerX, centerY, 0, centerX, centerY, Math.min(width, height) * .18);
+    core.addColorStop(0, 'rgba(255, 155, 195, .28)');
+    core.addColorStop(.32, 'rgba(132, 237, 187, .1)');
+    core.addColorStop(1, 'rgba(7, 20, 38, 0)');
+    context.fillStyle = core;
+    context.fillRect(0, 0, width, height);
+    context.restore();
+
+    if (!staticFrame && visible && !reducedMotion.matches) animationFrame = requestAnimationFrame(drawVortex);
+  }
+
+  function startVortex() {
+    cancelAnimationFrame(animationFrame);
+    if (reducedMotion.matches) drawVortex(1400, true);
+    else if (visible) animationFrame = requestAnimationFrame(drawVortex);
+  }
+
+  hero.addEventListener('pointermove', event => {
+    const bounds = hero.getBoundingClientRect();
+    pointer.targetX = (event.clientX - bounds.left) / bounds.width;
+    pointer.targetY = (event.clientY - bounds.top) / bounds.height;
+    pointer.active = true;
+  });
+
+  hero.addEventListener('pointerleave', () => {
+    pointer.targetX = .7;
+    pointer.targetY = .48;
+    pointer.active = false;
+  });
+
+  const visibilityObserver = new IntersectionObserver(entries => {
+    visible = entries[0]?.isIntersecting ?? true;
+    startVortex();
+  }, { threshold: 0 });
+
+  visibilityObserver.observe(hero);
+  addEventListener('resize', resizeVortex, { passive: true });
+  reducedMotion.addEventListener?.('change', startVortex);
+  resizeVortex();
+  startVortex();
+}
+
+initNeuralVortex();
+
 const layer = document.querySelector('#modal-layer');
 const modal = document.querySelector('#modal');
 const closeButton = document.querySelector('#close-modal');
