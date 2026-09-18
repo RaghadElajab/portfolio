@@ -751,3 +751,101 @@ footer i {
     grid-template-columns: 1fr;
   }
 }
+
+/* Asymmetric, solid-color project bento. */
+.project-grid,
+.project-grid.masonry-layout {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-flow: dense;
+  gap: 18px;
+}
+
+.project-card,
+.project-card.featured {
+  --tile-accent: var(--pink);
+  grid-column: span 1;
+  padding: 30px;
+  border: 1px solid color-mix(in srgb, var(--tile-accent) 42%, #274866);
+  border-radius: 14px;
+  background: #112a46;
+  box-shadow: 7px 7px 0 rgba(2, 8, 16, .38);
+  overflow: hidden;
+}
+
+.project-card:nth-child(1) { --tile-accent: #ff77ad; background: #112a46; grid-column: span 2; }
+.project-card:nth-child(2) { --tile-accent: #ff9bc3; background: #2a1830; }
+.project-card:nth-child(3) { --tile-accent: #84edbb; background: #15312f; grid-column: span 2; }
+.project-card:nth-child(4) { --tile-accent: #65c7e8; background: #102b38; }
+.project-card:nth-child(5) { --tile-accent: #a9a7ff; background: #1b2139; }
+.project-card:nth-child(6) { --tile-accent: #f4a4c6; background: #2b2030; }
+.project-card:nth-child(7) { --tile-accent: #84edbb; background: #172b35; grid-column: span 2; }
+
+.project-card:hover,
+.project-card:focus-within {
+  border-color: var(--tile-accent);
+  box-shadow: 9px 9px 0 rgba(2, 8, 16, .48);
+}
+
+.project-card .project-index {
+  color: var(--tile-accent);
+  font-weight: 700;
+}
+
+.project-card .project-icon,
+.project-card.featured .project-icon {
+  width: 74px;
+  height: 74px;
+  margin: 26px 0 24px;
+  border: 0;
+  color: var(--tile-accent);
+  background: transparent;
+  box-shadow: none;
+}
+
+.project-card .project-icon svg {
+  width: 58px;
+  height: 58px;
+  filter: drop-shadow(3px 3px 0 rgba(2, 8, 16, .3));
+}
+
+.project-card .face-icon:before {
+  border-color: var(--tile-accent);
+  box-shadow: inset 0 0 0 8px transparent;
+}
+
+.project-card .project-copy .tag {
+  color: var(--tile-accent);
+}
+
+.project-card .project-copy > p:not(.tag),
+.project-card .project-details ul {
+  color: #c3d2dc;
+}
+
+.project-card .project-meta span {
+  border-color: color-mix(in srgb, var(--tile-accent) 30%, #274866);
+  background: rgba(3, 10, 20, .24);
+  color: #d5e1e7;
+}
+
+.project-card .project-details {
+  border-top-color: color-mix(in srgb, var(--tile-accent) 24%, #183650);
+}
+
+@media (max-width: 1100px) {
+  .project-grid,
+  .project-grid.masonry-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 850px) {
+  .project-grid,
+  .project-grid.masonry-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card:nth-child(n) {
+    grid-column: span 1;
+  }
+}
