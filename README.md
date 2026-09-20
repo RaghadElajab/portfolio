@@ -8,13 +8,11 @@
 
 <p align="center">
   <strong>Hi, I'm Raghad! ✦</strong><br>
-  I turned my projects into a tiny pixel world.<br>
-  There are experiments, movable windows, and a pink cat with a secret.<br><br>
-  <em>Go on—enter the lab and see what happens.</em>
+  Explore my projects in AI, XR, robotics, and software engineering.
 </p>
 
 <p align="center">
-  <a href="https://raghadelajab.github.io/portfolio/"><strong>ENTER THE PIXEL LAB ↗</strong></a>
+  <a href="https://raghadelajab.github.io/portfolio/"><strong>VISIT MY PORTFOLIO ↗</strong></a>
   &nbsp;·&nbsp;
   <a href="https://github.com/RaghadElajab">GitHub</a>
   &nbsp;·&nbsp;
