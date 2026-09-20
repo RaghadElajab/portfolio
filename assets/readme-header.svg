@@ -1,24 +1,224 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" role="img" aria-labelledby="title desc">
   <title id="title">Raghad Elajab portfolio</title>
-  <desc id="desc">A dark-blue pixel-art window introducing Raghad Elajab and her work in AI, XR, robotics, and software engineering.</desc>
-  <rect width="1200" height="360" fill="#071426"/>
-  <g opacity=".3" stroke="#274866">
-    <path d="M0 40h1200M0 80h1200M0 120h1200M0 160h1200M0 200h1200M0 240h1200M0 280h1200M0 320h1200"/>
-    <path d="M40 0v360M80 0v360M120 0v360M160 0v360M200 0v360M240 0v360M280 0v360M320 0v360M360 0v360M400 0v360M440 0v360M480 0v360M520 0v360M560 0v360M600 0v360M640 0v360M680 0v360M720 0v360M760 0v360M800 0v360M840 0v360M880 0v360M920 0v360M960 0v360M1000 0v360M1040 0v360M1080 0v360M1120 0v360M1160 0v360"/>
+  <desc id="desc">Raghad Elajab, Computer Science student working in AI, XR and robotics. A navy banner with pink typography and a mint and pink neural network, matching the portfolio hero.</desc>
+  <defs>
+    <linearGradient id="background" x2="1" y2="1">
+      <stop stop-color="#030a14"/>
+      <stop offset=".5" stop-color="#071426"/>
+      <stop offset="1" stop-color="#0b1d33"/>
+    </linearGradient>
+    <radialGradient id="core">
+      <stop stop-color="#ff9bc3" stop-opacity=".16"/>
+      <stop offset=".42" stop-color="#84edbb" stop-opacity=".05"/>
+      <stop offset="1" stop-color="#071426" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="text-shade">
+      <stop stop-color="#071426" stop-opacity=".94"/>
+      <stop offset=".43" stop-color="#071426" stop-opacity=".8"/>
+      <stop offset=".7" stop-color="#071426" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#071426" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="bottom-shade" x2="0" y2="1">
+      <stop offset=".65" stop-color="#071426" stop-opacity="0"/>
+      <stop offset="1" stop-color="#071426"/>
+    </linearGradient>
+    <radialGradient id="glow-0">
+      <stop stop-color="#ff77ad" stop-opacity=".9"/>
+      <stop offset=".25" stop-color="#ff77ad" stop-opacity=".6"/>
+      <stop offset="1" stop-color="#ff77ad" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow-1">
+      <stop stop-color="#ff9bc3" stop-opacity=".9"/>
+      <stop offset=".25" stop-color="#ff9bc3" stop-opacity=".6"/>
+      <stop offset="1" stop-color="#ff9bc3" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow-2">
+      <stop stop-color="#84edbb" stop-opacity=".9"/>
+      <stop offset=".25" stop-color="#84edbb" stop-opacity=".6"/>
+      <stop offset="1" stop-color="#84edbb" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow-3">
+      <stop stop-color="#4da7c8" stop-opacity=".9"/>
+      <stop offset=".25" stop-color="#4da7c8" stop-opacity=".6"/>
+      <stop offset="1" stop-color="#4da7c8" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="banner"><rect width="1200" height="400" rx="14"/></clipPath>
+  </defs>
+  <g clip-path="url(#banner)">
+    <rect width="1200" height="400" fill="url(#background)"/>
+    <ellipse cx="906" cy="200" rx="330" ry="250" fill="url(#core)"/>
+    <g aria-hidden="true">
+    <polyline points="930.8,201.9 927.5,217.6 888.4,227.4 838.8,213.9 827.5,179.3 882.8,148.4 978.1,151.3 1041.7,195.9 1010.9,255.7 888.4,284.5 754.3,252.4 713.8,173.1 815.6,101.0 1003.2,93.7 1144.0,166.7 1123.0,275.1 935.0,340.5 702.4,307.9 596.3,190.5 710.5,67.6 982.2,31.0 1223.7,116.5" fill="none" stroke="#ff77ad" stroke-opacity=".22" stroke-width="1"/>
+    <polyline points="910.1,212.5 879.5,215.8 849.3,200.0 859.1,171.9 920.5,155.8 995.5,172.9 1019.7,219.7 955.6,264.2 834.0,267.8 742.0,217.6 760.9,143.0 897.1,99.0 1063.8,125.8 1135.4,214.0 1041.9,304.5 832.2,327.9 651.4,257.4 640.8,135.2 828.1,47.7 1093.8,64.8 1246.6,184.5 1160.8,327.4" fill="none" stroke="#84edbb" stroke-opacity=".22" stroke-width="1"/>
+    <polyline points="883.8,205.8 868.2,192.1 888.5,172.6 944.2,168.7 993.5,193.3 984.5,234.8 904.2,260.9 800.9,243.8 756.6,186.2 822.2,126.4 968.0,112.4 1092.7,164.5 1093.9,253.2 950.6,315.0 752.0,297.8 643.4,203.9 719.7,95.0 945.6,52.1 1167.6,115.4 1217.6,248.8 1040.3,359.5 745.8,362.2" fill="none" stroke="#ff77ad" stroke-opacity=".22" stroke-width="1"/>
+    <polyline points="888.2,191.1 909.1,179.3 951.9,183.1 976.5,208.7 945.5,240.1 865.0,248.6 791.2,217.9 791.4,162.9 885.7,123.7 1018.2,136.8 1089.4,202.8 1030.2,279.1 864.3,307.1 704.1,257.0 674.9,156.0 817.5,74.6 1045.4,77.7 1195.7,173.4 1145.6,300.0 910.7,365.4 648.4,314.0 552.2,172.9" fill="none" stroke="#84edbb" stroke-opacity=".22" stroke-width="1"/>
+    <polyline points="917.2,188.6 945.7,195.1 951.9,216.9 911.4,236.7 843.0,231.5 802.1,195.2 836.9,150.2 940.3,133.3 1042.8,166.6 1059.2,234.6 957.4,289.3 796.1,284.3 692.3,213.0 736.7,120.3 917.2,74.9 1113.9,118.5 1178.5,229.4 1045.4,331.5 792.5,346.4 597.3,253.4 612.5,111.0 847.5,21.0" fill="none" stroke="#ff77ad" stroke-opacity=".22" stroke-width="1"/>
+    <path d="M930.8 201.9L944.2 168.7" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M910.1 212.5L976.5 208.7" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M883.8 205.8L911.4 236.7" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M888.2 191.1L827.5 179.3" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M917.2 188.6L920.5 155.8" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M927.5 217.6L993.5 193.3" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M879.5 215.8L945.5 240.1" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M868.2 192.1L843.0 231.5" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M909.1 179.3L882.8 148.4" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M945.7 195.1L995.5 172.9" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M849.3 200.0L865.0 248.6" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M888.5 172.6L802.1 195.2" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M951.9 183.1L978.1 151.3" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M951.9 216.9L1019.7 219.7" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M838.8 213.9L904.2 260.9" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M859.1 171.9L791.2 217.9" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M976.5 208.7L1041.7 195.9" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M911.4 236.7L955.6 264.2" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M827.5 179.3L800.9 243.8" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M993.5 193.3L940.3 133.3" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M945.5 240.1L1010.9 255.7" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M843.0 231.5L834.0 267.8" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M984.5 234.8L1042.8 166.6" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M865.0 248.6L888.4 284.5" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M802.1 195.2L742.0 217.6" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M1019.7 219.7L1018.2 136.8" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M791.2 217.9L754.3 252.4" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M836.9 150.2L760.9 143.0" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M791.4 162.9L713.8 173.1" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M940.3 133.3L897.1 99.0" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M885.7 123.7L815.6 101.0" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M1042.8 166.6L1063.8 125.8" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M1018.2 136.8L1003.2 93.7" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M1059.2 234.6L1135.4 214.0" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M1089.4 202.8L1144.0 166.7" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M957.4 289.3L1041.9 304.5" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M1030.2 279.1L1123.0 275.1" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M796.1 284.3L832.2 327.9" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M864.3 307.1L935.0 340.5" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M692.3 213.0L651.4 257.4" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M704.1 257.0L702.4 307.9" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M674.9 156.0L596.3 190.5" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M917.2 74.9L828.1 47.7" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M1113.9 118.5L1093.8 64.8" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M1045.4 77.7L982.2 31.0" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M1178.5 229.4L1246.6 184.5" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <path d="M1195.7 173.4L1223.7 116.5" stroke="#8bbace" stroke-opacity=".12" fill="none"/>
+    <circle cx="930.8" cy="201.9" r="4.4" fill="url(#glow-0)"/>
+    <circle cx="910.1" cy="212.5" r="5.4" fill="url(#glow-1)"/>
+    <circle cx="883.8" cy="205.8" r="6.5" fill="url(#glow-2)"/>
+    <circle cx="888.2" cy="191.1" r="7.5" fill="url(#glow-3)"/>
+    <circle cx="917.2" cy="188.6" r="8.6" fill="url(#glow-0)"/>
+    <circle cx="927.5" cy="217.6" r="4.4" fill="url(#glow-1)"/>
+    <circle cx="879.5" cy="215.8" r="5.4" fill="url(#glow-2)"/>
+    <circle cx="868.2" cy="192.1" r="6.5" fill="url(#glow-3)"/>
+    <circle cx="909.1" cy="179.3" r="7.5" fill="url(#glow-0)"/>
+    <circle cx="945.7" cy="195.1" r="8.6" fill="url(#glow-1)"/>
+    <circle cx="888.4" cy="227.4" r="4.4" fill="url(#glow-2)"/>
+    <circle cx="849.3" cy="200.0" r="5.4" fill="url(#glow-3)"/>
+    <circle cx="888.5" cy="172.6" r="6.5" fill="url(#glow-0)"/>
+    <circle cx="951.9" cy="183.1" r="7.5" fill="url(#glow-1)"/>
+    <circle cx="951.9" cy="216.9" r="8.6" fill="url(#glow-2)"/>
+    <circle cx="838.8" cy="213.9" r="4.4" fill="url(#glow-3)"/>
+    <circle cx="859.1" cy="171.9" r="5.4" fill="url(#glow-0)"/>
+    <circle cx="944.2" cy="168.7" r="6.5" fill="url(#glow-1)"/>
+    <circle cx="976.5" cy="208.7" r="7.5" fill="url(#glow-2)"/>
+    <circle cx="911.4" cy="236.7" r="8.6" fill="url(#glow-3)"/>
+    <circle cx="827.5" cy="179.3" r="4.4" fill="url(#glow-0)"/>
+    <circle cx="920.5" cy="155.8" r="5.4" fill="url(#glow-1)"/>
+    <circle cx="993.5" cy="193.3" r="6.5" fill="url(#glow-2)"/>
+    <circle cx="945.5" cy="240.1" r="7.5" fill="url(#glow-3)"/>
+    <circle cx="843.0" cy="231.5" r="8.6" fill="url(#glow-0)"/>
+    <circle cx="882.8" cy="148.4" r="4.4" fill="url(#glow-1)"/>
+    <circle cx="995.5" cy="172.9" r="5.4" fill="url(#glow-2)"/>
+    <circle cx="984.5" cy="234.8" r="6.5" fill="url(#glow-3)"/>
+    <circle cx="865.0" cy="248.6" r="7.5" fill="url(#glow-0)"/>
+    <circle cx="802.1" cy="195.2" r="8.6" fill="url(#glow-1)"/>
+    <circle cx="978.1" cy="151.3" r="4.4" fill="url(#glow-2)"/>
+    <circle cx="1019.7" cy="219.7" r="5.4" fill="url(#glow-3)"/>
+    <circle cx="904.2" cy="260.9" r="6.5" fill="url(#glow-0)"/>
+    <circle cx="791.2" cy="217.9" r="7.5" fill="url(#glow-1)"/>
+    <circle cx="836.9" cy="150.2" r="8.6" fill="url(#glow-2)"/>
+    <circle cx="1041.7" cy="195.9" r="4.4" fill="url(#glow-3)"/>
+    <circle cx="955.6" cy="264.2" r="5.4" fill="url(#glow-0)"/>
+    <circle cx="800.9" cy="243.8" r="6.5" fill="url(#glow-1)"/>
+    <circle cx="791.4" cy="162.9" r="7.5" fill="url(#glow-2)"/>
+    <circle cx="940.3" cy="133.3" r="8.6" fill="url(#glow-3)"/>
+    <circle cx="1010.9" cy="255.7" r="4.4" fill="url(#glow-0)"/>
+    <circle cx="834.0" cy="267.8" r="5.4" fill="url(#glow-1)"/>
+    <circle cx="756.6" cy="186.2" r="6.5" fill="url(#glow-2)"/>
+    <circle cx="885.7" cy="123.7" r="7.5" fill="url(#glow-3)"/>
+    <circle cx="1042.8" cy="166.6" r="8.6" fill="url(#glow-0)"/>
+    <circle cx="888.4" cy="284.5" r="4.4" fill="url(#glow-1)"/>
+    <circle cx="742.0" cy="217.6" r="5.4" fill="url(#glow-2)"/>
+    <circle cx="822.2" cy="126.4" r="6.5" fill="url(#glow-3)"/>
+    <circle cx="1018.2" cy="136.8" r="7.5" fill="url(#glow-0)"/>
+    <circle cx="1059.2" cy="234.6" r="8.6" fill="url(#glow-1)"/>
+    <circle cx="754.3" cy="252.4" r="4.4" fill="url(#glow-2)"/>
+    <circle cx="760.9" cy="143.0" r="5.4" fill="url(#glow-3)"/>
+    <circle cx="968.0" cy="112.4" r="6.5" fill="url(#glow-0)"/>
+    <circle cx="1089.4" cy="202.8" r="7.5" fill="url(#glow-1)"/>
+    <circle cx="957.4" cy="289.3" r="8.6" fill="url(#glow-2)"/>
+    <circle cx="713.8" cy="173.1" r="4.4" fill="url(#glow-3)"/>
+    <circle cx="897.1" cy="99.0" r="5.4" fill="url(#glow-0)"/>
+    <circle cx="1092.7" cy="164.5" r="6.5" fill="url(#glow-1)"/>
+    <circle cx="1030.2" cy="279.1" r="7.5" fill="url(#glow-2)"/>
+    <circle cx="796.1" cy="284.3" r="8.6" fill="url(#glow-3)"/>
+    <circle cx="815.6" cy="101.0" r="4.4" fill="url(#glow-0)"/>
+    <circle cx="1063.8" cy="125.8" r="5.4" fill="url(#glow-1)"/>
+    <circle cx="1093.9" cy="253.2" r="6.5" fill="url(#glow-2)"/>
+    <circle cx="864.3" cy="307.1" r="7.5" fill="url(#glow-3)"/>
+    <circle cx="692.3" cy="213.0" r="8.6" fill="url(#glow-0)"/>
+    <circle cx="1003.2" cy="93.7" r="4.4" fill="url(#glow-1)"/>
+    <circle cx="1135.4" cy="214.0" r="5.4" fill="url(#glow-2)"/>
+    <circle cx="950.6" cy="315.0" r="6.5" fill="url(#glow-3)"/>
+    <circle cx="704.1" cy="257.0" r="7.5" fill="url(#glow-0)"/>
+    <circle cx="736.7" cy="120.3" r="8.6" fill="url(#glow-1)"/>
+    <circle cx="1144.0" cy="166.7" r="4.4" fill="url(#glow-2)"/>
+    <circle cx="1041.9" cy="304.5" r="5.4" fill="url(#glow-3)"/>
+    <circle cx="752.0" cy="297.8" r="6.5" fill="url(#glow-0)"/>
+    <circle cx="674.9" cy="156.0" r="7.5" fill="url(#glow-1)"/>
+    <circle cx="917.2" cy="74.9" r="8.6" fill="url(#glow-2)"/>
+    <circle cx="1123.0" cy="275.1" r="4.4" fill="url(#glow-3)"/>
+    <circle cx="832.2" cy="327.9" r="5.4" fill="url(#glow-0)"/>
+    <circle cx="643.4" cy="203.9" r="6.5" fill="url(#glow-1)"/>
+    <circle cx="817.5" cy="74.6" r="7.5" fill="url(#glow-2)"/>
+    <circle cx="1113.9" cy="118.5" r="8.6" fill="url(#glow-3)"/>
+    <circle cx="935.0" cy="340.5" r="4.4" fill="url(#glow-0)"/>
+    <circle cx="651.4" cy="257.4" r="5.4" fill="url(#glow-1)"/>
+    <circle cx="719.7" cy="95.0" r="6.5" fill="url(#glow-2)"/>
+    <circle cx="1045.4" cy="77.7" r="7.5" fill="url(#glow-3)"/>
+    <circle cx="1178.5" cy="229.4" r="8.6" fill="url(#glow-0)"/>
+    <circle cx="702.4" cy="307.9" r="4.4" fill="url(#glow-1)"/>
+    <circle cx="640.8" cy="135.2" r="5.4" fill="url(#glow-2)"/>
+    <circle cx="945.6" cy="52.1" r="6.5" fill="url(#glow-3)"/>
+    <circle cx="1195.7" cy="173.4" r="7.5" fill="url(#glow-0)"/>
+    <circle cx="1045.4" cy="331.5" r="8.6" fill="url(#glow-1)"/>
+    <circle cx="596.3" cy="190.5" r="4.4" fill="url(#glow-2)"/>
+    <circle cx="828.1" cy="47.7" r="5.4" fill="url(#glow-3)"/>
+    <circle cx="1167.6" cy="115.4" r="6.5" fill="url(#glow-0)"/>
+    <circle cx="1145.6" cy="300.0" r="7.5" fill="url(#glow-1)"/>
+    <circle cx="792.5" cy="346.4" r="8.6" fill="url(#glow-2)"/>
+    <circle cx="710.5" cy="67.6" r="4.4" fill="url(#glow-3)"/>
+    <circle cx="1093.8" cy="64.8" r="5.4" fill="url(#glow-0)"/>
+    <circle cx="1217.6" cy="248.8" r="6.5" fill="url(#glow-1)"/>
+    <circle cx="910.7" cy="365.4" r="7.5" fill="url(#glow-2)"/>
+    <circle cx="597.3" cy="253.4" r="8.6" fill="url(#glow-3)"/>
+    <circle cx="982.2" cy="31.0" r="4.4" fill="url(#glow-0)"/>
+    <circle cx="1246.6" cy="184.5" r="5.4" fill="url(#glow-1)"/>
+    <circle cx="1040.3" cy="359.5" r="6.5" fill="url(#glow-2)"/>
+    <circle cx="648.4" cy="314.0" r="7.5" fill="url(#glow-3)"/>
+    <circle cx="612.5" cy="111.0" r="8.6" fill="url(#glow-0)"/>
+    <circle cx="1223.7" cy="116.5" r="4.4" fill="url(#glow-1)"/>
+    <circle cx="1160.8" cy="327.4" r="5.4" fill="url(#glow-2)"/>
+    <circle cx="745.8" cy="362.2" r="6.5" fill="url(#glow-3)"/>
+    <circle cx="552.2" cy="172.9" r="7.5" fill="url(#glow-0)"/>
+    <circle cx="847.5" cy="21.0" r="8.6" fill="url(#glow-1)"/>
+    </g>
+    <rect width="1200" height="400" fill="url(#text-shade)"/>
+    <rect width="1200" height="400" fill="url(#bottom-shade)"/>
+    <text x="64" y="64" fill="#84edbb" font-family="Courier New, monospace" font-size="13" font-weight="700" letter-spacing="3"><tspan fill="#ff77ad">01</tspan><tspan dx="18">HELLO, WORLD!</tspan></text>
+    <g font-family="Arial, sans-serif" font-size="98" font-weight="900" letter-spacing="-5">
+      <text x="64" y="166" fill="#e7f1f6">I'm<tspan dx="18" fill="#ff77ad">Raghad</tspan></text>
+      <text x="64" y="255" fill="#ff77ad">Elajab.</text>
+    </g>
+    <text x="66" y="304" fill="#84edbb" font-family="Courier New, monospace" font-size="14" font-weight="700" letter-spacing="1.4">COMPUTER SCIENCE STUDENT · AI / XR / ROBOTICS</text>
+    <text x="66" y="341" fill="#b9ccd8" font-family="Arial, sans-serif" font-size="18">I build intelligent systems and playful digital experiences.</text>
   </g>
-  <rect x="55" y="45" width="1090" height="270" fill="#0b1d33" stroke="#274866" stroke-width="4"/>
-  <rect x="55" y="45" width="1090" height="42" fill="#143250" stroke="#274866" stroke-width="4"/>
-  <text x="78" y="72" fill="#acc4d3" font-family="Courier New, monospace" font-size="16" font-weight="700" letter-spacing="2">RAGHAD_PORTFOLIO.EXE</text>
-  <rect x="1053" y="60" width="11" height="11" fill="#8ba5b7"/>
-  <rect x="1076" y="60" width="11" height="11" fill="#84edbb"/>
-  <rect x="1099" y="60" width="11" height="11" fill="#ff77ad"/>
-  <text x="94" y="138" fill="#84edbb" font-family="Courier New, monospace" font-size="17" font-weight="700" letter-spacing="4">&gt; HELLO, WORLD. I'M</text>
-  <text x="88" y="226" fill="#ff77ad" font-family="Arial, sans-serif" font-size="76" font-weight="900" letter-spacing="-4">Raghad Elajab.</text>
-  <text x="94" y="272" fill="#b9ccd8" font-family="Courier New, monospace" font-size="19" font-weight="700" letter-spacing="3">AI  ·  XR  ·  ROBOTICS  ·  SOFTWARE ENGINEERING</text>
-  <rect x="1019" y="126" width="11" height="11" fill="#84edbb"/>
-  <rect x="1046" y="153" width="11" height="11" fill="#ff77ad"/>
-  <rect x="1084" y="119" width="7" height="7" fill="#84edbb"/>
-  <rect x="1102" y="187" width="9" height="9" fill="#ff77ad"/>
-  <path d="M1019 251h92" stroke="#274866" stroke-width="4"/>
-  <path d="M1030 269h81" stroke="#84edbb" stroke-width="4"/>
 </svg>
