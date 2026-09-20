@@ -250,5 +250,18 @@
   </div>
 
   <script src="script.js"></script>
+  <script>
+    // Vercel Web Analytics: skip local previews and the GitHub Pages mirror.
+    (() => {
+      const hostname = window.location.hostname;
+      if (window.location.protocol !== 'https:' || hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '[::1]' || hostname.endsWith('.github.io')) return;
+
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+      const analytics = document.createElement('script');
+      analytics.defer = true;
+      analytics.src = '/_vercel/insights/script.js';
+      document.head.appendChild(analytics);
+    })();
+  </script>
 </body>
 </html>
