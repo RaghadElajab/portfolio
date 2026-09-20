@@ -399,13 +399,20 @@
 }
 .about-intro {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  align-items: center;
-  gap: clamp(28px, 5vw, 72px);
+  grid-template-columns: minmax(0, 1fr);
+  gap: 26px;
 }
 .about .section-heading { margin: 0; }
 .about h2 { font-size: clamp(34px, 3.6vw, 52px); line-height: 1.04; }
-.about-story { max-width: 570px; }
+.about-story {
+  width: 100%;
+  max-width: 960px;
+  padding: 26px 30px;
+  border: 1px solid #345168;
+  border-left: 3px solid var(--mint);
+  border-radius: 12px;
+  background: #0b1d30;
+}
 .about-story p { margin: 15px 0 0; color: #adc2d0; font: 16px/1.75 Arial, sans-serif; }
 .about-story .about-lead { margin-top: 0; color: #e0eaf0; font-size: 19px; line-height: 1.6; }
 .about-facts {
@@ -547,14 +554,13 @@
 html { scroll-padding-top: 88px; }
 
 @media (max-width: 900px) {
-  .about-intro { grid-template-columns: 1fr; gap: 25px; }
-  .about-story { max-width: 720px; }
   .about h2 { font-size: clamp(40px, 6.5vw, 60px); }
   .profile-facts { gap: 20px 32px; }
 }
 @media (max-width: 600px) {
   .about { padding-top: 55px; padding-bottom: 60px; }
   .about h2 { font-size: clamp(34px, 8.5vw, 46px); }
+  .about-story { padding: 20px; }
   .about-story .about-lead { font-size: 18px; }
   .about-story p { font-size: 15px; line-height: 1.7; }
   .about-facts { position: relative; margin-top: 25px; padding-bottom: 25px; }
