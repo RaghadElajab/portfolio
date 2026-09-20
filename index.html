@@ -49,38 +49,46 @@
     </div>
 
     <section class="section about" id="about" aria-labelledby="about-title">
-      <div class="section-heading">
-        <p class="eyebrow"><span>02</span> PLAYER PROFILE</p>
-        <h2 id="about-title">Curious by default.<br><em>Technical by practice.</em></h2>
+      <div class="about-intro">
+        <div class="section-heading">
+          <p class="eyebrow"><span>02</span> ABOUT ME</p>
+          <h2 id="about-title">Curious by default.<br><em>Technical by practice.</em></h2>
+        </div>
+        <div class="about-story">
+          <p class="about-lead">I'm a Computer Science student at Khalifa University, building AI systems, immersive experiences and practical software.</p>
+          <p>I enjoy turning technical ideas into things people can use, whether that's a computer vision pipeline, a hands-on XR lesson or a robotic system. I also love helping others learn through teaching, mentoring and collaboration.</p>
+        </div>
       </div>
-      <div class="about-grid">
-        <article class="window profile-card draggable-profile">
-          <div class="window-bar profile-drag-handle" title="Move window; double-click to reset"><span>PROFILE.TXT</span><div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div></div>
-          <div class="profile-body">
-            <div class="pixel-avatar" aria-hidden="true"><img class="profile-cat-img" src="assets/profile-cat.png" alt=""></div>
-            <div>
-              <p class="mono pink">@RaghadElajab</p>
-              <p>Computer Science student at Khalifa University with experience in artificial intelligence, computer vision, and machine learning through technical projects and applied development. Skilled in developing AI systems, XR applications, and software solutions, with an interest in building reliable intelligent systems.</p>
-              <dl class="quick-stats">
-                <div><dt>GPA</dt><dd>3.63</dd></div>
-                <div><dt>EXPECTED GRAD</dt><dd>2027</dd></div>
-                <div><dt>LOCATION</dt><dd>ABU DHABI</dd></div>
-              </dl>
-            </div>
-          </div>
-        </article>
-
-        <article class="terminal-card skills-card">
-          <div class="terminal-line"><span>raghad@portfolio:~$</span> skills --grouped</div>
-          <div class="skill-groups" aria-label="Skills grouped by category">
-            <section class="skill-group"><button class="skill-group-toggle" type="button" aria-expanded="true"><span>Languages</span><i aria-hidden="true">−</i></button><div class="skill-cloud"><span>Python</span><span>Java</span><span>C</span><span>C#</span><span>Assembly</span></div></section>
-            <section class="skill-group"><button class="skill-group-toggle" type="button" aria-expanded="true"><span>AI &amp; Data</span><i aria-hidden="true">−</i></button><div class="skill-cloud"><span>Machine Learning</span><span>Computer Vision</span><span>OpenCV</span><span>YOLO</span><span>FaceNet</span><span>SVM</span><span>Neural Networks</span><span>Data Analysis</span><span>Feature Engineering</span></div></section>
-            <section class="skill-group"><button class="skill-group-toggle" type="button" aria-expanded="true"><span>XR &amp; Game Development</span><i aria-hidden="true">−</i></button><div class="skill-cloud"><span>Unity</span><span>Unity XR</span><span>HoloLens</span><span>WebAR</span><span>Game Development</span><span>Speech Recognition</span></div></section>
-            <section class="skill-group"><button class="skill-group-toggle" type="button" aria-expanded="true"><span>Robotics &amp; Tools</span><i aria-hidden="true">−</i></button><div class="skill-cloud"><span>ROS 2</span><span>Git</span><span>GitHub</span><span>Software Engineering</span><span>Object-Oriented Programming</span><span>File-Based Databases</span></div></section>
-            <section class="skill-group"><button class="skill-group-toggle" type="button" aria-expanded="true"><span>Collaboration</span><i aria-hidden="true">−</i></button><div class="skill-cloud"><span>Team Leadership</span><span>Teaching &amp; Mentoring</span><span>Technical Communication</span><span>Problem Solving</span><span>Critical Thinking</span></div></section>
-          </div>
-        </article>
+      <div class="about-facts">
+        <dl class="profile-facts">
+          <div><dt>GPA</dt><dd>3.63 <span>/ 4</span></dd></div>
+          <div><dt>Expected graduation</dt><dd>2027</dd></div>
+          <div><dt>Based in</dt><dd>Abu Dhabi, UAE</dd></div>
+        </dl>
+        <img class="about-cat" src="assets/profile-cat.png" width="88" height="88" alt="" loading="lazy" decoding="async">
       </div>
+      <section class="skills-marquees" id="skills-marquees" aria-labelledby="skills-title">
+        <div class="skills-heading">
+          <h3 id="skills-title">Skills, tools &amp; how I work.</h3>
+          <button class="skills-motion-toggle" id="skills-motion-toggle" type="button" aria-pressed="false" hidden><span class="skills-motion-icon" aria-hidden="true"></span><span data-motion-label>Pause motion</span></button>
+        </div>
+          <div class="skills-row">
+            <h4 id="skills-label-0">Languages &amp; tools</h4>
+            <div class="skills-viewport"><div class="skills-track"><ul class="skills-list" aria-labelledby="skills-label-0"><li>Python</li><li>Java</li><li>C</li><li>C#</li><li>Assembly</li><li>Git</li><li>GitHub</li></ul></div></div>
+          </div>
+          <div class="skills-row">
+            <h4 id="skills-label-1">AI &amp; data</h4>
+            <div class="skills-viewport"><div class="skills-track"><ul class="skills-list" aria-labelledby="skills-label-1"><li>Machine Learning</li><li>Computer Vision</li><li>OpenCV</li><li>YOLO</li><li>FaceNet</li><li>SVM</li><li>Neural Networks</li><li>Data Analysis</li><li>Feature Engineering</li></ul></div></div>
+          </div>
+          <div class="skills-row">
+            <h4 id="skills-label-2">XR &amp; engineering</h4>
+            <div class="skills-viewport"><div class="skills-track"><ul class="skills-list" aria-labelledby="skills-label-2"><li>Unity</li><li>Unity XR</li><li>HoloLens</li><li>WebAR</li><li>Game Development</li><li>Speech Recognition</li><li>ROS 2</li><li>Software Engineering</li><li>Object-Oriented Programming</li><li>File-Based Databases</li></ul></div></div>
+          </div>
+          <div class="skills-row">
+            <h4 id="skills-label-3">People skills</h4>
+            <div class="skills-viewport"><div class="skills-track"><ul class="skills-list" aria-labelledby="skills-label-3"><li>Team Leadership</li><li>Teaching &amp; Mentoring</li><li>Technical Communication</li><li>Teamwork</li><li>Problem Solving</li><li>Critical Thinking</li></ul></div></div>
+          </div>
+      </section>
     </section>
 
     <section class="section projects" id="projects" aria-labelledby="projects-title">
@@ -89,60 +97,60 @@
         <a class="text-link" href="https://github.com/RaghadElajab" target="_blank" rel="noreferrer">ALL REPOSITORIES ↗</a>
       </div>
       <div class="project-grid">
-        <article class="project-card featured">
-          <div class="project-index">01</div><div class="project-icon face-icon" aria-hidden="true"><i></i></div>
-          <div class="project-copy"><p class="tag">AI · COMPUTER VISION</p><h3>Face Recognition Attendance</h3><p>An end-to-end attendance platform built for reliable live, multi-face identification—not just a model demo.</p><div class="project-meta"><span>98.5% grade</span><span>Python</span><span>FaceNet</span><span>SVM</span><span>OpenCV</span><span>FastAPI</span></div></div>
-          <ul class="project-highlights"><li>Recognizes multiple students live while rejecting unknown faces.</li><li>Connects registration, recognition, attendance, and recorded sessions in one system.</li></ul>
-          <button class="project-detail-button" type="button">View project details <span aria-hidden="true">↗</span></button>
-          <div class="project-details"><ul><li>Built a mobile-friendly FastAPI portal that lets administrators upload or capture student registration images.</li><li>Created a face detection, alignment, and preprocessing pipeline that converts each face into a normalized 512-dimensional FaceNet embedding.</li><li>Trained an RBF SVM with class balancing, cross-validation, and automatic hyperparameter comparison for reliable identity classification.</li><li>Implemented real-time multi-face recognition with confidence thresholds, top-class margin filtering, cosine-similarity fallback, and unknown-face rejection.</li><li>Generated attendance summaries automatically and saved a timestamped annotated recording after each recognition session.</li></ul><div class="project-inline-links"><button class="video-demo-button" type="button" data-embed="https://drive.google.com/file/d/1IJfpQDGhbCoxk3noxcqGk9atibL6a7k4/preview" data-video-title="Face Recognition Attendance Demo">Watch demo ▶</button><a href="https://github.com/RaghadElajab/ai-face-recognition-attendance" target="_blank" rel="noreferrer">View source ↗</a></div></div>
+        <article class="project-card" data-project="attendance">
+          <div class="project-cover"><img src="assets/project-attendance.jpg" alt="Live face recognition and attendance interface" width="800" height="450" loading="lazy" decoding="async"><span class="project-index">01</span></div>
+          <div class="project-copy"><p class="tag">AI · COMPUTER VISION</p><h3>Face Recognition Attendance</h3><p>A live attendance platform that registers students, identifies multiple faces and saves session reports.</p><div class="project-meta"><span>Python</span><span>FaceNet</span><span>SVM</span><span>OpenCV</span><span>FastAPI</span></div></div>
+          <ul class="project-highlights"><li>Recognizes multiple students live and rejects unknown faces.</li><li>Connects registration, attendance and session recordings.</li></ul>
+          <button class="project-detail-button" type="button">View details <span aria-hidden="true">↗</span></button>
+          <div class="project-details"><ul><li><strong>Registration:</strong> A mobile-friendly FastAPI portal captures or uploads student photos.</li><li><strong>Recognition:</strong> Aligned faces become 512-dimensional FaceNet embeddings, classified by an RBF SVM.</li><li><strong>Reliability:</strong> Class balancing, cross-validation, confidence checks and cosine-similarity fallback reduce false matches.</li><li><strong>Output:</strong> Each session saves an attendance summary and a timestamped, annotated recording. Earned a 98.5% project grade.</li></ul><div class="project-inline-links"><button class="video-demo-button" type="button" data-embed="https://drive.google.com/file/d/1IJfpQDGhbCoxk3noxcqGk9atibL6a7k4/preview" data-video-title="Live attendance" data-poster="assets/project-attendance.jpg" data-video-description="Multiple faces, unknown-face rejection and automatic attendance.">Watch demo ▶</button><a href="https://github.com/RaghadElajab/ai-face-recognition-attendance" target="_blank" rel="noreferrer">View source ↗</a></div></div>
         </article>
 
-        <article class="project-card">
-          <div class="project-index">02</div><div class="project-icon coffee-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M13 27h35v15c0 9-7 15-16 15h-3c-9 0-16-6-16-15V27Z"/><path d="M48 31h5c6 0 8 4 8 8s-3 8-9 8h-6M10 57h42M22 21c-5-5 5-7 0-13M34 21c-5-5 5-7 0-13M45 21c-4-4 4-6 0-10"/></svg></div>
-          <div class="project-copy"><p class="tag">VR · SUSTAINABILITY</p><h3>ECoffe!</h3><p>An award-winning VR café game that turns sustainable decision-making into physical, fast-paced gameplay.</p><div class="project-meta"><span>Unity</span><span>VR</span><span>OpenXR</span><span>XR Interaction Toolkit</span><span>Hand Tracking</span><span>3rd Place</span></div></div>
-          <ul class="project-highlights"><li>Won third place at Khalifa University's sustainability e-gaming competition.</li><li>Combines hand-tracked café workflows with dynamic customers and AI conversations.</li></ul>
-          <button class="project-detail-button" type="button">View project details <span aria-hidden="true">↗</span></button>
-          <div class="project-details"><ul><li>Built with Unity's XR Interaction Toolkit and OpenXR, supporting controller interactions, pinch grabbing, hand tracking, poke controls, and distance-based ray interaction.</li><li>Created physical café workflows for grabbing cups, pouring liquids, preparing food, operating appliances, and serving completed orders.</li><li>Designed intentional grab points and object behavior—for example, holding teapots by their handles and spoons by their ends—to make interactions feel natural.</li><li>Developed dynamic café shifts with randomized orders, customer patience, scoring, and special customer behaviors that make each session less predictable.</li><li>Integrated sustainability into gameplay through hidden, shuffled eco-friendly utensils, accessible plastic alternatives, waste reduction, and bonus scoring for sustainable choices.</li><li>Added AI-powered anti-sustainability customers whom players must persuade through interactive VR conversations, encouraging critical thinking rather than passive instruction.</li><li>Used visual and audio feedback to confirm pouring, cooking, machine operation, and order submission without relying on excessive interface elements.</li></ul><div class="project-inline-links"><button class="video-demo-button" type="button" data-embed="https://drive.google.com/file/d/1aO0PlffQ0hZNE9mr6IvJNMYv_o-qQBn4/preview" data-video-title="ECoffe! VR Demo">Watch ECoffe! demo ▶</button><a href="https://www.linkedin.com/in/raghad-elajab/" target="_blank" rel="noreferrer">View on LinkedIn ↗</a></div></div>
+        <article class="project-card" data-project="ecoffe">
+          <div class="project-cover"><img src="assets/project-ecoffe.jpg" alt="ECoffe virtual reality café gameplay" width="800" height="450" loading="lazy" decoding="async"><span class="project-index">02</span></div>
+          <div class="project-copy"><p class="tag">VR · SUSTAINABILITY</p><h3>ECoffe!</h3><p>An award-winning VR café game that turns sustainable decision-making into physical, fast-paced gameplay.</p><div class="project-meta"><span>Unity</span><span>VR</span><span>OpenXR</span><span>XR Interaction Toolkit</span><span>Hand Tracking</span></div></div>
+          <ul class="project-highlights"><li>Third place in Khalifa University’s sustainability gaming competition.</li><li>Hand-tracked café tasks and AI customer conversations.</li></ul>
+          <button class="project-detail-button" type="button">View details <span aria-hidden="true">↗</span></button>
+          <div class="project-details"><ul><li><strong>Interaction:</strong> Unity, OpenXR and XR Interaction Toolkit support hands, controllers, pinch grabs and poke controls.</li><li><strong>Café workflow:</strong> Prepare drinks and food, use appliances and serve orders with natural grab points.</li><li><strong>Game loop:</strong> Random orders, customer patience and scoring keep each shift different.</li><li><strong>Sustainability:</strong> Eco-friendly utensils, waste reduction and AI customer conversations reward thoughtful choices.</li></ul><div class="project-inline-links"><button class="video-demo-button" type="button" data-embed="https://drive.google.com/file/d/1aO0PlffQ0hZNE9mr6IvJNMYv_o-qQBn4/preview" data-video-title="Café gameplay" data-poster="assets/project-ecoffe.jpg" data-video-description="Prepare orders and make sustainable choices in VR.">Watch ECoffe! demo ▶</button><a href="https://www.linkedin.com/in/raghad-elajab/" target="_blank" rel="noreferrer">View on LinkedIn ↗</a></div></div>
         </article>
 
-        <article class="project-card">
-          <div class="project-index">03</div><div class="project-icon tomato-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M18 24c-7 5-10 14-7 23 3 9 11 13 21 13s18-4 21-13c3-9 0-18-7-23-7-5-21-5-28 0Z"/><path d="m32 24-5-10 7 4 6-7-1 10 10 1-9 5M32 18v9"/><path d="M17 39h4M43 49h4"/></svg></div>
+        <article class="project-card" data-project="garden">
+          <div class="project-cover"><img src="assets/project-garden-explore.jpg" alt="HoloLens mixed reality gardening experience" width="800" height="450" loading="lazy" decoding="async"><span class="project-index">03</span></div>
           <div class="project-copy"><p class="tag">XR · HOLOLENS</p><h3>MR Gardening Simulator</h3><p>A HoloLens learning experience that makes tomato planting tangible through natural interaction and guided practice.</p><div class="project-meta"><span>Unity</span><span>C#</span><span>MRTK3</span><span>HoloLens</span><span>OpenAI API</span></div></div>
-          <ul class="project-highlights"><li>Three learning modes progress from exploration to independent challenge.</li><li>An AI gardening assistant answers spoken questions in real time.</li></ul>
-          <button class="project-detail-button" type="button">View project details <span aria-hidden="true">↗</span></button>
-          <div class="project-details"><ul><li>Developed in Unity with MRTK3 to transform tomato planting into an accessible, hands-on mixed-reality lesson.</li><li>Created Explore, Follow-Through, and Challenge modes that progress from freely examining tools to completing the planting process independently.</li><li>Implemented natural hand tracking for grabbing, moving, and using a shovel, watering can, and seed bag through realistic interaction points.</li><li>Designed accurate tool behavior: players dig into soil to collect dirt, water the soil rather than the plant, and physically shake the seed bag to release seeds.</li><li>Added touch-to-spin inspection, responsive push buttons, and floating menus that remain readable as players move through the environment.</li><li>Integrated Elizabeth, an AI gardening assistant using speech recognition, the OpenAI API, and text-to-speech to answer questions and provide child-friendly guidance in real time.</li></ul><div class="project-inline-links"><button class="video-demo-button" type="button" data-embed="https://drive.google.com/file/d/16YIivby9UVqaL-87qD3xmw4XMYHYh6Gt/preview" data-video-title="MR Gardening · Explore Mode">Explore demo ▶</button><button class="video-demo-button" type="button" data-embed="https://drive.google.com/file/d/1pA_FC78dUD3fdvYjJwU3ha01Hp7bTL0_/preview" data-video-title="MR Gardening · Follow-Through Mode">Follow-Through demo ▶</button><button class="video-demo-button" type="button" data-embed="https://drive.google.com/file/d/1LXrEeqsohdFDi1Bn5aV8vzKk0rd1Eadu/preview" data-video-title="MR Gardening · Challenge Mode">Challenge demo ▶</button></div></div>
+          <ul class="project-highlights"><li>Three learning modes, from exploration to independent planting.</li><li>A voice-driven AI assistant answers gardening questions.</li></ul>
+          <button class="project-detail-button" type="button">View details <span aria-hidden="true">↗</span></button>
+          <div class="project-details"><ul><li><strong>Learning modes:</strong> Explore tools freely, follow guided steps or plant independently in Challenge mode.</li><li><strong>Natural tools:</strong> Hand tracking lets learners dig soil, pour water and shake seeds from a bag.</li><li><strong>Built for HoloLens:</strong> Unity and MRTK3 power touch controls, tool inspection and floating menus.</li><li><strong>AI guidance:</strong> Elizabeth combines speech recognition, the OpenAI API and text-to-speech for spoken help.</li></ul><div class="project-inline-links"><button class="video-demo-button" type="button" data-embed="https://drive.google.com/file/d/16YIivby9UVqaL-87qD3xmw4XMYHYh6Gt/preview" data-video-title="Explore tools" data-poster="assets/project-garden-explore.jpg" data-video-description="Pick up and inspect the gardening tools.">Explore demo ▶</button><button class="video-demo-button" type="button" data-embed="https://drive.google.com/file/d/1pA_FC78dUD3fdvYjJwU3ha01Hp7bTL0_/preview" data-video-title="Guided planting" data-poster="assets/project-garden-guided.jpg" data-video-description="Follow the planting process step by step.">Follow-Through demo ▶</button><button class="video-demo-button" type="button" data-embed="https://drive.google.com/file/d/1LXrEeqsohdFDi1Bn5aV8vzKk0rd1Eadu/preview" data-video-title="Planting challenge" data-poster="assets/project-garden-challenge.jpg" data-video-description="Complete the planting process independently.">Challenge demo ▶</button></div></div>
         </article>
 
-        <article class="project-card">
-          <div class="project-index">04</div><div class="project-icon crop-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M13 48C15 24 30 12 52 12c0 22-12 38-34 39"/><path d="M17 48c9-12 18-20 32-31M26 38l-1-11M35 30l10 1"/><path d="M47 42h5M44 48h4"/></svg></div>
-          <div class="project-copy"><p class="tag">AI · DEEP LEARNING</p><h3>Crop Disease Classification</h3><p>A rigorous PyTorch comparison of four CNN architectures across 12 maize and cashew health conditions.</p><div class="project-meta"><span>95.73% best accuracy</span><span>Python</span><span>PyTorch</span><span>EfficientNet</span></div></div>
-          <ul class="project-highlights"><li>Benchmarked four architectures on 11,838 real crop images.</li><li>EfficientNet-B0 reached 95.73% test accuracy on cashew.</li></ul>
-          <button class="project-detail-button" type="button">View project details <span aria-hidden="true">↗</span></button>
-          <div class="project-details"><ul><li>Prepared and validated 11,838 crop images spanning five cashew classes and seven maize classes.</li><li>Created stratified training, validation, and test splits with augmentation, ImageNet normalization, and class-weighted loss.</li><li>Compared a custom CNN with transfer-learned ResNet-18, EfficientNet-B0, and VGG-16 models using early stopping and best-checkpoint restoration.</li><li>Evaluated class-level precision, recall, F1 scores, confusion matrices, ROC curves, and held-out test accuracy.</li><li>Reached 95.73% test accuracy on cashew and 85.89% on maize with EfficientNet-B0.</li></ul><div class="project-inline-links"><button class="image-demo-button" type="button" data-image="assets/crop-model-accuracy-comparison.png" data-image-title="Crop Model Accuracy Comparison" data-image-description="Held-out test accuracy across four neural-network architectures for maize and cashew.">Compare models ◫</button><button class="image-demo-button" type="button" data-image="assets/crop-efficientnet-maize-confusion-matrix.png" data-image-title="EfficientNet · Maize Confusion Matrix" data-image-description="Class-level prediction distribution for the seven maize conditions in the held-out test set.">Maize results ◫</button><button class="image-demo-button" type="button" data-image="assets/crop-efficientnet-cashew-confusion-matrix.png" data-image-title="EfficientNet · Cashew Confusion Matrix" data-image-description="Class-level prediction distribution for the five cashew conditions in the held-out test set.">Cashew results ◫</button><a href="https://github.com/RaghadElajab/crop-disease-classification" target="_blank" rel="noreferrer">View source ↗</a></div></div>
+        <article class="project-card" data-project="crop">
+          <div class="project-cover"><img src="assets/project-crop.svg" alt="Comparison of maize and cashew classification accuracy" width="800" height="450" loading="lazy" decoding="async"><span class="project-index">04</span></div>
+          <div class="project-copy"><p class="tag">AI · DEEP LEARNING</p><h3>Crop Disease Classification</h3><p>A rigorous PyTorch comparison of four CNN architectures across 12 maize and cashew health conditions.</p><div class="project-meta"><span>Python</span><span>PyTorch</span><span>EfficientNet</span></div></div>
+          <ul class="project-highlights"><li>Compared four CNNs across 11,838 images and 12 crop conditions.</li><li>EfficientNet-B0 achieved 95.73% cashew test accuracy.</li></ul>
+          <button class="project-detail-button" type="button">View details <span aria-hidden="true">↗</span></button>
+          <div class="project-details"><ul><li><strong>Dataset:</strong> 11,838 images across five cashew and seven maize conditions.</li><li><strong>Training:</strong> Stratified splits, augmentation, ImageNet normalization and class-weighted loss.</li><li><strong>Models:</strong> A custom CNN, ResNet-18, EfficientNet-B0 and VGG-16, with early stopping and best-checkpoint restoration.</li><li><strong>Evaluation:</strong> Held-out accuracy, precision, recall, F1, confusion matrices and ROC curves; EfficientNet-B0 reached 85.89% on maize.</li></ul><div class="project-inline-links"><button class="image-demo-button" type="button" data-image="assets/crop-model-accuracy-comparison.svg" data-image-title="Model accuracy" data-image-action="Expand chart" data-image-description="EfficientNet-B0 leads on both crops. Bars show held-out test accuracy.">Compare models ◫</button><button class="image-demo-button" type="button" data-image="assets/crop-efficientnet-maize-confusion-matrix.svg" data-image-title="Maize predictions" data-image-action="Expand chart" data-image-description="Most errors are between leaf blight and leaf spot. Cells count test images.">Maize results ◫</button><button class="image-demo-button" type="button" data-image="assets/crop-efficientnet-cashew-confusion-matrix.svg" data-image-title="Cashew predictions" data-image-action="Expand chart" data-image-description="All 205 healthy test leaves were classified correctly. Cells count test images.">Cashew results ◫</button><a href="https://github.com/RaghadElajab/crop-disease-classification" target="_blank" rel="noreferrer">View source ↗</a></div></div>
         </article>
 
-        <article class="project-card">
-          <div class="project-index">05</div><div class="project-icon terminal-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M8 12h48v40H8V12Z"/><path d="m17 25 8 7-8 7M31 41h16"/></svg></div>
+        <article class="project-card" data-project="shell">
+          <div class="project-cover"><img src="assets/project-shell.svg" alt="Client, TCP server and Unix process pipeline diagram" width="800" height="450" loading="lazy" decoding="async"><span class="project-index">05</span></div>
           <div class="project-copy"><p class="tag">SYSTEMS · NETWORKING</p><h3>Networked CLI Shell</h3><p>A concurrent remote Unix shell built in C around TCP sockets and POSIX process control.</p><div class="project-meta"><span>C</span><span>POSIX</span><span>TCP Sockets</span><span>pthreads</span></div></div>
-          <ul class="project-highlights"><li>Executes allowlisted commands remotely with isolated client sessions.</li><li>Supports Unix pipelines of up to four coordinated processes.</li></ul>
-          <button class="project-detail-button" type="button">View project details <span aria-hidden="true">↗</span></button>
-          <div class="project-details"><ul><li>Built an interactive localhost client that sends commands to a shell server and renders prompts, standard output, and errors over TCP.</li><li>Executed allowlisted Unix commands with <code>fork</code> and <code>exec</code>, redirecting process output through the client socket with <code>dup2</code>.</li><li>Implemented pipelines of up to four commands using Unix pipes and coordinated child-process cleanup with <code>wait</code>.</li><li>Maintained a working-directory path for each client session and used POSIX threads with FIFO session scheduling.</li></ul><a href="https://github.com/RaghadElajab/networked-cli-shell" target="_blank" rel="noreferrer">View source ↗</a></div>
+          <ul class="project-highlights"><li>Runs remote commands with isolated client sessions.</li><li>Supports Unix pipelines of up to four processes.</li></ul>
+          <button class="project-detail-button" type="button">View details <span aria-hidden="true">↗</span></button>
+          <div class="project-details"><ul><li><strong>Client/server:</strong> An interactive localhost client sends commands and receives output over TCP.</li><li><strong>Execution:</strong> Allowlisted commands use <code>fork</code> and <code>exec</code>; <code>dup2</code> redirects output to the socket.</li><li><strong>Pipelines:</strong> Up to four commands run through Unix pipes, with <code>wait</code> coordinating process cleanup.</li><li><strong>Sessions:</strong> Each client keeps its own working-directory path, with POSIX threads and FIFO scheduling.</li></ul><button class="image-demo-button" type="button" data-image="assets/project-shell.svg" data-image-title="How commands run" data-image-description="TCP carries commands to the server; Unix pipes connect up to four processes." data-image-action="Expand diagram">View workflow</button><a href="https://github.com/RaghadElajab/networked-cli-shell" target="_blank" rel="noreferrer">View source ↗</a></div>
         </article>
 
-        <article class="project-card">
-          <div class="project-index">06</div><div class="project-icon chart-icon" aria-hidden="true">⌁</div>
-          <div class="project-copy"><p class="tag">DATA · MACHINE LEARNING</p><h3>Car Price Prediction</h3><p>A complete data-cleaning and modeling pipeline for a high-dimensional vehicle dataset.</p><div class="project-meta"><span>100% grade</span><span>Python</span><span>Neural Network</span><span>~87% accuracy</span></div></div>
-          <ul class="project-highlights"><li>Reduced and cleaned 148 features across roughly 34,000 records.</li><li>Reached approximately 87% prediction accuracy and earned a 100% grade.</li></ul>
-          <button class="project-detail-button" type="button">View project details <span aria-hidden="true">↗</span></button>
-          <div class="project-details"><ul><li>Performed extensive cleaning, feature selection, and preprocessing on a large, high-dimensional dataset.</li><li>Handled missing and inconsistent values while reducing dimensionality.</li><li>Built and optimized multiple machine-learning models, including a neural network.</li></ul><a href="https://github.com/RaghadElajab/car-price-prediction" target="_blank" rel="noreferrer">View source ↗</a></div>
+        <article class="project-card" data-project="cars">
+          <div class="project-cover"><img src="assets/project-car.svg" alt="Vehicle dataset cleaning and price prediction pipeline" width="800" height="450" loading="lazy" decoding="async"><span class="project-index">06</span></div>
+          <div class="project-copy"><p class="tag">DATA · MACHINE LEARNING</p><h3>Car Price Prediction</h3><p>A complete data-cleaning and modeling pipeline for a high-dimensional vehicle dataset.</p><div class="project-meta"><span>Python</span><span>Neural Network</span></div></div>
+          <ul class="project-highlights"><li>Cleaned roughly 34,000 records with 148 initial features.</li><li>Compared and tuned models, including a neural network.</li></ul>
+          <button class="project-detail-button" type="button">View details <span aria-hidden="true">↗</span></button>
+          <div class="project-details"><ul><li><strong>Data preparation:</strong> Cleaned missing and inconsistent values across a high-dimensional vehicle dataset.</li><li><strong>Feature selection:</strong> Reduced the original 148 features before model training.</li><li><strong>Modeling:</strong> Built and optimized multiple models, including a neural network.</li><li><strong>Course result:</strong> Earned a 100% project grade.</li></ul><button class="image-demo-button" type="button" data-image="assets/project-car.svg" data-image-title="From data to prediction" data-image-description="Clean records and select features before comparing and tuning prediction models." data-image-action="Expand diagram">View workflow</button><a href="https://github.com/RaghadElajab/car-price-prediction" target="_blank" rel="noreferrer">View source ↗</a></div>
         </article>
 
-        <article class="project-card">
-          <div class="project-index">07</div><div class="project-icon fitness-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M19 23v18M13 27v10M45 23v18M51 27v10M19 32h26"/><path d="M9 29v6M55 29v6"/></svg></div>
-          <div class="project-copy"><p class="tag">JAVA · SOFTWARE ENGINEERING</p><h3>Java-Based Fitness Tracker</h3><p>A complete role-based desktop application backed by a custom persistent data layer.</p><div class="project-meta"><span>100% grade</span><span>Java</span><span>Swing</span><span>OOP</span></div></div>
-          <ul class="project-highlights"><li>Separates user and administrator workflows with real-time persistence.</li><li>Tracks activities, goals, calories, approvals, and progress reports.</li></ul>
-          <button class="project-detail-button" type="button">View project details <span aria-hidden="true">↗</span></button>
-          <div class="project-details"><ul><li>Designed account creation, sign-in, validation, profile editing, and separate interfaces for users and administrators.</li><li>Enabled users to record dated activities, calories burned, fitness goals, and calorie goals, then generate progress reports.</li><li>Built a scalable file-based persistence layer around nested <code>ArrayList</code> structures with real-time updating and saving.</li><li>Implemented administrator workflows for reviewing activity and goal requests, approving or rejecting changes, searching records, and managing accounts.</li></ul><a href="https://github.com/RaghadElajab/java-fitness-tracker" target="_blank" rel="noreferrer">View source ↗</a></div>
+        <article class="project-card" data-project="fitness">
+          <div class="project-cover"><img src="assets/project-fitness.svg" alt="Fitness tracker user and administrator workflow diagram" width="800" height="450" loading="lazy" decoding="async"><span class="project-index">07</span></div>
+          <div class="project-copy"><p class="tag">JAVA · SOFTWARE ENGINEERING</p><h3>Java-Based Fitness Tracker</h3><p>A complete role-based desktop application backed by a custom persistent data layer.</p><div class="project-meta"><span>Java</span><span>Swing</span><span>OOP</span></div></div>
+          <ul class="project-highlights"><li>Separate user and admin workflows with persistent records.</li><li>Tracks activities, goals, calories and progress reports.</li></ul>
+          <button class="project-detail-button" type="button">View details <span aria-hidden="true">↗</span></button>
+          <div class="project-details"><ul><li><strong>Accounts:</strong> Sign-up, validation, profile editing and separate user and administrator interfaces.</li><li><strong>Tracking:</strong> Record dated activities, calories burned and goals, then generate progress reports.</li><li><strong>Storage:</strong> Nested <code>ArrayList</code> structures provide file-based persistence and real-time saving.</li><li><strong>Administration:</strong> Review activity and goal requests, approve changes, search records and manage accounts. Earned a 100% project grade.</li></ul><button class="image-demo-button" type="button" data-image="assets/project-fitness.svg" data-image-title="Users & administrators" data-image-description="User tracking and administrator approvals share a file-based data layer." data-image-action="Expand diagram">View workflow</button><a href="https://github.com/RaghadElajab/java-fitness-tracker" target="_blank" rel="noreferrer">View source ↗</a></div>
         </article>
       </div>
     </section>
@@ -158,9 +166,24 @@
     <section class="section achievements" aria-labelledby="achievements-title">
       <div class="section-heading"><p class="eyebrow"><span>05</span> UNLOCKED</p><h2 id="achievements-title">A few <em>milestones.</em></h2></div>
       <div class="achievement-grid">
-        <article><svg class="achievement-icon" aria-hidden="true" viewBox="0 0 48 48"><path d="m24 5 5.2 10.6 11.7 1.7-8.5 8.2 2 11.7L24 31.7l-10.4 5.5 2-11.7-8.5-8.2 11.7-1.7L24 5Z"/></svg><h3>Dean's List</h3><p class="achievement-copy">Achieved Dean's List placement for two consecutive academic years in recognition of strong academic performance.</p><small>Academic years 2023–24 &amp; 2024–25</small></article>
-        <article><svg class="achievement-icon" aria-hidden="true" viewBox="0 0 48 48"><path d="M15 7h18v8c0 8-3.8 14-9 14s-9-6-9-14V7Z"/><path d="M15 11H7v4c0 6 3.6 10 9 10M33 11h8v4c0 6-3.6 10-9 10M24 29v8M15 41h18M19 37h10"/></svg><h3>Khalifa University's 3rd Annual Sustainability E-Gaming Competition</h3><p class="achievement-copy">Won third place with <strong>ECoffe!</strong>, a VR café simulation where players work as baristas, prepare and serve orders using hand tracking, manage dynamic customers, and promote environmentally responsible choices through AI-powered interactions.</p><small>Spring 2025</small></article>
-        <article><svg class="achievement-icon" aria-hidden="true" viewBox="0 0 48 48"><path d="M8 9h13c4 0 7 3 7 7v24c0-4-3-7-7-7H8V9Z"/><path d="M40 9H27c-4 0-7 3-7 7v24c0-4 3-7 7-7h13V9Z"/></svg><h3>Leading with Passion and Knowledge Training Certificate</h3><p class="achievement-copy">Successfully completed the Center for Teaching and Learning's eight-week leadership training. Led a team of aspiring student leaders in helping the center address a real challenge: increasing student awareness and use of its academic support services.</p><small>Khalifa University · Fall 2025</small></article>
+        <article>
+          <svg class="achievement-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5-10-5Z"/><path d="M6 11v6c3 3 9 3 12 0v-6M22 9v7"/></svg>
+          <h3>Dean's List</h3>
+          <p class="achievement-copy">Consecutive Dean's List honors since admission, recognizing sustained academic excellence.</p>
+          <small>Khalifa University · Since admission</small>
+        </article>
+        <article>
+          <svg class="achievement-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 3h10v6a5 5 0 0 1-10 0V3ZM7 5H4v2a4 4 0 0 0 4 4M17 5h3v2a4 4 0 0 1-4 4M12 14v4M8 21v-3h8v3M6 21h12"/></svg>
+          <h3>Sustainability E-Gaming</h3>
+          <p class="achievement-copy">Third place at Khalifa University's 3rd Annual Sustainability E-Gaming Competition with <strong>ECoffe!</strong>, a VR café game built around sustainable choices.</p>
+          <small>Third place · Spring 2025</small>
+        </article>
+        <article>
+          <svg class="achievement-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="m8 12-2 9 6-3 6 3-2-9M10 8l1.5 1.5L14 7"/></svg>
+          <h3>Leadership training</h3>
+          <p class="achievement-copy">Completed the eight-week <strong>Leading with Passion and Knowledge</strong> program. Led a team helping the Center for Teaching and Learning improve awareness of academic support.</p>
+          <small>Khalifa University · Fall 2025</small>
+        </article>
       </div>
     </section>
 
@@ -185,7 +208,11 @@
     </section>
   </main>
 
-  <footer><span>© 2026 RAGHAD ELAJAB</span><span>DESIGNED WITH &lt;3</span></footer>
+  <footer class="site-footer">
+    <p>© 2026 <span>Raghad Elajab</span></p>
+    <p class="footer-credit">Designed &amp; built with <svg viewBox="0 0 24 24" role="img" aria-label="love"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg> in Abu Dhabi</p>
+    <a class="footer-top" href="#home">Back to top <span aria-hidden="true">↑</span></a>
+  </footer>
 
   <div class="modal-layer" id="modal-layer" hidden>
     <div class="window modal" id="modal" role="dialog" aria-labelledby="modal-title">
@@ -201,28 +228,25 @@
         <button class="dashboard-close" id="dashboard-close" type="button" aria-label="Close project details">×</button>
       </header>
       <div class="dashboard-content">
-        <div class="dashboard-hero dashboard-panel">
-          <p class="dashboard-label">01 / OVERVIEW</p>
+        <div class="dashboard-hero">
           <p class="tag" id="dashboard-tag"></p>
           <h2 id="dashboard-title"></h2>
           <p id="dashboard-summary"></p>
-          <div class="dashboard-overview-stack">
-            <p class="dashboard-label">TECH STACK</p>
-            <div class="dashboard-stack" id="dashboard-stack"></div>
-          </div>
+          <div class="dashboard-stack" id="dashboard-stack" aria-label="Technologies"></div>
         </div>
-        <div class="dashboard-panel dashboard-highlights-panel">
-          <p class="dashboard-label">02 / WHY IT STANDS OUT</p>
+        <aside class="dashboard-aside" id="dashboard-aside" aria-label="Project demos and visuals">
+          <div class="dashboard-media-heading" id="dashboard-media-heading"><h3 class="dashboard-label">Demos &amp; visuals</h3></div>
+          <div class="dashboard-media-grid" id="dashboard-media-grid"></div>
+        </aside>
+        <section class="dashboard-highlights-panel" aria-labelledby="dashboard-highlights-label">
+          <h3 class="dashboard-label" id="dashboard-highlights-label">At a glance</h3>
           <ul id="dashboard-highlights"></ul>
-        </div>
-        <div class="dashboard-panel dashboard-build-panel">
-          <p class="dashboard-label">03 / DETAILS</p>
+        </section>
+        <section class="dashboard-build-panel" aria-labelledby="dashboard-details-label">
+          <h3 class="dashboard-label" id="dashboard-details-label">What I built</h3>
           <ul id="dashboard-details"></ul>
-        </div>
-        <div class="dashboard-media-heading" id="dashboard-media-heading"><p class="dashboard-label">04 / DEMOS &amp; DATA</p></div>
-        <div class="dashboard-media-grid" id="dashboard-media-grid"></div>
-        <div class="dashboard-panel dashboard-resources-panel" id="dashboard-resources-panel">
-          <p class="dashboard-label" id="dashboard-resources-label">05 / PROJECT LINKS</p>
+        </section>
+        <div class="dashboard-resources-panel" id="dashboard-resources-panel">
           <div class="dashboard-resources" id="dashboard-resources"></div>
         </div>
       </div>
@@ -230,5 +254,6 @@
   </div>
 
   <script src="script.js"></script>
+  <script src="skills.js" defer></script>
 </body>
 </html>
