@@ -409,7 +409,6 @@
   max-width: 960px;
   padding: 26px 30px;
   border: 1px solid #345168;
-  border-left: 3px solid var(--mint);
   border-radius: 12px;
   background: #0b1d30;
 }
