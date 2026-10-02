@@ -543,7 +543,18 @@ function openDashboardImage(button, trigger) {
   image.src = button.dataset.image;
   image.alt = button.dataset.imageDescription || title.textContent;
   image.decoding = 'async';
-  viewer.append(back, title, image);
+  viewer.append(back, title);
+  if (button.classList.contains('dashboard-diagram-expand')) {
+    const scroll = document.createElement('div');
+    scroll.className = 'dashboard-diagram-scroll';
+    scroll.tabIndex = 0;
+    scroll.setAttribute('role', 'region');
+    scroll.setAttribute('aria-label', `${title.textContent}; scroll horizontally to explore`);
+    scroll.appendChild(image);
+    viewer.appendChild(scroll);
+  } else {
+    viewer.appendChild(image);
+  }
   if (button.dataset.imageDescription) {
     const caption = document.createElement('p');
     caption.className = 'dashboard-media-caption';
@@ -612,16 +623,35 @@ function openProjectDashboard(card, trigger) {
   const mediaHeading = document.querySelector('#dashboard-media-heading');
   const resourcesPanel = document.querySelector('#dashboard-resources-panel');
   const resources = document.querySelector('#dashboard-resources');
+  const story = card.querySelector('.project-story');
+  const storyPanel = document.querySelector('#dashboard-story');
+  const systems = card.querySelector('.project-systems');
+  const systemsPanel = document.querySelector('#dashboard-systems');
 
   closeDashboardImage(false);
   projectDashboardTrigger = trigger;
   projectDashboard.style.setProperty('--tile-accent', accent);
+  projectDashboard.dataset.project = card.dataset.project || '';
+  projectDashboard.classList.toggle('has-systems', Boolean(systems));
   document.querySelector('#dashboard-file').textContent = 'Project details';
   document.querySelector('#dashboard-tag').textContent = tag;
   document.querySelector('#dashboard-title').textContent = title;
   document.querySelector('#dashboard-summary').textContent = summary;
   document.querySelector('#dashboard-highlights').innerHTML = card.querySelector('.project-highlights').innerHTML;
+  document.querySelector('#dashboard-highlights').hidden = Boolean(story);
+  document.querySelector('#dashboard-highlights-label').textContent = story?.dataset.heading || 'At a glance';
+  storyPanel.replaceChildren(...(story ? [story.content.cloneNode(true)] : []));
+  storyPanel.hidden = !story;
   document.querySelector('#dashboard-details').innerHTML = detailList?.innerHTML || '';
+  document.querySelector('.dashboard-build-panel').hidden = !detailList?.children.length;
+  systemsPanel.replaceChildren(...(systems ? [systems.content.cloneNode(true)] : []));
+  systemsPanel.hidden = !systems;
+  const systemsTitle = systemsPanel.querySelector('h3[id]');
+  if (systemsTitle) systemsPanel.setAttribute('aria-labelledby', systemsTitle.id);
+  else systemsPanel.removeAttribute('aria-labelledby');
+  systemsPanel.querySelectorAll('.dashboard-diagram-expand').forEach(button => {
+    button.addEventListener('click', () => openDashboardImage(button, button));
+  });
   document.querySelector('#dashboard-stack').replaceChildren(
     ...[...card.querySelectorAll('.project-meta span')].map(item => item.cloneNode(true))
   );

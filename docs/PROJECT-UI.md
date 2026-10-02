@@ -14,6 +14,12 @@ Preview locally with `python -m http.server 8765`, then open
 `http://localhost:8765`. Videos load from Google Drive when their preview is
 clicked. Each video also has a direct link. Headers and charts are local assets.
 
+ECoffe adds optional `project-story` and `project-systems` HTML templates to its
+project card. The shared dialog clones them on open and clears them when a
+different project is selected. Its gameplay loop appears above its subsystem
+diagram; each SVG can be expanded and scrolled horizontally on narrow screens.
+The README banner is stored locally and displayed without cropping.
+
 ## Using the original React component
 
 The current site has no React, TypeScript, Tailwind or shadcn runtime. For a
