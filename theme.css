@@ -331,6 +331,120 @@ body {
   color: var(--text);
 }
 
+/* Project details use the same quiet card language as the main portfolio. */
+.project-dashboard {
+  --tile-accent: var(--pink) !important;
+  border-radius: 20px;
+  background: #fbf8f4;
+  box-shadow: 0 26px 80px rgba(77, 51, 46, .2);
+}
+
+.dashboard-topbar {
+  background: #eaded7;
+  border-bottom-color: #c9b2a8;
+}
+
+.dashboard-content {
+  background: #fbf8f4;
+}
+
+.dashboard-highlights-panel,
+.dashboard-build-panel,
+.dashboard-systems-panel {
+  margin-top: 18px;
+  padding: 20px 22px;
+  border: 1px solid #d8c6bd;
+  border-radius: 14px;
+  background: #fffaf6;
+}
+
+.dashboard-highlights-panel,
+.dashboard-build-panel {
+  border-top: 1px solid #d8c6bd;
+}
+
+.dashboard-aside {
+  border-left-color: #d8c6bd;
+}
+
+.dashboard-media-panel,
+.dashboard-media-panel:only-child,
+.dashboard-media-grid[data-count="3"] .dashboard-media-panel {
+  padding: 14px;
+  border: 1px solid #d8c6bd;
+  border-radius: 12px;
+  background: #fffaf6;
+}
+
+.dashboard-media-panel h3 { color: var(--text); }
+.dashboard-label { color: var(--pink); }
+
+.project-dashboard li::marker { color: var(--pink); }
+.project-dashboard strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.dashboard-build-panel code,
+.project-dashboard code {
+  padding: .12em .38em;
+  border: 1px solid #cfbbb2;
+  border-radius: 4px;
+  background: #eaded7;
+  color: #4d332e;
+  font-size: .9em;
+  font-weight: 700;
+}
+
+.dashboard-stack span {
+  color: #755f58;
+}
+
+.dashboard-media-link.is-prominent {
+  border-color: var(--text);
+  background: var(--text);
+  color: var(--bg);
+  box-shadow: none;
+}
+
+.dashboard-media-link.is-prominent:hover,
+.dashboard-media-link.is-prominent:focus-visible {
+  background: var(--pink);
+  box-shadow: none;
+}
+
+.dashboard-close:hover,
+.dashboard-close:focus-visible {
+  border-color: var(--text);
+  background: var(--text);
+  color: var(--bg);
+  box-shadow: none;
+}
+
+.dashboard-diagram-expand:hover,
+.dashboard-diagram-expand:focus-visible,
+.dashboard-image-back:hover,
+.dashboard-image-back:focus-visible,
+.dashboard-resources a:hover,
+.dashboard-resources a:focus-visible {
+  border-color: var(--pink);
+  background: #eaded7;
+  color: var(--text);
+  box-shadow: none;
+}
+
+.dashboard-media-preview:hover,
+.dashboard-media-preview:focus-visible { border-color: var(--pink); }
+
+.dashboard-media-preview:hover .dashboard-media-play,
+.dashboard-media-preview:focus-visible .dashboard-media-play,
+.dashboard-media-preview:hover .dashboard-media-zoom,
+.dashboard-media-preview:focus-visible .dashboard-media-zoom {
+  border-color: var(--pink);
+  background: var(--text);
+  color: var(--bg);
+}
+
 @media (max-width: 850px) {
   .hero.compact-hero {
     min-height: 560px;
@@ -355,5 +469,14 @@ body {
     min-height: 590px;
     padding-top: 104px;
     padding-bottom: 58px;
+  }
+
+  .dashboard-highlights-panel,
+  .dashboard-build-panel,
+  .dashboard-systems-panel { padding: 17px; }
+
+  .dashboard-aside {
+    border-left: 0;
+    border-top-color: #d8c6bd;
   }
 }

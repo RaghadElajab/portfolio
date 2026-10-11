@@ -4,23 +4,23 @@
 
   <defs>
     <marker id="arrow" markerWidth="16" markerHeight="16" refX="14" refY="8" orient="auto" markerUnits="userSpaceOnUse">
-      <path d="M 0 0 L 16 8 L 0 16 z" fill="#39434d"/>
+      <path d="M 0 0 L 16 8 L 0 16 z" fill="#4b302d"/>
     </marker>
     <filter id="shadow" x="-10%" y="-15%" width="120%" height="140%">
-      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#18212a" flood-opacity="0.13"/>
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#4b302d" flood-opacity="0.13"/>
     </filter>
     <style>
-      .title { font: 700 46px Arial, Helvetica, sans-serif; fill: #17212b; }
-      .subtitle { font: 400 23px Arial, Helvetica, sans-serif; fill: #5c6873; }
-      .label { font: 700 26px Arial, Helvetica, sans-serif; fill: #17212b; text-anchor: middle; }
-      .small { font: 400 18px Arial, Helvetica, sans-serif; fill: #4c5964; text-anchor: middle; }
-      .stage { font: 700 17px Arial, Helvetica, sans-serif; fill: #ffffff; text-anchor: middle; letter-spacing: 0; }
-      .arrow { stroke: #39434d; stroke-width: 5; fill: none; marker-end: url(#arrow); }
+      .title { font: 700 46px Arial, Helvetica, sans-serif; fill: #4b302d; }
+      .subtitle { font: 400 23px Arial, Helvetica, sans-serif; fill: #765f57; }
+      .label { font: 700 26px Arial, Helvetica, sans-serif; fill: #4b302d; text-anchor: middle; }
+      .small { font: 400 18px Arial, Helvetica, sans-serif; fill: #765f57; text-anchor: middle; }
+      .stage { font: 700 17px Arial, Helvetica, sans-serif; fill: #fffaf6; text-anchor: middle; letter-spacing: 0; }
+      .arrow { stroke: #4b302d; stroke-width: 5; fill: none; marker-end: url(#arrow); }
       .box { stroke-width: 3; rx: 8; filter: url(#shadow); }
     </style>
   </defs>
 
-  <rect width="1800" height="760" fill="#ffffff"/>
+  <rect width="1800" height="760" fill="#fffaf6"/>
   <text x="900" y="74" class="title" text-anchor="middle">Jersey-Color Classification and Team-Role Mapping</text>
   <text x="900" y="112" class="subtitle" text-anchor="middle">From camera input to a match-aware identity decision</text>
 
@@ -32,37 +32,37 @@
   <path class="arrow" d="M 1440 310 H 1492"/>
 
   <!-- Stage 1 -->
-  <rect x="42" y="220" width="238" height="180" class="box" fill="#eef6f8" stroke="#238293"/>
-  <rect x="42" y="220" width="238" height="38" rx="8" fill="#238293"/>
+  <rect x="42" y="220" width="238" height="180" class="box" fill="#f7f1eb" stroke="#9a6f67"/>
+  <rect x="42" y="220" width="238" height="38" rx="8" fill="#9a6f67"/>
   <text x="161" y="246" class="stage">INPUT</text>
-  <circle cx="161" cy="302" r="27" fill="#238293"/>
-  <rect x="141" y="288" width="40" height="29" rx="4" fill="#ffffff"/>
-  <circle cx="161" cy="302" r="9" fill="#238293"/>
-  <path d="M 181 294 L 194 286 V 318 L 181 310 Z" fill="#ffffff"/>
+  <circle cx="161" cy="302" r="27" fill="#9a6f67"/>
+  <rect x="141" y="288" width="40" height="29" rx="4" fill="#fffaf6"/>
+  <circle cx="161" cy="302" r="9" fill="#9a6f67"/>
+  <path d="M 181 294 L 194 286 V 318 L 181 310 Z" fill="#fffaf6"/>
   <text x="161" y="353" class="label">Camera Image</text>
   <text x="161" y="383" class="small">Live RGB frame</text>
 
   <!-- Stage 2 -->
-  <rect x="332" y="220" width="238" height="180" class="box" fill="#f0f5fa" stroke="#3679ad"/>
-  <rect x="332" y="220" width="238" height="38" rx="8" fill="#3679ad"/>
+  <rect x="332" y="220" width="238" height="180" class="box" fill="#f3eae5" stroke="#b56270"/>
+  <rect x="332" y="220" width="238" height="38" rx="8" fill="#b56270"/>
   <text x="451" y="246" class="stage">PERCEPTION</text>
-  <rect x="414" y="278" width="74" height="53" fill="none" stroke="#3679ad" stroke-width="5"/>
-  <path d="M 405 290 V 270 H 425 M 477 270 H 497 V 290 M 405 319 V 339 H 425 M 477 339 H 497 V 319" fill="none" stroke="#3679ad" stroke-width="5"/>
+  <rect x="414" y="278" width="74" height="53" fill="none" stroke="#b56270" stroke-width="5"/>
+  <path d="M 405 290 V 270 H 425 M 477 270 H 497 V 290 M 405 319 V 339 H 425 M 477 339 H 497 V 319" fill="none" stroke="#b56270" stroke-width="5"/>
   <text x="451" y="353" class="label">Robot Detector</text>
   <text x="451" y="383" class="small">Find player bounding box</text>
 
   <!-- Stage 3 -->
-  <rect x="622" y="220" width="238" height="180" class="box" fill="#f7f3e8" stroke="#a97813"/>
-  <rect x="622" y="220" width="238" height="38" rx="8" fill="#a97813"/>
+  <rect x="622" y="220" width="238" height="180" class="box" fill="#f7f1eb" stroke="#9a6f67"/>
+  <rect x="622" y="220" width="238" height="38" rx="8" fill="#9a6f67"/>
   <text x="741" y="246" class="stage">PREPROCESSING</text>
-  <path d="M 720 281 H 762 L 777 300 L 762 331 H 720 L 705 300 Z" fill="none" stroke="#a97813" stroke-width="5"/>
-  <rect x="721" y="292" width="40" height="25" fill="#ead394" stroke="#a97813" stroke-width="3"/>
+  <path d="M 720 281 H 762 L 777 300 L 762 331 H 720 L 705 300 Z" fill="none" stroke="#9a6f67" stroke-width="5"/>
+  <rect x="721" y="292" width="40" height="25" fill="#ead394" stroke="#9a6f67" stroke-width="3"/>
   <text x="741" y="353" class="label">Torso Crop</text>
   <text x="741" y="383" class="small">Reduce body/background noise</text>
 
   <!-- Stage 4 -->
-  <rect x="912" y="220" width="238" height="180" class="box" fill="#f4f0f7" stroke="#76508d"/>
-  <rect x="912" y="220" width="238" height="38" rx="8" fill="#76508d"/>
+  <rect x="912" y="220" width="238" height="180" class="box" fill="#f3eae5" stroke="#b56270"/>
+  <rect x="912" y="220" width="238" height="38" rx="8" fill="#b56270"/>
   <text x="1031" y="246" class="stage">CLASSIFICATION</text>
   <circle cx="1005" cy="302" r="13" fill="#d64545"/>
   <circle cx="1031" cy="287" r="13" fill="#e5b62f"/>
@@ -72,45 +72,45 @@
   <text x="1031" y="383" class="small">ONNX model / HSV fallback</text>
 
   <!-- Stage 5 -->
-  <rect x="1202" y="220" width="238" height="180" class="box" fill="#edf7f2" stroke="#34855f"/>
-  <rect x="1202" y="220" width="238" height="38" rx="8" fill="#34855f"/>
+  <rect x="1202" y="220" width="238" height="180" class="box" fill="#f7f1eb" stroke="#9a6f67"/>
+  <rect x="1202" y="220" width="238" height="38" rx="8" fill="#9a6f67"/>
   <text x="1321" y="246" class="stage">VISION OUTPUT</text>
-  <path d="M 1288 282 H 1354 V 323 H 1288 Z M 1300 294 H 1342 M 1300 306 H 1333" fill="none" stroke="#34855f" stroke-width="5"/>
+  <path d="M 1288 282 H 1354 V 323 H 1288 Z M 1300 294 H 1342 M 1300 306 H 1333" fill="none" stroke="#9a6f67" stroke-width="5"/>
   <text x="1321" y="353" class="label">Publish Color</text>
   <text x="1321" y="383" class="small">DetectedObject.color</text>
 
   <!-- Stage 6 -->
-  <rect x="1492" y="220" width="266" height="180" class="box" fill="#fff3f0" stroke="#b94e3d"/>
-  <rect x="1492" y="220" width="266" height="38" rx="8" fill="#b94e3d"/>
+  <rect x="1492" y="220" width="266" height="180" class="box" fill="#f3eae5" stroke="#b56270"/>
+  <rect x="1492" y="220" width="266" height="38" rx="8" fill="#b56270"/>
   <text x="1625" y="246" class="stage">BRAIN MAPPING</text>
-  <path d="M 1594 283 H 1656 M 1625 271 V 333" stroke="#b94e3d" stroke-width="5"/>
-  <circle cx="1594" cy="283" r="9" fill="#b94e3d"/>
-  <circle cx="1656" cy="283" r="9" fill="#b94e3d"/>
-  <circle cx="1625" cy="333" r="9" fill="#b94e3d"/>
+  <path d="M 1594 283 H 1656 M 1625 271 V 333" stroke="#b56270" stroke-width="5"/>
+  <circle cx="1594" cy="283" r="9" fill="#b56270"/>
+  <circle cx="1656" cy="283" r="9" fill="#b56270"/>
+  <circle cx="1625" cy="333" r="9" fill="#b56270"/>
   <text x="1625" y="353" class="label">Compare Colors</text>
   <text x="1625" y="383" class="small">Predicted vs assigned colors</text>
 
   <!-- GameController input -->
   <path class="arrow" d="M 1390 545 H 1450 Q 1470 545 1470 525 V 330 Q 1470 310 1492 310"/>
-  <rect x="960" y="468" width="430" height="150" class="box" fill="#f1f5f7" stroke="#596c79"/>
-  <rect x="960" y="468" width="430" height="38" rx="8" fill="#596c79"/>
+  <rect x="960" y="468" width="430" height="150" class="box" fill="#f7f1eb" stroke="#9a6f67"/>
+  <rect x="960" y="468" width="430" height="38" rx="8" fill="#9a6f67"/>
   <text x="1175" y="494" class="stage">MATCH CONFIGURATION INPUT</text>
   <text x="1175" y="548" class="label">RoboCup GameController</text>
   <text x="1175" y="582" class="small">Field-player color + goalkeeper color</text>
 
   <!-- Final role output -->
   <path class="arrow" d="M 1625 400 V 478"/>
-  <rect x="1492" y="492" width="266" height="172" class="box" fill="#f5f7f8" stroke="#39434d"/>
-  <rect x="1492" y="492" width="266" height="38" rx="8" fill="#39434d"/>
+  <rect x="1492" y="492" width="266" height="172" class="box" fill="#fffaf6" stroke="#4b302d"/>
+  <rect x="1492" y="492" width="266" height="38" rx="8" fill="#4b302d"/>
   <text x="1625" y="518" class="stage">FINAL OUTPUT</text>
-  <rect x="1517" y="551" width="92" height="42" rx="6" fill="#dff3e8" stroke="#34855f" stroke-width="2"/>
-  <text x="1563" y="579" class="small" style="font-weight:700; fill:#256c4c">Teammate</text>
-  <rect x="1617" y="551" width="92" height="42" rx="6" fill="#fde4df" stroke="#b94e3d" stroke-width="2"/>
-  <text x="1663" y="579" class="small" style="font-weight:700; fill:#953d30">Opponent</text>
-  <rect x="1567" y="604" width="116" height="38" rx="6" fill="#e8ecef" stroke="#687681" stroke-width="2"/>
-  <text x="1625" y="630" class="small" style="font-weight:700; fill:#4c5964">Unknown</text>
+  <rect x="1517" y="551" width="92" height="42" rx="6" fill="#eaded7" stroke="#9a6f67" stroke-width="2"/>
+  <text x="1563" y="579" class="small" style="font-weight:700; fill:#4b302d">Teammate</text>
+  <rect x="1617" y="551" width="92" height="42" rx="6" fill="#f3eae5" stroke="#b56270" stroke-width="2"/>
+  <text x="1663" y="579" class="small" style="font-weight:700; fill:#4b302d">Opponent</text>
+  <rect x="1567" y="604" width="116" height="38" rx="6" fill="#eaded7" stroke="#9a6f67" stroke-width="2"/>
+  <text x="1625" y="630" class="small" style="font-weight:700; fill:#765f57">Unknown</text>
 
   <!-- Bottom note -->
   <text x="42" y="712" class="subtitle">Unknown is returned when a required color is missing, unsupported, or insufficiently reliable.</text>
-  <line x1="42" y1="684" x2="1758" y2="684" stroke="#d7dde1" stroke-width="2"/>
+  <line x1="42" y1="684" x2="1758" y2="684" stroke="#c9b2a8" stroke-width="2"/>
 </svg>

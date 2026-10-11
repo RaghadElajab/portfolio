@@ -2,14 +2,14 @@
 <title id="ecoffe-systems-title">The interconnected systems behind ECoffe</title>
 <desc id="ecoffe-systems-desc">XR grab, poke and ray input drives drink ingredient tracking and food cooking state. Customer orders select unlocked recipes. Prepared ingredients and cooking state feed recipe validation, while sustainable utensils affect the score and sustainability rating. Customer AI includes sustainability dialogue and thieves that reduce tips. Completing the shift opens waste sorting and the daily review. Sorting bonuses and shift earnings feed the economy and shop. Purchases update the recipe book, preparation tools and decorations; decor perks affect patience and special customer odds. Local JSON saves retain coins, purchases, day scores and sustainability ratings.</desc>
 <defs>
-  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#10283e"/><stop offset="1" stop-color="#0b1d30"/></linearGradient>
-  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 9 5 1 9" fill="none" stroke="#84edbb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
-  <marker id="blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1 9 5 1 9" fill="none" stroke="#65c7e8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
-  <marker id="pink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M1 1 9 5 1 9" fill="none" stroke="#ff9bc3" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
-  <style>text { font-family:Arial,Helvetica,sans-serif; } .node { fill:#132e44; stroke:#355068; stroke-width:1.5; } .heading { fill:#f2f6fa; font-size:22px; font-weight:700; } .copy { fill:#c7d6e4; font-size:18px; } .flow { fill:none; stroke:#84edbb; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; marker-end:url(#arrow); } .label { fill:#b4f3d3; font-size:16px; } .education { fill:none; stroke:#ff9bc3; stroke-width:1.8; stroke-dasharray:3 6; stroke-linecap:round; marker-end:url(#pink); }</style>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7f1eb"/><stop offset="1" stop-color="#fffaf6"/></linearGradient>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 9 5 1 9" fill="none" stroke="#9a6f67" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  <marker id="blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1 9 5 1 9" fill="none" stroke="#b56270" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  <marker id="pink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M1 1 9 5 1 9" fill="none" stroke="#c77d87" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  <style>text { font-family:Arial,Helvetica,sans-serif; } .node { fill:#fffaf6; stroke:#c9b2a8; stroke-width:1.5; } .heading { fill:#4d332e; font-size:22px; font-weight:700; } .copy { fill:#765f57; font-size:18px; } .flow { fill:none; stroke:#9a6f67; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; marker-end:url(#arrow); } .label { fill:#755f58; font-size:16px; } .education { fill:none; stroke:#c77d87; stroke-width:1.8; stroke-dasharray:3 6; stroke-linecap:round; marker-end:url(#pink); }</style>
 </defs>
 <rect width="1200" height="900" rx="22" fill="url(#bg)"/>
-<rect x=".75" y=".75" width="1198.5" height="898.5" rx="21.25" fill="none" stroke="#355068" stroke-width="1.5"/>
+<rect x=".75" y=".75" width="1198.5" height="898.5" rx="21.25" fill="none" stroke="#c9b2a8" stroke-width="1.5"/>
 
 <!-- Input drives stateful preparation. -->
 <path class="flow" d="M600 141V174"/>
@@ -27,21 +27,21 @@
 <text class="label" x="800" y="229" text-anchor="middle">item state</text>
 <g>
   <rect class="node" x="50" y="180" width="300" height="132" rx="16"/>
-  <rect x="72" y="200" width="30" height="4" rx="2" fill="#84edbb"/>
+  <rect x="72" y="200" width="30" height="4" rx="2" fill="#9a6f67"/>
   <text class="heading" x="72" y="235">Customers + orders</text>
   <text class="copy" x="72" y="265">Unlocked recipes + patience</text>
   <text class="copy" x="72" y="290">Day / night + special guests</text>
 </g>
 <g>
   <rect class="node" x="450" y="180" width="300" height="132" rx="16"/>
-  <rect x="472" y="200" width="30" height="4" rx="2" fill="#65c7e8"/>
+  <rect x="472" y="200" width="30" height="4" rx="2" fill="#b56270"/>
   <text class="heading" x="472" y="235">Drink + food state</text>
   <text class="copy" x="472" y="265">Track ingredients in each cup</text>
   <text class="copy" x="472" y="290">Food toppings + cooked state</text>
 </g>
 <g>
   <rect class="node" x="850" y="180" width="300" height="132" rx="16"/>
-  <rect x="872" y="200" width="30" height="4" rx="2" fill="#ff9bc3"/>
+  <rect x="872" y="200" width="30" height="4" rx="2" fill="#c77d87"/>
   <text class="heading" x="872" y="235">Validation + scoring</text>
   <text class="copy" x="872" y="265">Compare order with recipe</text>
   <text class="copy" x="872" y="290">Score sustainable serving</text>
@@ -49,10 +49,10 @@
 
 <!-- Educational customer dialogue is independent of the reward calculation. -->
 <path class="education" d="M352 295H402Q414 295 414 307V393Q414 405 426 405H444"/>
-<text x="339" y="357" fill="#ffb4d2" font-size="14">angry guest</text>
+<text x="339" y="357" fill="#b56270" font-size="14">angry guest</text>
 <g>
-  <rect x="450" y="365" width="300" height="80" rx="14" fill="#263044" stroke="#775770" stroke-width="1.5"/>
-  <text x="472" y="399" fill="#ffb4d2" font-size="22" font-weight="700">AI customer dialogue</text>
+  <rect x="450" y="365" width="300" height="80" rx="14" fill="#f3eae5" stroke="#b56270" stroke-width="1.5"/>
+  <text x="472" y="399" fill="#b56270" font-size="22" font-weight="700">AI customer dialogue</text>
   <text class="copy" x="472" y="425">Explain sustainable choices</text>
 </g>
 
@@ -73,47 +73,47 @@
 <path class="flow" d="M848 285H812Q800 285 800 297V478Q800 490 788 490H732Q720 490 720 502V554"/>
 <text class="label" x="643" y="478">shift earnings</text>
 <path class="education" d="M330 314V513Q330 525 342 525H488Q500 525 500 537V554"/>
-<text x="349" y="513" fill="#ffb4d2" font-size="16">thieves reduce tips</text>
+<text x="349" y="513" fill="#b56270" font-size="16">thieves reduce tips</text>
 <path class="flow" d="M448 626H356"/>
 <text class="label" x="400" y="609" text-anchor="middle">purchases</text>
 <path class="flow" d="M848 626H756"/>
 <text class="label" x="800" y="609" text-anchor="middle">bonus</text>
 <!-- The shift ends after the customer sequence and opens the sorting game. -->
 <path class="flow" d="M200 178V34Q200 22 212 22H1161Q1173 22 1173 34V614Q1173 626 1161 626H1156"/>
-<rect x="651" y="9" width="128" height="25" rx="8" fill="#10263b"/>
+<rect x="651" y="9" width="128" height="25" rx="8" fill="#eaded7"/>
 <text class="label" x="715" y="27" text-anchor="middle">shift ends</text>
 
 <g>
   <rect class="node" x="50" y="560" width="300" height="132" rx="16"/>
-  <rect x="72" y="580" width="30" height="4" rx="2" fill="#ff9bc3"/>
+  <rect x="72" y="580" width="30" height="4" rx="2" fill="#c77d87"/>
   <text class="heading" x="72" y="615">Inventory + unlocks</text>
   <text class="copy" x="72" y="645">Recipe book + preparation tools</text>
   <text class="copy" x="72" y="670">Decorations + gameplay perks</text>
 </g>
 <g>
   <rect class="node" x="450" y="560" width="300" height="132" rx="16"/>
-  <rect x="472" y="580" width="30" height="4" rx="2" fill="#84edbb"/>
+  <rect x="472" y="580" width="30" height="4" rx="2" fill="#9a6f67"/>
   <text class="heading" x="472" y="615">Economy + shop</text>
   <text class="copy" x="472" y="645">Combine earnings + bonuses</text>
   <text class="copy" x="472" y="670">Buy recipes + caf&#233; d&#233;cor</text>
 </g>
 <g>
   <rect class="node" x="850" y="560" width="300" height="132" rx="16"/>
-  <rect x="872" y="580" width="30" height="4" rx="2" fill="#65c7e8"/>
+  <rect x="872" y="580" width="30" height="4" rx="2" fill="#b56270"/>
   <text class="heading" x="872" y="615">Waste sorting + review</text>
   <text class="copy" x="872" y="645">Match thrown items to bins</text>
   <text class="copy" x="872" y="670">Award bonuses + daily review</text>
 </g>
 
 <!-- Persistent state underpins the connected scenes. -->
-<g fill="none" stroke="#65c7e8" stroke-width="1.8" stroke-dasharray="5 7" stroke-linecap="round" marker-start="url(#blue)" marker-end="url(#blue)">
+<g fill="none" stroke="#b56270" stroke-width="1.8" stroke-dasharray="5 7" stroke-linecap="round" marker-start="url(#blue)" marker-end="url(#blue)">
   <path d="M200 703V775"/>
   <path d="M600 703V775"/>
   <path d="M1000 703V775"/>
 </g>
-<rect x="50" y="785" width="1100" height="85" rx="16" fill="#153447" stroke="#497183" stroke-width="1.5"/>
-<text x="74" y="819" fill="#f2f6fa" font-size="22" font-weight="700">Saved progress across the game</text>
-<text x="74" y="850" fill="#c7d6e4" font-size="18">Coins &#183; unlocked recipes + d&#233;cor &#183; day score &#183; sustainability rating</text>
-<rect x="945" y="807" width="182" height="39" rx="11" fill="#23475a"/>
-<text x="1036" y="833" fill="#9bdcf0" font-size="18" font-weight="700" text-anchor="middle">Local JSON save</text>
+<rect x="50" y="785" width="1100" height="85" rx="16" fill="#eaded7" stroke="#c9b2a8" stroke-width="1.5"/>
+<text x="74" y="819" fill="#4d332e" font-size="22" font-weight="700">Saved progress across the game</text>
+<text x="74" y="850" fill="#765f57" font-size="18">Coins &#183; unlocked recipes + d&#233;cor &#183; day score &#183; sustainability rating</text>
+<rect x="945" y="807" width="182" height="39" rx="11" fill="#ddcec7"/>
+<text x="1036" y="833" fill="#b56270" font-size="18" font-weight="700" text-anchor="middle">Local JSON save</text>
 </svg>

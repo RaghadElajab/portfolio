@@ -7,13 +7,13 @@ from pathlib import Path
 from html import escape
 
 ROOT = Path(__file__).resolve().parents[1] / "assets"
-BG = "#091827"
-PANEL = "#102638"
-LINE = "#294557"
-TEXT = "#e7f2f1"
-MUTED = "#9eb5c1"
-MINT = "#8ce7c0"
-PINK = "#f48cba"
+BG = "#f7f1eb"
+PANEL = "#fffaf6"
+LINE = "#c9b2a8"
+TEXT = "#4b302d"
+MUTED = "#765f57"
+MINT = "#9a6f67"
+PINK = "#b56270"
 
 
 def text(x, y, value, size=24, color=TEXT, weight=400, anchor="start", extra=""):
@@ -35,7 +35,7 @@ def arrow(x1, y1, x2, y2, color=MINT):
 def svg(name, title, description, body, width=1200, height=675):
     content = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">
 <title id="title">{escape(title)}</title><desc id="desc">{escape(description)}</desc>
-<defs><radialGradient id="glow"><stop stop-color="#173d45"/><stop offset="1" stop-color="{BG}"/></radialGradient></defs>
+<defs><radialGradient id="glow"><stop stop-color="#eaded7"/><stop offset="1" stop-color="{BG}"/></radialGradient></defs>
 <rect width="100%" height="100%" fill="{BG}"/>
 <ellipse cx="900" cy="60" rx="600" ry="550" fill="url(#glow)" opacity=".65"/>
 <g font-family="Segoe UI, Arial, sans-serif">{body}</g></svg>'''
@@ -73,7 +73,7 @@ body += text(98, 381, "$ ls | sort", 33, MINT, 600, extra='font-family="Consolas
 body += text(98, 438, "input / output", 24, MUTED)
 body += arrow(374, 363, 451, 363) + text(412, 334, "TCP", 18, MUTED, anchor="middle")
 body += text(502, 314, "SHELL SERVER", 20, MUTED, 600)
-body += rect(501, 342, 260, 75, "#173b3d", 12, "#2a5953") + rect(802, 342, 300, 75, "#302b43", 12, "#584059")
+body += rect(501, 342, 260, 75, "#eaded7", 12, "#9a6f67") + rect(802, 342, 300, 75, "#f3eae5", 12, "#b56270")
 body += text(631, 389, "fork / exec", 31, MINT, 600, "middle") + text(952, 389, "Unix pipes", 31, PINK, 600, "middle")
 body += arrow(771, 379, 790, 379) + text(502, 459, "Up to four command stages", 24, MUTED)
 body += footer("C · POSIX · TCP sockets · Per-client working directory")
@@ -172,6 +172,41 @@ for crop,data in matrices.items():
     body+=rect(legend_x,y0+20,20,20,MINT,4,MINT)+text(legend_x+32,y0+37,"Correct",19,MUTED)
     body+=rect(legend_x,y0+58,20,20,PINK,4,PINK)+text(legend_x+32,y0+75,"Error",19,MUTED)
     body+=text(64,959,data["caption"],23,MUTED)
-    svg(f"crop-efficientnet-{crop}-confusion-matrix.svg", f"EfficientNet-B0 {crop} confusion matrix", f"Verified image counts for {crop}, with actual classes in rows and predicted classes in columns. Mint marks correct predictions; pink marks errors.",body,height=1000)
+    svg(f"crop-efficientnet-{crop}-confusion-matrix.svg", f"EfficientNet-B0 {crop} confusion matrix", f"Verified image counts for {crop}, with actual classes in rows and predicted classes in columns. Taupe marks correct predictions; dusty pink marks errors.",body,height=1000)
+
+
+def recolor_existing(name, replacements):
+    target = ROOT.parent / name
+    content = target.read_text(encoding="utf-8")
+    for old, new in replacements.items():
+        content = content.replace(old, new)
+    target.write_text(content, encoding="utf-8")
+
+
+# Standalone diagrams use the same cream, brown, taupe, and dusty-pink system.
+ecoffe_palette = {
+    "#10283e": "#f7f1eb", "#0b1d30": "#fffaf6", "#132e44": "#fffaf6",
+    "#10263b": "#eaded7", "#153447": "#eaded7", "#23475a": "#ddcec7",
+    "#263044": "#f3eae5", "#355068": "#c9b2a8", "#497183": "#c9b2a8",
+    "#84edbb": "#9a6f67", "#65c7e8": "#b56270", "#ff9bc3": "#c77d87",
+    "#b4f3d3": "#755f58", "#9bdcf0": "#b56270", "#ffb4d2": "#b56270",
+    "#775770": "#b56270", "#c7d6e4": "#765f57", "#f2f6fa": "#4d332e",
+}
+recolor_existing("assets/ecoffe-gameplay-loop.svg", ecoffe_palette)
+recolor_existing("assets/ecoffe-systems.svg", ecoffe_palette)
+
+jersey_palette = {
+    "#ffffff": "#fffaf6", "#17212b": "#4b302d", "#18212a": "#4b302d",
+    "#39434d": "#4b302d", "#4c5964": "#765f57", "#5c6873": "#765f57",
+    "#596c79": "#9a6f67", "#687681": "#9a6f67", "#d7dde1": "#c9b2a8",
+    "#238293": "#9a6f67", "#3679ad": "#b56270", "#a97813": "#9a6f67",
+    "#76508d": "#b56270", "#34855f": "#9a6f67", "#b94e3d": "#b56270",
+    "#eef6f8": "#f7f1eb", "#f0f5fa": "#f3eae5", "#f7f3e8": "#f7f1eb",
+    "#f4f0f7": "#f3eae5", "#edf7f2": "#f7f1eb", "#fff3f0": "#f3eae5",
+    "#f1f5f7": "#f7f1eb", "#f5f7f8": "#fffaf6", "#dff3e8": "#eaded7",
+    "#fde4df": "#f3eae5", "#e8ecef": "#eaded7", "#256c4c": "#4b302d",
+    "#953d30": "#4b302d",
+}
+recolor_existing("figure-2-jersey-color-pipeline.svg", jersey_palette)
 
 print("Built four project diagrams and three crop charts.")
