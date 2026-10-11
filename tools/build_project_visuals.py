@@ -79,6 +79,21 @@ body += arrow(771, 379, 790, 379) + text(502, 459, "Up to four command stages", 
 body += footer("C · POSIX · TCP sockets · Per-client working directory")
 svg("project-shell.svg", "Networked shell architecture", "Architecture diagram: CLI client sends commands over TCP to a shell server using fork, exec and Unix pipes.", body)
 
+body = label("REVERSE-ENGINEERING WORKFLOW") + text(64, 144, "Read the binary. Recover the logic.", 44, TEXT, 600)
+body += text(64, 190, "Static disassembly and instruction-level debugging", 26, MUTED)
+for x, title, copy, color in [
+    (64, "DISASSEMBLE", "Map phases + helpers", MINT),
+    (439, "TRACE", "Breakpoints + memory", PINK),
+    (814, "RECONSTRUCT", "Recover constraints", MINT),
+]:
+    body += rect(x, 273, 322, 244)
+    body += text(x + 27, 318, title, 18, color, 600)
+    body += text(x + 27, 389, copy, 28, TEXT, 600)
+    body += text(x + 27, 438, "x86-64 / GDB" if x < 814 else "6 phases + secret phase", 21, MUTED)
+body += arrow(399, 397, 425, 397) + arrow(774, 397, 800, 397)
+body += footer("objdump · Registers · Stack memory · Jump tables · Recursive structures")
+svg("project-logic-bomb.svg", "Binary bomb reverse-engineering workflow", "Workflow diagram: disassemble the binary, trace execution with GDB, then reconstruct the input constraints for six phases and a hidden secret phase.", body)
+
 body = label("PREDICTION PIPELINE") + text(64, 144, "From vehicle listings to price.", 44, TEXT, 600)
 body += text(64, 190, "Cleaning, feature engineering and neural networks", 26, MUTED)
 for x, title, top, bottom, color in [(64,"VEHICLE DATA","34,033","listings",MINT),(439,"PREPROCESSING","148","original features",TEXT),(814,"NEURAL NETWORK","64 → 32 → 16","hidden layers",PINK)]:
@@ -209,4 +224,4 @@ jersey_palette = {
 }
 recolor_existing("figure-2-jersey-color-pipeline.svg", jersey_palette)
 
-print("Built four project diagrams and three crop charts.")
+print("Built five project diagrams and three crop charts.")

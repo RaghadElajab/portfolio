@@ -96,7 +96,7 @@
         <button class="project-filter" type="button" data-project-filter="ai" aria-pressed="false">AI &amp; data</button>
         <button class="project-filter" type="button" data-project-filter="xr" aria-pressed="false">XR &amp; games</button>
         <button class="project-filter" type="button" data-project-filter="software" aria-pressed="false">Software &amp; systems</button>
-        <span class="project-filter-count" aria-live="polite" aria-atomic="true">9 projects</span>
+        <span class="project-filter-count" aria-live="polite" aria-atomic="true">10 projects</span>
       </div>
       <div class="project-grid" id="other-project-grid">
 
@@ -183,8 +183,16 @@
           <div class="project-details"><ul><li><strong>Experiment pipeline:</strong> Built an end-to-end PyTorch workflow for preparing data, training models, restoring the best checkpoints, and comparing results reproducibly.</li><li><strong>Model development:</strong> Implemented a custom CNN and transfer-learning pipelines for ResNet-18, EfficientNet-B0, and VGG-16.</li><li><strong>Training strategy:</strong> Added stratified splitting, augmentation, ImageNet normalization, class-weighted loss, and early stopping to handle 11,838 images across 12 crop conditions.</li><li><strong>Evaluation tooling:</strong> Generated held-out accuracy, precision, recall, F1, ROC curves, and confusion matrices; EfficientNet-B0 achieved the strongest results.</li></ul><div class="project-inline-links"><button class="image-demo-button" type="button" data-image="assets/crop-model-accuracy-comparison.svg" data-image-title="Model accuracy" data-image-action="Expand chart" data-image-description="EfficientNet-B0 leads on both crops. Bars show held-out test accuracy.">Compare models ◫</button><button class="image-demo-button" type="button" data-image="assets/crop-efficientnet-maize-confusion-matrix.svg" data-image-title="Maize predictions" data-image-action="Expand chart" data-image-description="Most errors are between leaf blight and leaf spot. Cells count test images.">Maize results ◫</button><button class="image-demo-button" type="button" data-image="assets/crop-efficientnet-cashew-confusion-matrix.svg" data-image-title="Cashew predictions" data-image-action="Expand chart" data-image-description="All 205 healthy test leaves were classified correctly. Cells count test images.">Cashew results ◫</button><a href="https://github.com/RaghadElajab/crop-disease-classification" target="_blank" rel="noreferrer">View source ↗</a></div></div>
         </article>
 
+        <article class="project-card" data-project="logic-bomb" data-category="software">
+          <div class="project-cover"><img src="assets/card-logic-bomb.svg" alt="Binary code being inspected through a debugging lens" width="800" height="450" loading="lazy" decoding="async"><span class="project-index">07</span></div>
+          <div class="project-copy"><p class="tag">SYSTEMS · REVERSE ENGINEERING</p><div class="project-meta"><span>x86-64 Assembly</span><span>GDB</span><span>objdump</span><span>Linux</span></div><h3>Binary Bomb Reverse Engineering</h3><p>A systems project that reverse-engineered a compiled binary bomb and reconstructed the logic behind six phases and a hidden secret phase.</p></div>
+          <ul class="project-highlights"><li>Traced assembly-level control flow, registers, memory, and helper functions with GDB.</li><li>Decoded jump tables, recursion, pointer chains, linked lists, and a hidden binary-search-tree challenge.</li></ul>
+          <button class="project-detail-button" type="button">View details <span aria-hidden="true">↗</span></button>
+          <div class="project-details"><ul><li><strong>Disassembly:</strong> Used <code>objdump</code> to extract the executable’s x86-64 assembly and organize each phase with its helper functions.</li><li><strong>Dynamic analysis:</strong> Set targeted GDB breakpoints, stepped through instructions, and inspected registers and memory to identify every trigger condition.</li><li><strong>Logic reconstruction:</strong> Recovered numeric sequences, jump-table cases, recursive path encodings, pointer-chasing rules, and linked-list ordering constraints.</li><li><strong>Hidden phase:</strong> Traced the post-defusal control path, discovered the secret trigger, and analyzed its binary search tree to complete the final challenge.</li></ul><button class="image-demo-button" type="button" data-image="assets/project-logic-bomb.svg" data-image-title="Reverse-engineering workflow" data-image-action="Expand workflow" data-image-description="Disassembly and GDB tracing reveal each phase’s control flow, data structures, and safe input constraints.">View workflow</button></div>
+        </article>
+
         <article class="project-card" data-project="shell" data-category="software">
-          <div class="project-cover"><img src="assets/card-shell.svg" alt="Terminal connected to remote process nodes" width="800" height="450" loading="lazy" decoding="async"><span class="project-index">07</span></div>
+          <div class="project-cover"><img src="assets/card-shell.svg" alt="Terminal connected to remote process nodes" width="800" height="450" loading="lazy" decoding="async"><span class="project-index">08</span></div>
           <div class="project-copy"><p class="tag">SYSTEMS · NETWORKING</p><div class="project-meta"><span>C</span><span>POSIX</span><span>TCP Sockets</span><span>pthreads</span></div><h3>Networked CLI Shell</h3><p>A concurrent remote Unix shell built in C around TCP sockets and POSIX process control.</p></div>
           <ul class="project-highlights"><li>Runs remote commands with isolated client sessions.</li><li>Supports Unix pipelines of up to four processes.</li></ul>
           <button class="project-detail-button" type="button">View details <span aria-hidden="true">↗</span></button>
@@ -192,7 +200,7 @@
         </article>
 
         <article class="project-card" data-project="cars" data-category="ai">
-          <div class="project-cover"><img src="assets/card-car.svg" alt="Car with a rising price-prediction line" width="800" height="450" loading="lazy" decoding="async"><span class="project-index">08</span></div>
+          <div class="project-cover"><img src="assets/card-car.svg" alt="Car with a rising price-prediction line" width="800" height="450" loading="lazy" decoding="async"><span class="project-index">09</span></div>
           <div class="project-copy"><p class="tag">DATA · MACHINE LEARNING</p><div class="project-meta"><span>Python</span><span>Neural Network</span></div><h3>Car Price Prediction</h3><p>A complete data-cleaning and modeling pipeline for a high-dimensional vehicle dataset.</p></div>
           <ul class="project-highlights"><li>Cleaned roughly 34,000 records with 148 initial features.</li><li>Compared and tuned models, including a neural network.</li></ul>
           <button class="project-detail-button" type="button">View details <span aria-hidden="true">↗</span></button>
@@ -200,7 +208,7 @@
         </article>
 
         <article class="project-card" data-project="fitness" data-category="software">
-          <div class="project-cover"><img src="assets/card-fitness.svg" alt="Dumbbell with a circular progress indicator" width="800" height="450" loading="lazy" decoding="async"><span class="project-index">09</span></div>
+          <div class="project-cover"><img src="assets/card-fitness.svg" alt="Dumbbell with a circular progress indicator" width="800" height="450" loading="lazy" decoding="async"><span class="project-index">10</span></div>
           <div class="project-copy"><p class="tag">JAVA · SOFTWARE ENGINEERING</p><div class="project-meta"><span>Java</span><span>Swing</span><span>OOP</span></div><h3>Java-Based Fitness Tracker</h3><p>A complete role-based desktop application backed by a custom persistent data layer.</p></div>
           <ul class="project-highlights"><li>Separate user and admin workflows with persistent records.</li><li>Tracks activities, goals, calories and progress reports.</li></ul>
           <button class="project-detail-button" type="button">View details <span aria-hidden="true">↗</span></button>

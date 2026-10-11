@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">Binary bomb reverse engineering</title>
+  <desc id="desc">A minimal debugging lens inspecting assembly instructions and a hidden program path.</desc>
+  <rect width="800" height="450" fill="#f7f1eb"/>
+  <circle cx="400" cy="225" r="142" fill="#eaded7" stroke="#c66f7b" stroke-width="2"/>
+  <rect x="210" y="122" width="330" height="214" rx="18" fill="#fffaf6" stroke="#4b302d" stroke-width="4"/>
+  <circle cx="239" cy="151" r="7" fill="#b56270"/>
+  <circle cx="263" cy="151" r="7" fill="#c9b2a8"/>
+  <circle cx="287" cy="151" r="7" fill="#9a6f67"/>
+  <path d="M246 202h72m-72 38h126m-126 38h92" stroke="#765f57" stroke-width="8" stroke-linecap="round"/>
+  <path d="m411 199 23 20-23 20m-34 0-23-20 23-20" fill="none" stroke="#b56270" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="513" cy="278" r="69" fill="#f7f1eb" stroke="#4b302d" stroke-width="7"/>
+  <circle cx="513" cy="278" r="35" fill="none" stroke="#b56270" stroke-width="5" stroke-dasharray="8 7"/>
+  <path d="m563 328 70 70" stroke="#4b302d" stroke-width="16" stroke-linecap="round"/>
+  <path d="M574 179c28 4 53 19 70 41" fill="none" stroke="#b56270" stroke-width="4" stroke-dasharray="8 9"/>
+  <circle cx="651" cy="232" r="10" fill="#b56270"/>
+</svg>
