@@ -205,6 +205,22 @@ body {
   gap: 7px 14px;
 }
 
+/* Card reading order: category, title, tools, then the project summary. */
+#projects .project-copy {
+  display: flex;
+  flex-direction: column;
+}
+#projects .project-copy > .tag { order: 1; }
+#projects .project-copy > h3 {
+  order: 2;
+  margin-bottom: 9px;
+}
+#projects .project-copy > .project-meta {
+  order: 3;
+  margin: 0 0 14px;
+}
+#projects .project-copy > p:not(.tag) { order: 4; }
+
 .project-filter {
   border-color: var(--line);
   border-radius: 8px;
