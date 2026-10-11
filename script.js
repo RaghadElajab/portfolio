@@ -864,9 +864,7 @@ function openProjectDashboard(card, trigger) {
   document.querySelector('#dashboard-highlights').hidden = Boolean(story);
   document.querySelector('#dashboard-highlights-label').textContent = story?.dataset.heading || 'At a glance';
   const storyContent = story?.content.cloneNode(true);
-  const featuredOutcomes = card.dataset.project === 'ecoffe'
-    ? storyContent?.querySelector('.dashboard-outcomes')
-    : null;
+  const featuredOutcomes = storyContent?.querySelector('.dashboard-outcomes');
   heroOutcomes.replaceChildren(...(featuredOutcomes ? [featuredOutcomes] : []));
   heroOutcomes.hidden = !featuredOutcomes;
   storyPanel.replaceChildren(...(storyContent ? [storyContent] : []));
