@@ -207,15 +207,18 @@ body {
 
 .project-filter {
   border-color: var(--line);
+  border-radius: 8px;
   color: var(--muted);
 }
 .project-filter:hover,
 .project-filter:focus-visible {
   border-color: var(--pink);
+  border-radius: 8px;
   color: var(--text);
 }
 .project-filter.is-active {
   border-color: var(--pink);
+  border-radius: 8px;
   background: var(--panel-2);
   color: var(--text);
   box-shadow: inset 0 -2px 0 var(--pink);
