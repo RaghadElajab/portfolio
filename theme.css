@@ -461,6 +461,28 @@ body {
   color: var(--bg);
 }
 
+/* ECoffe's wide banner uses themed letterboxing and a light play strip. */
+.project-dashboard[data-project="ecoffe"] .dashboard-media-preview,
+.project-dashboard[data-project="ecoffe"] .dashboard-media-preview img {
+  background: #fbefdf;
+}
+
+.project-dashboard[data-project="ecoffe"] .dashboard-media-play {
+  border-top-color: #c9b2a8;
+  background: #eaded7;
+  color: var(--text);
+}
+
+.project-dashboard[data-project="ecoffe"] .dashboard-media-play::before {
+  border-left-color: var(--pink);
+}
+
+.project-dashboard[data-project="ecoffe"] .dashboard-media-preview:hover .dashboard-media-play,
+.project-dashboard[data-project="ecoffe"] .dashboard-media-preview:focus-visible .dashboard-media-play {
+  background: var(--text);
+  color: var(--bg);
+}
+
 @media (max-width: 850px) {
   .hero.compact-hero {
     min-height: 560px;
