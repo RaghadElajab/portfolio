@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">Mixed-reality gardening simulator</title>
+  <desc id="desc">A simple growing plant framed by mixed-reality markers.</desc>
+  <rect width="800" height="450" fill="#f7f1eb"/>
+  <path d="M278 290h244l-28 93H306Z" fill="#c66f7b" stroke="#4b302d" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M400 291V157" stroke="#76564d" stroke-width="8" stroke-linecap="round"/>
+  <path d="M398 228c-57 0-86-26-91-78 58-3 91 23 91 78ZM402 190c57 0 86-26 91-78-58-3-91 23-91 78Z" fill="#eaded7"/>
+  <path d="M342 331h116" stroke="#4b302d" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="400" cy="95" r="12" fill="#c66f7b"/>
+  <path d="M218 146v-42h48M582 146v-42h-48M218 304v42h48M582 304v42h-48" fill="none" stroke="#4b302d" stroke-width="4"/>
+  <path d="M249 226h52M499 226h52" stroke="#c66f7b" stroke-width="3" stroke-dasharray="7 8"/>
+</svg>

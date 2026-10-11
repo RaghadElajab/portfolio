@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">ECoffe sustainability game</title>
+  <desc id="desc">A minimal coffee cup with a leaf and virtual-reality markers.</desc>
+  <rect width="800" height="450" fill="#eaded7"/>
+  <circle cx="400" cy="225" r="148" fill="#f7f1eb"/>
+  <path d="M279 169h234l-18 145a40 40 0 0 1-40 35H337a40 40 0 0 1-40-35Z" fill="#c66f7b" stroke="#4b302d" stroke-width="4"/>
+  <path d="M511 205h28c44 0 44 83 0 83h-36" fill="none" stroke="#4b302d" stroke-width="16"/>
+  <path d="M336 219c49-48 107-45 139 5-65 16-112 15-139-5Z" fill="#eaded7"/>
+  <path d="M351 222c38 4 71 14 99 31" fill="none" stroke="#4b302d" stroke-width="4" stroke-linecap="round"/>
+  <path d="M354 145c-18-18 14-30-2-49M404 145c-18-18 14-30-2-49M454 145c-18-18 14-30-2-49" fill="none" stroke="#c66f7b" stroke-width="4" stroke-linecap="round"/>
+  <path d="M215 145v-37h45M585 145v-37h-45M215 305v37h45M585 305v37h-45" fill="none" stroke="#76564d" stroke-width="4"/>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">Crop disease classification</title>
+  <desc id="desc">A leaf under a simple machine-learning scan.</desc>
+  <rect width="800" height="450" fill="#e4d4cc"/>
+  <path d="M240 317c18-150 110-226 292-210-4 177-94 258-270 243Z" fill="#eaded7" stroke="#4b302d" stroke-width="4"/>
+  <path d="M267 326c83-91 153-148 238-193M356 237l-59-9M407 193l14-57M330 264l12 58M452 160l49 18" fill="none" stroke="#4b302d" stroke-width="5" stroke-linecap="round"/>
+  <g fill="#c66f7b"><circle cx="381" cy="273" r="13"/><circle cx="443" cy="225" r="9"/><circle cx="475" cy="151" r="7"/></g>
+  <path d="M198 119v-35h41M602 119v-35h-41M198 331v35h41M602 331v35h-41" fill="none" stroke="#4b302d" stroke-width="4"/>
+  <path d="M570 164v122" stroke="#4b302d" stroke-width="3"/>
+  <circle cx="570" cy="185" r="8" fill="#76564d"/><circle cx="570" cy="225" r="8" fill="#76564d"/><circle cx="570" cy="265" r="8" fill="#c66f7b"/>
+</svg>

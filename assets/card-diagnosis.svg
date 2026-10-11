@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">Budget-aware clinical diagnosis</title>
+  <desc id="desc">A minimal clinical record branching toward a diagnosis while balancing information and cost.</desc>
+  <rect width="800" height="450" fill="#f7f1eb"/>
+  <circle cx="400" cy="225" r="142" fill="#eaded7" stroke="#c66f7b" stroke-width="2"/>
+  <path d="M220 145h95M220 225h95M220 305h95M485 225h95" stroke="#c66f7b" stroke-width="3" stroke-linecap="round"/>
+  <g fill="#fbf8f4" stroke="#4b302d" stroke-width="3"><circle cx="200" cy="145" r="17"/><circle cx="200" cy="225" r="17"/><circle cx="200" cy="305" r="17"/></g>
+  <path d="M315 145v160M315 225h52" stroke="#c66f7b" stroke-width="3"/>
+  <rect x="367" y="160" width="118" height="130" rx="18" fill="#fbf8f4" stroke="#4b302d" stroke-width="3"/>
+  <path d="M408 190h36M426 172v36" stroke="#c66f7b" stroke-width="8" stroke-linecap="round"/>
+  <path d="M394 236h64M394 258h45" stroke="#76564d" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="602" cy="225" r="38" fill="#4b302d"/>
+  <path d="m585 225 12 12 23-27" fill="none" stroke="#f7f1eb" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M545 292c20 25 48 39 82 41" fill="none" stroke="#c66f7b" stroke-width="3" stroke-dasharray="7 9"/>
+</svg>

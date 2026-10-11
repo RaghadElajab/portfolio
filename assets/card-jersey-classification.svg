@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">RoboCup jersey-color classification</title>
+  <desc id="desc">A minimal humanoid soccer player with a highlighted torso crop connected to team-color predictions.</desc>
+  <rect width="800" height="450" fill="#f7f1eb"/>
+  <circle cx="400" cy="225" r="142" fill="#eaded7" stroke="#c66f7b" stroke-width="2"/>
+  <circle cx="330" cy="130" r="35" fill="#fbf8f4" stroke="#4b302d" stroke-width="4"/>
+  <path d="M286 194 330 168l44 26-10 112h-68Z" fill="#c66f7b" stroke="#4b302d" stroke-width="4" stroke-linejoin="round"/>
+  <path d="m289 201-49 73m133-73 49 73M311 306l-34 73m72-73 35 73" fill="none" stroke="#4b302d" stroke-width="12" stroke-linecap="round"/>
+  <rect x="279" y="183" width="102" height="126" rx="10" fill="none" stroke="#fbf8f4" stroke-width="4" stroke-dasharray="10 8"/>
+  <path d="M381 246h75" fill="none" stroke="#c66f7b" stroke-width="4" stroke-linecap="round"/>
+  <g stroke="#4b302d" stroke-width="3">
+    <circle cx="490" cy="206" r="17" fill="#c66f7b"/>
+    <circle cx="534" cy="206" r="17" fill="#cfaa8c"/>
+    <circle cx="578" cy="206" r="17" fill="#4b302d"/>
+  </g>
+  <rect x="461" y="245" width="144" height="62" rx="16" fill="#4b302d"/>
+  <path d="m487 276 15 14 27-31" fill="none" stroke="#f7f1eb" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M544 276h34" stroke="#f7f1eb" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="245" cy="372" r="25" fill="#fbf8f4" stroke="#4b302d" stroke-width="4"/>
+  <path d="m228 362 34 20m-34 0 34-20m-17-15v40" stroke="#c66f7b" stroke-width="3"/>
+</svg>

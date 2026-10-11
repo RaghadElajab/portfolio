@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">Face-recognition attendance</title>
+  <desc id="desc">A minimal face scan with an attendance confirmation.</desc>
+  <rect width="800" height="450" fill="#e4d4cc"/>
+  <rect x="245" y="82" width="310" height="286" rx="28" fill="#f7f1eb" stroke="#4b302d" stroke-width="2"/>
+  <path d="M285 153v-32h42M515 153v-32h-42M285 297v32h42M515 297v32h-42" fill="none" stroke="#4b302d" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="400" cy="195" r="48" fill="#eaded7" stroke="#76564d" stroke-width="3"/>
+  <path d="M321 304c16-46 42-68 79-68s63 22 79 68" fill="#eaded7" stroke="#76564d" stroke-width="3"/>
+  <circle cx="536" cy="317" r="42" fill="#4b302d"/>
+  <path d="m516 316 14 14 27-31" fill="none" stroke="#f7f1eb" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M193 181h55M193 205h37M552 181h55M570 205h37" stroke="#4b302d" stroke-width="4" stroke-linecap="round"/>
+</svg>

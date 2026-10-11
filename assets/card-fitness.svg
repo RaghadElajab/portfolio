@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">Java fitness tracker</title>
+  <desc id="desc">A minimal dumbbell with a circular progress indicator.</desc>
+  <rect width="800" height="450" fill="#e4d4cc"/>
+  <circle cx="400" cy="225" r="139" fill="#f7f1eb" stroke="#c66f7b" stroke-width="3"/>
+  <path d="M400 86a139 139 0 0 1 127 195" fill="none" stroke="#76564d" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="400" cy="86" r="9" fill="#4b302d"/>
+  <path d="M305 225h190" stroke="#4b302d" stroke-width="14" stroke-linecap="round"/>
+  <path d="M327 186v78M353 199v52M447 199v52M473 186v78" stroke="#c66f7b" stroke-width="18" stroke-linecap="round"/>
+  <path d="M261 327h93M446 327h93" stroke="#4b302d" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="238" cy="327" r="8" fill="#76564d"/><circle cx="562" cy="327" r="8" fill="#76564d"/>
+</svg>

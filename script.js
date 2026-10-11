@@ -13,8 +13,8 @@ const projects = {
   },
   ecoffe: {
     file: 'ECOFFE.VR', tag: 'VR · SUSTAINABILITY · UNITY', title: 'ECoffe!',
-    text: 'ECoffe! is an immersive virtual-reality café simulation designed to promote sustainability through everyday decisions. Players step into the role of a barista, prepare food and drinks, serve orders, manage the café, and balance customer expectations with environmentally responsible choices.',
-    points: ['First-person VR interactions with hand-tracked drink and food preparation', 'Dynamic customers with randomized orders, limited patience, and varied behavior', 'AI-powered customers who challenge sustainable utensils, creating opportunities for players to advocate for sustainable choices', 'Built with Unity and the XR Interaction Toolkit around practical VR interaction design and game systems', 'Awarded third place at Khalifa University’s 3rd Annual Sustainability E-Gaming Competition'],
+    text: 'A VR café management game developed in Unity for Meta Quest. ECoffe! combines VR development, AI integration, and game design to teach children environmental sustainability through interactive play.',
+    points: ['Taught myself VR development from scratch to bring an unfamiliar but meaningful idea to life', 'Challenges players to choose scattered paper utensils over convenient plastic alternatives while managing orders under time pressure', 'Includes unlockable recipes, furniture with functional perks, and a dynamic day-night cycle', 'Features AI-powered customers with anti-sustainability views during the day and thieves who appear at night', 'Ends each day with a recycling-themed basketball mini-game that reinforces sustainability through play', 'Earned 100%; outstanding individual performance led to a course TA appointment the following semester', 'Won third place in KU’s 3rd Annual Sustainability E-Gaming Competition and was presented at Open Day on behalf of the Computer Science major'],
     links: [['View LinkedIn', 'https://www.linkedin.com/in/raghad-elajab/']]
   },
   cars: {
@@ -48,7 +48,7 @@ function initNeuralVortex() {
 
   const context = canvas.getContext('2d', { alpha: true });
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-  const colors = ['#ff77ad', '#ff9bc3', '#84edbb', '#4da7c8'];
+  const colors = ['#4b302d', '#76564d', '#c66f7b', '#d9a2a9'];
   const glows = colors.map(makeParticleGlow);
   const pointer = { x: .7, y: .48, targetX: .7, targetY: .48, active: false };
   let width = 0;
@@ -71,9 +71,9 @@ function initNeuralVortex() {
   core.width = core.height = 256;
   const coreContext = core.getContext('2d');
   const coreGlow = coreContext.createRadialGradient(128, 128, 0, 128, 128, 128);
-  coreGlow.addColorStop(0, 'rgba(255, 155, 195, .28)');
-  coreGlow.addColorStop(.32, 'rgba(132, 237, 187, .1)');
-  coreGlow.addColorStop(1, 'rgba(7, 20, 38, 0)');
+  coreGlow.addColorStop(0, 'rgba(198, 111, 123, .22)');
+  coreGlow.addColorStop(.32, 'rgba(155, 129, 118, .16)');
+  coreGlow.addColorStop(1, 'rgba(247, 241, 235, 0)');
   coreContext.fillStyle = coreGlow;
   coreContext.fillRect(0, 0, 256, 256);
 
@@ -136,7 +136,7 @@ function initNeuralVortex() {
         if (index === 0) context.moveTo(point.x, point.y);
         else context.lineTo(point.x, point.y);
       });
-      context.strokeStyle = arm % 2 ? 'rgba(132, 237, 187, .16)' : 'rgba(255, 119, 173, .2)';
+      context.strokeStyle = arm % 2 ? 'rgba(75, 48, 45, .18)' : 'rgba(198, 111, 123, .22)';
       context.lineWidth = arm % 2 ? 1 : 1.25;
       context.stroke();
     }
@@ -151,7 +151,7 @@ function initNeuralVortex() {
         context.lineTo(neighbor.x, neighbor.y);
       }
     }
-    context.strokeStyle = 'rgba(139, 186, 206, .07)';
+    context.strokeStyle = 'rgba(75, 48, 45, .09)';
     context.lineWidth = .65;
     context.stroke();
 
@@ -232,7 +232,229 @@ function initNeuralVortex() {
   syncVortex();
 }
 
-initNeuralVortex();
+function initProjectEcosystem() {
+  const canvas = document.querySelector('#focus-map-canvas');
+  const hero = document.querySelector('.hero');
+  if (!canvas || !hero) return;
+
+  const context = canvas.getContext('2d', { alpha: true });
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const pointer = { x: 0, y: 0, active: false };
+  const nodes = [
+    { label: 'CLINICAL AI', icon: 'clinical', x: .58, y: .24, phase: .3 },
+    { label: 'COMPUTER VISION', icon: 'vision', x: .79, y: .2, phase: 1.4 },
+    { label: 'ROBOTICS', icon: 'robotics', x: .89, y: .49, phase: 2.5 },
+    { label: 'XR', icon: 'xr', x: .78, y: .78, phase: 3.6 },
+    { label: 'SOFTWARE', icon: 'software', x: .57, y: .7, phase: 4.7 }
+  ];
+  let width = 0;
+  let height = 0;
+  let ratio = 1;
+  let animationFrame = 0;
+  let resizeFrame = 0;
+  let running = false;
+  let visible = true;
+  let pageVisible = !document.hidden;
+  let hoveredNode = -1;
+
+  function drawIcon(type, x, y, size, color) {
+    context.save();
+    context.translate(x, y);
+    context.strokeStyle = color;
+    context.fillStyle = color;
+    context.lineWidth = 2;
+    context.lineCap = 'round';
+    context.lineJoin = 'round';
+
+    if (type === 'clinical') {
+      context.fillRect(-size * .12, -size * .42, size * .24, size * .84);
+      context.fillRect(-size * .42, -size * .12, size * .84, size * .24);
+    } else if (type === 'vision') {
+      context.beginPath();
+      context.moveTo(-size * .48, 0);
+      context.quadraticCurveTo(0, -size * .4, size * .48, 0);
+      context.quadraticCurveTo(0, size * .4, -size * .48, 0);
+      context.stroke();
+      context.beginPath();
+      context.arc(0, 0, size * .14, 0, Math.PI * 2);
+      context.fill();
+    } else if (type === 'robotics') {
+      context.strokeRect(-size * .38, -size * .3, size * .76, size * .62);
+      context.beginPath();
+      context.moveTo(0, -size * .3);
+      context.lineTo(0, -size * .48);
+      context.stroke();
+      context.beginPath();
+      context.arc(0, -size * .53, size * .06, 0, Math.PI * 2);
+      context.fill();
+      context.beginPath();
+      context.arc(-size * .16, -size * .02, size * .055, 0, Math.PI * 2);
+      context.arc(size * .16, -size * .02, size * .055, 0, Math.PI * 2);
+      context.fill();
+    } else if (type === 'xr') {
+      context.beginPath();
+      context.moveTo(0, -size * .43);
+      context.lineTo(size * .4, -size * .2);
+      context.lineTo(size * .4, size * .26);
+      context.lineTo(0, size * .48);
+      context.lineTo(-size * .4, size * .26);
+      context.lineTo(-size * .4, -size * .2);
+      context.closePath();
+      context.moveTo(0, 0);
+      context.lineTo(0, size * .48);
+      context.moveTo(0, 0);
+      context.lineTo(size * .4, -size * .2);
+      context.moveTo(0, 0);
+      context.lineTo(-size * .4, -size * .2);
+      context.stroke();
+    } else {
+      context.beginPath();
+      context.moveTo(-size * .2, -size * .42);
+      context.quadraticCurveTo(-size * .45, -size * .42, -size * .4, -size * .14);
+      context.lineTo(-size * .4, size * .14);
+      context.quadraticCurveTo(-size * .45, size * .42, -size * .2, size * .42);
+      context.moveTo(size * .2, -size * .42);
+      context.quadraticCurveTo(size * .45, -size * .42, size * .4, -size * .14);
+      context.lineTo(size * .4, size * .14);
+      context.quadraticCurveTo(size * .45, size * .42, size * .2, size * .42);
+      context.stroke();
+    }
+    context.restore();
+  }
+
+  function draw(time = 0) {
+    context.clearRect(0, 0, width, height);
+    const compact = width < 760;
+    const hub = {
+      x: width * (compact ? .72 : .73),
+      y: height * .5
+    };
+    const nodeRadius = compact ? 25 : 31;
+    hoveredNode = -1;
+
+    nodes.forEach((node, index) => {
+      const drift = reducedMotion.matches ? 0 : Math.sin(time * .0007 + node.phase) * 5;
+      node.drawX = width * node.x + drift;
+      node.drawY = height * node.y + Math.cos(time * .0006 + node.phase) * (reducedMotion.matches ? 0 : 4);
+      const distance = Math.hypot(pointer.x - node.drawX, pointer.y - node.drawY);
+      if (pointer.active && distance < nodeRadius + 34) hoveredNode = index;
+    });
+
+    context.save();
+    context.strokeStyle = 'rgba(117, 95, 88, .3)';
+    context.lineWidth = 1.2;
+    nodes.forEach(node => {
+      context.beginPath();
+      context.moveTo(hub.x, hub.y);
+      context.lineTo(node.drawX, node.drawY);
+      context.stroke();
+    });
+    context.setLineDash([4, 7]);
+    context.strokeStyle = 'rgba(181, 98, 112, .2)';
+    context.beginPath();
+    context.arc(hub.x, hub.y, Math.min(width, height) * .36, 0, Math.PI * 2);
+    context.stroke();
+    context.restore();
+
+    context.beginPath();
+    context.arc(hub.x, hub.y, compact ? 39 : 48, 0, Math.PI * 2);
+    context.fillStyle = 'rgba(77, 51, 46, .94)';
+    context.fill();
+    context.strokeStyle = '#b56270';
+    context.lineWidth = 3;
+    context.stroke();
+    context.fillStyle = '#f6efe9';
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.font = `700 ${compact ? 9 : 10}px Arial`;
+    context.fillText('PROJECT', hub.x, hub.y - 7);
+    context.fillText('SYSTEMS', hub.x, hub.y + 8);
+
+    nodes.forEach((node, index) => {
+      const active = index === hoveredNode;
+      const radius = nodeRadius + (active ? 6 : 0);
+      const pull = active ? .08 : 0;
+      const x = node.drawX + (hub.x - node.drawX) * pull;
+      const y = node.drawY + (hub.y - node.drawY) * pull;
+      context.beginPath();
+      context.arc(x, y, radius, 0, Math.PI * 2);
+      context.fillStyle = active ? '#b56270' : 'rgba(255, 250, 246, .9)';
+      context.fill();
+      context.strokeStyle = active ? '#934d5a' : '#9a6f67';
+      context.lineWidth = active ? 2.5 : 1.5;
+      context.stroke();
+      drawIcon(node.icon, x, y, compact ? 24 : 29, active ? '#fffaf6' : '#4d332e');
+      context.fillStyle = '#4d332e';
+      context.font = `700 ${compact ? 8 : 10}px Arial`;
+      context.textAlign = 'center';
+      context.textBaseline = 'top';
+      context.fillText(node.label, x, y + radius + 8);
+    });
+  }
+
+  function animate(time) {
+    if (!running) return;
+    draw(time);
+    animationFrame = requestAnimationFrame(animate);
+  }
+
+  function sync() {
+    const shouldRun = visible && pageVisible && !reducedMotion.matches;
+    if (shouldRun && !running) {
+      running = true;
+      animationFrame = requestAnimationFrame(animate);
+    } else if (!shouldRun && running) {
+      running = false;
+      cancelAnimationFrame(animationFrame);
+    }
+    if (!shouldRun) draw(1400);
+  }
+
+  function resize() {
+    const bounds = hero.getBoundingClientRect();
+    width = Math.max(1, Math.round(bounds.width));
+    height = Math.max(1, Math.round(bounds.height));
+    ratio = Math.min(devicePixelRatio || 1, 1.5);
+    canvas.width = Math.round(width * ratio);
+    canvas.height = Math.round(height * ratio);
+    context.setTransform(ratio, 0, 0, ratio, 0, 0);
+    draw(reducedMotion.matches ? 1400 : performance.now());
+  }
+
+  hero.addEventListener('pointermove', event => {
+    const bounds = hero.getBoundingClientRect();
+    pointer.x = event.clientX - bounds.left;
+    pointer.y = event.clientY - bounds.top;
+    pointer.active = event.pointerType !== 'touch';
+    if (reducedMotion.matches) draw(1400);
+  });
+  hero.addEventListener('pointerleave', () => {
+    pointer.active = false;
+    if (reducedMotion.matches) draw(1400);
+  });
+
+  new IntersectionObserver(entries => {
+    visible = (entries[0]?.intersectionRatio ?? 0) > .35;
+    sync();
+  }, { threshold: [0, .35] }).observe(hero);
+
+  new ResizeObserver(() => {
+    if (!resizeFrame) resizeFrame = requestAnimationFrame(() => {
+      resizeFrame = 0;
+      resize();
+    });
+  }).observe(hero);
+
+  document.addEventListener('visibilitychange', () => {
+    pageVisible = !document.hidden;
+    sync();
+  });
+  reducedMotion.addEventListener?.('change', sync);
+  resize();
+  sync();
+}
+
+initProjectEcosystem();
 
 function initSpecialText() {
   const elements = document.querySelectorAll('[data-special-text]');
@@ -295,7 +517,7 @@ function initAmbientParticles() {
 
   const context = canvas.getContext('2d', { alpha: true });
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-  const palette = ['#ff77ad', '#ff9bc3', '#84edbb', '#4da7c8'];
+  const palette = ['#4b302d', '#76564d', '#c66f7b', '#d9a2a9'];
   const glows = palette.map(makeParticleGlow);
   const pointer = { x: 0, y: 0, active: false };
   let width = 0;
@@ -403,7 +625,7 @@ function initAmbientParticles() {
         context.moveTo(links[offset], links[offset + 1]);
         context.lineTo(links[offset + 2], links[offset + 3]);
       }
-      context.strokeStyle = `rgba(132, 237, 187, ${(index + .5) * .07})`;
+      context.strokeStyle = `rgba(75, 48, 45, ${(index + .5) * .07})`;
       context.stroke();
     });
 
@@ -415,7 +637,7 @@ function initAmbientParticles() {
           context.beginPath();
           context.moveTo(particle.x, particle.y);
           context.lineTo(pointer.x, pointer.y);
-          context.strokeStyle = `rgba(255, 119, 173, ${(1 - distance / 190) * .42})`;
+          context.strokeStyle = `rgba(198, 111, 123, ${(1 - distance / 190) * .42})`;
           context.lineWidth = 1;
           context.stroke();
         }
@@ -617,7 +839,7 @@ function openProjectDashboard(card, trigger) {
   const title = card.querySelector('.project-copy h3').textContent.trim();
   const tag = card.querySelector('.project-copy .tag').textContent.trim();
   const summary = card.querySelector('.project-copy > p:not(.tag)').textContent.trim();
-  const accent = getComputedStyle(card).getPropertyValue('--tile-accent').trim() || '#ff77ad';
+  const accent = getComputedStyle(card).getPropertyValue('--tile-accent').trim() || '#a95764';
   const detailList = card.querySelector('.project-details > ul');
   const mediaGrid = document.querySelector('#dashboard-media-grid');
   const mediaHeading = document.querySelector('#dashboard-media-heading');
@@ -625,6 +847,7 @@ function openProjectDashboard(card, trigger) {
   const resources = document.querySelector('#dashboard-resources');
   const story = card.querySelector('.project-story');
   const storyPanel = document.querySelector('#dashboard-story');
+  const heroOutcomes = document.querySelector('#dashboard-hero-outcomes');
   const systems = card.querySelector('.project-systems');
   const systemsPanel = document.querySelector('#dashboard-systems');
 
@@ -640,7 +863,14 @@ function openProjectDashboard(card, trigger) {
   document.querySelector('#dashboard-highlights').innerHTML = card.querySelector('.project-highlights').innerHTML;
   document.querySelector('#dashboard-highlights').hidden = Boolean(story);
   document.querySelector('#dashboard-highlights-label').textContent = story?.dataset.heading || 'At a glance';
-  storyPanel.replaceChildren(...(story ? [story.content.cloneNode(true)] : []));
+  const storyContent = story?.content.cloneNode(true);
+  const featuredOutcomes = card.dataset.project === 'ecoffe'
+    ? storyContent?.querySelector('.dashboard-outcomes')
+    : null;
+  heroOutcomes.replaceChildren(...(featuredOutcomes ? [featuredOutcomes] : []));
+  heroOutcomes.hidden = !featuredOutcomes;
+  storyPanel.replaceChildren(...(storyContent ? [storyContent] : []));
+  storyPanel.classList.toggle('story-only', Boolean(featuredOutcomes));
   storyPanel.hidden = !story;
   document.querySelector('#dashboard-details').innerHTML = detailList?.innerHTML || '';
   document.querySelector('.dashboard-build-panel').hidden = !detailList?.children.length;
@@ -667,7 +897,8 @@ function openProjectDashboard(card, trigger) {
         player = document.createElement('iframe');
         player.src = button.dataset.embed;
         player.title = demoTitle;
-        player.allow = 'autoplay; fullscreen';
+        player.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen';
+        player.referrerPolicy = 'strict-origin-when-cross-origin';
         player.allowFullscreen = true;
       } else {
         player = document.createElement('video');
@@ -688,7 +919,9 @@ function openProjectDashboard(card, trigger) {
     link.href = button.dataset.video || button.dataset.embed.replace(/\/preview(?:\?.*)?$/, '/view');
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
-    link.textContent = 'Open video \u2197';
+    const externalVideoLabel = button.dataset.videoLabel;
+    link.textContent = `${externalVideoLabel || 'Open video'} \u2197`;
+    link.classList.toggle('is-prominent', Boolean(externalVideoLabel));
     link.setAttribute('aria-label', `Open ${demoTitle} in a new tab`);
     panel.appendChild(link);
     mediaGrid.appendChild(panel);
@@ -749,6 +982,34 @@ function closeProjectDashboard() {
 
 document.querySelectorAll('.project-detail-button').forEach(button => {
   button.addEventListener('click', () => openProjectDashboard(button.closest('.project-card'), button));
+});
+
+const projectFilterButtons = [...document.querySelectorAll('.project-filter')];
+const filterableProjectCards = [...document.querySelectorAll('#other-project-grid .project-card')];
+const projectFilterCount = document.querySelector('.project-filter-count');
+
+projectFilterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const filter = button.dataset.projectFilter;
+    let visibleCount = 0;
+
+    projectFilterButtons.forEach(option => {
+      const isActive = option === button;
+      option.classList.toggle('is-active', isActive);
+      option.setAttribute('aria-pressed', String(isActive));
+    });
+
+    filterableProjectCards.forEach(card => {
+      const categories = (card.dataset.category || '').split(/\s+/);
+      const isVisible = filter === 'all' || categories.includes(filter);
+      card.hidden = !isVisible;
+      if (isVisible) visibleCount += 1;
+    });
+
+    if (projectFilterCount) {
+      projectFilterCount.textContent = `${visibleCount} ${visibleCount === 1 ? 'project' : 'projects'}`;
+    }
+  });
 });
 
 projectDashboardClose.addEventListener('click', closeProjectDashboard);
@@ -915,14 +1176,17 @@ document.querySelector('#minimize').addEventListener('click', () => {
 layer.addEventListener('click', event => { if (event.target === layer) closeWindow(); });
 document.addEventListener('keydown', event => { if (event.key === 'Escape' && !layer.hidden) closeWindow(); });
 
-document.querySelector('#copy-email').addEventListener('click', async event => {
-  const button = event.currentTarget;
-  try {
-    await navigator.clipboard.writeText(button.dataset.email);
-    button.querySelector('span').textContent = 'COPIED!';
-    setTimeout(() => button.querySelector('span').textContent = 'COPY', 1600);
-  } catch { window.location.href = `mailto:${button.dataset.email}`; }
-});
+const copyEmailButton = document.querySelector('#copy-email');
+if (copyEmailButton) {
+  copyEmailButton.addEventListener('click', async event => {
+    const button = event.currentTarget;
+    try {
+      await navigator.clipboard.writeText(button.dataset.email);
+      button.querySelector('span').textContent = 'COPIED!';
+      setTimeout(() => button.querySelector('span').textContent = 'COPY', 1600);
+    } catch { window.location.href = `mailto:${button.dataset.email}`; }
+  });
+}
 
 function updateClock() {
   document.querySelector('#clock').textContent = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Dubai', hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date());

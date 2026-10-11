@@ -49,8 +49,9 @@ cooking state, recipe book, décor perks, hand interactions, and special-custome
 connections. Its older desktop/VR split and cross-mode cloud synchronization
 are not used to describe the current experience.
 
-The 100% grade and both teammates' later teaching-assistant appointments are
-first-person project context supplied by Raghad, rather than repository claims.
+The 100% grade and Raghad's later teaching-assistant appointment for outstanding
+individual performance are first-person project context supplied by Raghad,
+rather than repository claims.
 
 ## Crop chart data verification
 

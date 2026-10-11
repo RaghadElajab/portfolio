@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">Networked command-line shell</title>
+  <desc id="desc">A minimal terminal connected to remote process nodes.</desc>
+  <rect width="800" height="450" fill="#eaded7"/>
+  <rect x="164" y="93" width="472" height="264" rx="16" fill="#f7f1eb" stroke="#4b302d" stroke-width="3"/>
+  <path d="M164 143h472" stroke="#c66f7b" stroke-width="3"/>
+  <circle cx="195" cy="118" r="7" fill="#c66f7b"/><circle cx="220" cy="118" r="7" fill="#76564d"/><circle cx="245" cy="118" r="7" fill="#4b302d"/>
+  <path d="m216 205 34 27-34 27M276 263h67" fill="none" stroke="#4b302d" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M390 225h58M448 225h56M504 225h58" stroke="#c66f7b" stroke-width="3"/>
+  <g fill="#fbf8f4" stroke="#c66f7b" stroke-width="3"><circle cx="390" cy="225" r="13"/><circle cx="448" cy="225" r="13"/><circle cx="504" cy="225" r="13"/><circle cx="562" cy="225" r="13"/></g>
+  <path d="M390 282h128M390 307h79" stroke="#4b302d" stroke-width="4" stroke-linecap="round"/>
+</svg>

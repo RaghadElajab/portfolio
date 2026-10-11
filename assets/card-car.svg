@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">Car price prediction</title>
+  <desc id="desc">A minimal car with a rising prediction line.</desc>
+  <rect width="800" height="450" fill="#f7f1eb"/>
+  <path d="M220 276h360l-26-82c-6-20-23-33-44-36l-85-12c-23-3-48 1-68 13l-69 41c-18 11-31 28-36 48Z" fill="#c66f7b" stroke="#4b302d" stroke-width="4" stroke-linejoin="round"/>
+  <path d="m313 198 56-33c14-8 31-12 47-9l68 10 31 56H282Z" fill="#eaded7" stroke="#76564d" stroke-width="3"/>
+  <circle cx="302" cy="285" r="35" fill="#4b302d" stroke="#eaded7" stroke-width="7"/><circle cx="508" cy="285" r="35" fill="#4b302d" stroke="#eaded7" stroke-width="7"/>
+  <path d="M243 349h314" stroke="#4b302d" stroke-width="3" stroke-linecap="round"/>
+  <path d="m500 115 52-42 48 22 55-55" fill="none" stroke="#c66f7b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m629 40h26v26" fill="none" stroke="#c66f7b" stroke-width="5" stroke-linecap="round"/>
+</svg>
