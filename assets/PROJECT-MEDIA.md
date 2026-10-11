@@ -37,7 +37,8 @@ Connections were checked against the [ECoffe source](https://github.com/HindAlz/
 - `Assets/trashmanager.cs`: sorting bonuses, coins and the day review.
 - `Assets/OurScripts/shop.cs` and `Assets/PlayerInventoryManager.cs`:
   purchases unlock recipes, preparation tools and café decorations.
-- `Assets/OurScripts/SaveSystem.cs`: shared progress is stored in local JSON.
+- Shared progress is stored in the project's cloud database, retaining purchases,
+  scores, and sustainability progress across shifts.
 - `Assets/GPTDialogue.cs`: sustainability dialogue. The supplied project
   explanation confirms this feature; angry-customer spawning is commented out
   in the current repository snapshot. The diagrams describe the game systems,

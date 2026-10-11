@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="ecoffe-systems-title ecoffe-systems-desc">
 <title id="ecoffe-systems-title">The interconnected systems behind ECoffe</title>
-<desc id="ecoffe-systems-desc">XR grab, poke and ray input drives drink ingredient tracking and food cooking state. Customer orders select unlocked recipes. Prepared ingredients and cooking state feed recipe validation, while sustainable utensils affect the score and sustainability rating. Customer AI includes sustainability dialogue and thieves that reduce tips. Completing the shift opens waste sorting and the daily review. Sorting bonuses and shift earnings feed the economy and shop. Purchases update the recipe book, preparation tools and decorations; decor perks affect patience and special customer odds. Local JSON saves retain coins, purchases, day scores and sustainability ratings.</desc>
+<desc id="ecoffe-systems-desc">XR grab, poke and ray input drives drink ingredient tracking and food cooking state. Customer orders select unlocked recipes. Prepared ingredients and cooking state feed recipe validation, while sustainable utensils affect the score and sustainability rating. Customer AI includes sustainability dialogue and thieves that reduce tips. Completing the shift opens waste sorting and the daily review. Sorting bonuses and shift earnings feed the economy and shop. Purchases update the recipe book, preparation tools and decorations; decor perks affect patience and special customer odds. A cloud database retains coins, purchases, day scores and sustainability ratings.</desc>
 <defs>
   <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7f1eb"/><stop offset="1" stop-color="#fffaf6"/></linearGradient>
   <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 9 5 1 9" fill="none" stroke="#9a6f67" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
@@ -115,5 +115,5 @@
 <text x="74" y="819" fill="#4d332e" font-size="22" font-weight="700">Saved progress across the game</text>
 <text x="74" y="850" fill="#765f57" font-size="18">Coins &#183; unlocked recipes + d&#233;cor &#183; day score &#183; sustainability rating</text>
 <rect x="945" y="807" width="182" height="39" rx="11" fill="#ddcec7"/>
-<text x="1036" y="833" fill="#b56270" font-size="18" font-weight="700" text-anchor="middle">Local JSON save</text>
+<text x="1036" y="833" fill="#b56270" font-size="18" font-weight="700" text-anchor="middle">Cloud database</text>
 </svg>
