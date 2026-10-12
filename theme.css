@@ -503,10 +503,102 @@ body {
 }
 
 @media (max-width: 600px) {
+  .topbar {
+    height: 64px;
+    padding-inline: 18px;
+  }
+
+  .status-pill {
+    font-size: 9px;
+    letter-spacing: .06em;
+    white-space: nowrap;
+  }
+
   .hero.compact-hero {
-    min-height: 590px;
-    padding-top: 104px;
-    padding-bottom: 58px;
+    min-height: clamp(480px, 60svh, 520px);
+    padding: 104px 20px 62px;
+    align-items: center;
+  }
+
+  .compact-hero .hero-copy {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .compact-hero h1 {
+    max-width: 100%;
+    font-size: clamp(42px, 12vw, 50px);
+    overflow-wrap: anywhere;
+  }
+
+  .compact-hero .hero-role {
+    max-width: 300px;
+    font-size: 12px;
+    line-height: 1.6;
+    letter-spacing: .11em;
+  }
+
+  .compact-hero .hero-lede {
+    max-width: 34rem;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* The interactive map is useful on larger screens, but competes with
+     the introduction when the canvas collapses behind phone-sized copy. */
+  #focus-map-canvas {
+    display: none;
+  }
+
+  .hero-art.focus-map {
+    background:
+      radial-gradient(circle at 92% 18%, rgba(181, 98, 112, .14), transparent 32%),
+      radial-gradient(circle at 8% 84%, rgba(154, 111, 103, .1), transparent 34%),
+      linear-gradient(145deg, #fffaf6 0%, #f6efe9 65%, #eadcd5 100%);
+  }
+
+  .hero.compact-hero:after {
+    background: linear-gradient(90deg, rgba(246, 239, 233, .9), rgba(246, 239, 233, .72));
+  }
+
+  .section {
+    padding-inline: 20px;
+  }
+
+  .research-feature {
+    padding: 20px;
+  }
+
+  .research-status {
+    gap: 7px;
+  }
+
+  .research-status span {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  #projects .project-card,
+  #projects .project-card.featured {
+    padding: 20px;
+  }
+
+  #projects .project-cover {
+    margin: -20px -20px 20px;
+  }
+
+  .project-filter {
+    min-height: 44px;
+  }
+
+  .timeline-item {
+    gap: 12px;
+  }
+
+  .time-content h3,
+  .research-feature h3,
+  #projects .project-copy h3 {
+    overflow-wrap: anywhere;
   }
 
   .dashboard-highlights-panel,
@@ -516,5 +608,30 @@ body {
   .dashboard-aside {
     border-left: 0;
     border-top-color: #d8c6bd;
+  }
+}
+
+@media (max-width: 360px) {
+  .status-pill {
+    font-size: 8px;
+  }
+
+  .hero.compact-hero {
+    padding-inline: 18px;
+  }
+
+  .compact-hero .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .compact-hero .hero-actions .button {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .section {
+    padding-inline: 18px;
   }
 }
