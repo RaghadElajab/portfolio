@@ -6,9 +6,9 @@ const projects = {
     links: [['View repository', 'https://github.com/RaghadElajab/Attendance']]
   },
   garden: {
-    file: 'GARDEN.XR', tag: 'MIXED REALITY · SPRING 2025', title: 'MR Gardening Simulator',
-    text: 'A Microsoft HoloLens experience that teaches gardening through interactive mixed reality.',
-    points: ['Explore, Follow-Through, and Challenge gameplay modes', 'Built collaboratively with Unity XR and C#', 'Speech recognition and an AI assistant guide the learner'],
+    file: 'GARDEN.XR', tag: 'MIXED REALITY · SPRING 2025', title: 'Garden Tomato',
+    text: 'A mixed-reality learning experience on Microsoft HoloLens that makes tomato planting tangible through natural interaction and guided practice.',
+    points: ['Explore mode encourages free discovery of the gardening tools', 'Follow-Through mode guides children step by step with Elizabeth, an AI-powered speech assistant', 'Challenge mode asks children to complete the planting process independently'],
     links: [['Garden Tomato', 'https://github.com/RaghadElajab/GardenTomato'], ['WebAR experiment', 'https://github.com/RaghadElajab/webAR']]
   },
   ecoffe: {
@@ -236,6 +236,12 @@ function initProjectEcosystem() {
   const canvas = document.querySelector('#focus-map-canvas');
   const hero = document.querySelector('.hero');
   if (!canvas || !hero) return;
+  const reportsMobileDevice = navigator.userAgentData?.mobile
+    ?? /Android.+Mobile|iPhone|iPod|Windows Phone|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  if (reportsMobileDevice || matchMedia('(max-width: 600px)').matches) {
+    canvas.closest('.hero-art')?.remove();
+    return;
+  }
 
   const context = canvas.getContext('2d', { alpha: true });
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
@@ -1178,11 +1184,35 @@ const copyEmailButton = document.querySelector('#copy-email');
 if (copyEmailButton) {
   copyEmailButton.addEventListener('click', async event => {
     const button = event.currentTarget;
+    const status = button.querySelector('.copy-email-status');
+    const copyWithSelection = () => {
+      const emailField = document.createElement('textarea');
+      emailField.value = button.dataset.email;
+      emailField.setAttribute('readonly', '');
+      emailField.style.position = 'fixed';
+      emailField.style.opacity = '0';
+      document.body.appendChild(emailField);
+      emailField.select();
+      const copied = document.execCommand('copy');
+      emailField.remove();
+      if (!copied) throw new Error('Copy command was unavailable');
+    };
     try {
-      await navigator.clipboard.writeText(button.dataset.email);
-      button.querySelector('span').textContent = 'COPIED!';
-      setTimeout(() => button.querySelector('span').textContent = 'COPY', 1600);
-    } catch { window.location.href = `mailto:${button.dataset.email}`; }
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(button.dataset.email);
+        } catch {
+          copyWithSelection();
+        }
+      } else {
+        copyWithSelection();
+      }
+      status.textContent = 'COPIED!';
+      setTimeout(() => { status.textContent = 'COPY'; }, 1600);
+    } catch {
+      status.textContent = 'SELECT & COPY';
+      window.getSelection().selectAllChildren(button.querySelector('.email-address'));
+    }
   });
 }
 

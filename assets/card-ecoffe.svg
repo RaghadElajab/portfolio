@@ -3,10 +3,11 @@
   <desc id="desc">A minimal coffee cup with a leaf and virtual-reality markers.</desc>
   <rect width="800" height="450" fill="#eaded7"/>
   <circle cx="400" cy="225" r="148" fill="#f7f1eb"/>
-  <path d="M279 169h234l-18 145a40 40 0 0 1-40 35H337a40 40 0 0 1-40-35Z" fill="#c66f7b" stroke="#4b302d" stroke-width="4"/>
-  <path d="M511 205h28c44 0 44 83 0 83h-36" fill="none" stroke="#4b302d" stroke-width="16"/>
-  <path d="M336 219c49-48 107-45 139 5-65 16-112 15-139-5Z" fill="#eaded7"/>
-  <path d="M351 222c38 4 71 14 99 31" fill="none" stroke="#4b302d" stroke-width="4" stroke-linecap="round"/>
-  <path d="M354 145c-18-18 14-30-2-49M404 145c-18-18 14-30-2-49M454 145c-18-18 14-30-2-49" fill="none" stroke="#c66f7b" stroke-width="4" stroke-linecap="round"/>
+  <path d="M500 207h35c52 0 52 91 0 91h-45" fill="none" stroke="#4b302d" stroke-width="18" stroke-linecap="round"/>
+  <path d="M278 169h229l-17 143c-3 23-22 40-45 40H340c-23 0-42-17-45-40Z" fill="#c66f7b" stroke="#4b302d" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M337 260c27-46 81-64 132-40-21 47-80 72-132 40Z" fill="#f7f1eb" stroke="#76564d" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M350 260c34-7 68-18 102-33" fill="none" stroke="#4b302d" stroke-width="4" stroke-linecap="round"/>
+  <path d="M386 250c-4-10-10-19-19-26M414 240c5 8 12 15 21 20" fill="none" stroke="#76564d" stroke-width="3" stroke-linecap="round"/>
+  <path d="M354 145c-18-18 14-30-2-49M404 145c-18-18 14-30-2-49M454 145c-18-18 14-30-2-49" fill="none" stroke="#c66f7b" stroke-width="5" stroke-linecap="round"/>
   <path d="M215 145v-37h45M585 145v-37h-45M215 305v37h45M585 305v37h-45" fill="none" stroke="#76564d" stroke-width="4"/>
 </svg>

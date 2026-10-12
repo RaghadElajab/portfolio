@@ -536,6 +536,8 @@
 .dashboard-story[hidden], #dashboard-highlights[hidden] { display: none; }
 
 @media (min-width: 900px) {
+  .project-dashboard[data-project="attendance"] .dashboard-content,
+  .project-dashboard[data-project="garden"] .dashboard-content,
   .project-dashboard[data-project="ecoffe"] .dashboard-content {
     grid-template-columns: minmax(0, .95fr) minmax(440px, 1.15fr);
   }
@@ -838,7 +840,7 @@ html { scroll-padding-top: 88px; }
 .about .skills-section { margin-top: 36px; }
 .compact-skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 22px;
   padding: 20px 0;
   border-top: 1px solid #284258;
@@ -846,6 +848,10 @@ html { scroll-padding-top: 88px; }
 }
 .compact-skills-grid h4 { margin: 0 0 8px; color: var(--mint); font: 650 13px/1.4 Arial, sans-serif; }
 .compact-skills-grid > div:last-child h4 { color: var(--pink); }
+
+@media (max-width: 1000px) {
+  .compact-skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 .compact-skills-grid p { margin: 0; color: #b2c5d1; font: 14px/1.7 Arial, sans-serif; }
 .about-connect {
   display: grid;
@@ -1019,6 +1025,7 @@ html { scroll-padding-top: 88px; }
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 32px;
 }
 .simple-connect h2 {
@@ -1033,15 +1040,60 @@ html { scroll-padding-top: 88px; }
 }
 .simple-connect-links {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   flex-wrap: wrap;
-  gap: 18px;
+  gap: 28px;
   flex: 0 0 auto;
+}
+.simple-connect .connect-group p.connect-label {
+  margin: 0 0 9px;
+  color: inherit;
+  font: 700 11px/1.2 "Courier New", monospace;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.copy-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 45px;
+}
+.copy-email .email-address {
+  color: inherit;
+  font: inherit;
+  letter-spacing: .035em;
+}
+.copy-email .copy-email-status {
+  padding-left: 14px;
+  border-left: 1px solid currentColor;
+  color: inherit;
+  font: inherit;
+  opacity: .75;
+}
+.social-buttons {
+  display: flex;
+  gap: 10px;
+}
+.simple-connect-links .social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--text);
+  text-decoration: none;
 }
 
 @media (max-width: 700px) {
   .simple-connect { padding-top: 48px; padding-bottom: 48px; }
   .simple-connect-row { align-items: flex-start; flex-direction: column; gap: 24px; }
+  .simple-connect-links { align-items: flex-start; flex-direction: column; width: 100%; gap: 22px; }
+  .copy-email { max-width: 100%; }
+  .email-address { overflow-wrap: anywhere; }
+}
+
+@media (max-width: 430px) {
+  .copy-email { width: 100%; justify-content: space-between; padding-inline: 14px; }
+  .social-buttons { width: 100%; }
+  .social-buttons .button { flex: 1; justify-content: center; }
 }
 
 /* Technology labels read as lightweight metadata, not buttons. */

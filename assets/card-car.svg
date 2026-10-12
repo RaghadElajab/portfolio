@@ -2,10 +2,17 @@
   <title id="title">Car price prediction</title>
   <desc id="desc">A minimal car with a rising prediction line.</desc>
   <rect width="800" height="450" fill="#f7f1eb"/>
-  <path d="M220 276h360l-26-82c-6-20-23-33-44-36l-85-12c-23-3-48 1-68 13l-69 41c-18 11-31 28-36 48Z" fill="#c66f7b" stroke="#4b302d" stroke-width="4" stroke-linejoin="round"/>
-  <path d="m313 198 56-33c14-8 31-12 47-9l68 10 31 56H282Z" fill="#eaded7" stroke="#76564d" stroke-width="3"/>
-  <circle cx="302" cy="285" r="35" fill="#4b302d" stroke="#eaded7" stroke-width="7"/><circle cx="508" cy="285" r="35" fill="#4b302d" stroke="#eaded7" stroke-width="7"/>
-  <path d="M243 349h314" stroke="#4b302d" stroke-width="3" stroke-linecap="round"/>
-  <path d="m500 115 52-42 48 22 55-55" fill="none" stroke="#c66f7b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="m629 40h26v26" fill="none" stroke="#c66f7b" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="400" cy="230" r="153" fill="#eaded7" opacity=".5"/>
+  <path d="M208 280c4-35 21-57 55-69l60-22 48-38c17-13 40-19 63-16l73 10c28 4 49 20 61 46l26 58 17 12v19H208Z" fill="#c66f7b" stroke="#4b302d" stroke-width="5" stroke-linejoin="round"/>
+  <path d="m330 190 51-39c13-10 31-14 48-12l40 6 30 59H310Z" fill="#f7f1eb" stroke="#76564d" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M430 141v63" stroke="#76564d" stroke-width="4"/>
+  <path d="M226 257h38M552 238h31" fill="none" stroke="#f7f1eb" stroke-width="10" stroke-linecap="round"/>
+  <path d="M208 280h45M563 280h48" fill="none" stroke="#4b302d" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="300" cy="282" r="39" fill="#f7f1eb"/>
+  <circle cx="300" cy="282" r="29" fill="#4b302d"/>
+  <circle cx="520" cy="282" r="39" fill="#f7f1eb"/>
+  <circle cx="520" cy="282" r="29" fill="#4b302d"/>
+  <path d="M244 349h326" stroke="#4b302d" stroke-width="4" stroke-linecap="round"/>
+  <path d="m500 105 52-42 48 22 55-55" fill="none" stroke="#c66f7b" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m629 30h26v26" fill="none" stroke="#c66f7b" stroke-width="6" stroke-linecap="round"/>
 </svg>
